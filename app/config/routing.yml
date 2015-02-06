@@ -1,0 +1,7 @@
+alz_fakturak:
+    resource: "@alzFakturakBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: @AppBundle/Controller/
+    type:     annotation

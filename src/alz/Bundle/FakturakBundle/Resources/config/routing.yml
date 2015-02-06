@@ -1,0 +1,3 @@
+alz_fakturak_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: alzFakturakBundle:Default:index }
