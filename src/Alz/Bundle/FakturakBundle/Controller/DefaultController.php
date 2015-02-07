@@ -1,6 +1,6 @@
 <?php
 
-namespace alz\Bundle\FakturakBundle\Controller;
+namespace Alz\Bundle\FakturakBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -8,6 +8,6 @@ class DefaultController extends Controller
 {
     public function indexAction($name)
     {
-        return $this->render('alzFakturakBundle:Default:index.html.twig', array('name' => $name));
+        return $this->render('AlzFakturakBundle:Default:index.html.twig', array('name' => $name));
     }
 }
