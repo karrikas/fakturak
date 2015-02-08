@@ -1,6 +1,6 @@
 <?php
 
-namespace Alz\Bundle\FakturakBundle;
+namespace Alz\FakturakBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

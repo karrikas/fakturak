@@ -1,6 +1,6 @@
 <?php
 
-namespace Alz\Bundle\FakturakBundle\Controller;
+namespace Alz\FakturakBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 

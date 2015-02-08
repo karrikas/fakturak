@@ -1,6 +1,6 @@
 <?php
 
-namespace Alz\Bundle\FakturakBundle\DependencyInjection;
+namespace Alz\FakturakBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
