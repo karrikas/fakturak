@@ -1,5 +1,5 @@
 <?php
-namespace Acme\UserBundle\Entity;
+namespace Alz\FakturakBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
