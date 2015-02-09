@@ -23,7 +23,10 @@ security:
             form_login:
                 provider: fos_userbundle
                 csrf_provider: form.csrf_provider
-            logout:       true
+                check_path: fos_user_security_check
+            logout:
+                path: /user/logout
+                target: /
             anonymous:    true
 
     # with these settings you can restrict or allow access for different parts
