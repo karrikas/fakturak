@@ -1,3 +1,7 @@
+alz_user:
+    resource: "@AlzUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
 alz_fakturak:
     resource: "@AlzFakturakBundle/Resources/config/routing.yml"
     prefix:   /
