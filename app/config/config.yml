@@ -81,3 +81,8 @@ fos_user:
     registration:
         confirmation:
             enabled:    true
+
+jms_i18n_routing:
+    default_locale: es
+    locales: [es, eu]
+    strategy: prefix

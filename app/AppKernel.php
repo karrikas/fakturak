@@ -19,6 +19,8 @@ class AppKernel extends Kernel
             new Alz\FakturakBundle\AlzFakturakBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Alz\UserBundle\AlzUserBundle(),
+            new JMS\I18nRoutingBundle\JMSI18nRoutingBundle(),
+            new JMS\TranslationBundle\JMSTranslationBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
