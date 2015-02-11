@@ -61,8 +61,8 @@
             </tr>
             <tr>
                 <td></td>
-                <th class="text-center"><a class="btn btn-danger" href="#" role="button">{{ "Registrate gratis"|trans }}</a></th>
-                <th class="text-center"><a class="btn btn-danger" href="#" role="button">{{ "Comprar por 99€"|trans }}</a></th>
+                <th class="text-center"><a class="btn btn-danger" href="{{ path('fos_user_registration_register') }}" role="button">{{ "Registrate gratis"|trans }}</a></th>
+                <th class="text-center"><a class="btn btn-danger" href="{{ path('fos_user_registration_register', { premium: "on"}) }}" role="button">{{ "Comprar por 99€"|trans }}</a></th>
             </tr>
         </table>
     </div>

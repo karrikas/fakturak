@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new JMS\I18nRoutingBundle\JMSI18nRoutingBundle(),
             new JMS\TranslationBundle\JMSTranslationBundle(),
             new Alz\WebBundle\AlzWebBundle(),
+            new Alz\AppBundle\AlzAppBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

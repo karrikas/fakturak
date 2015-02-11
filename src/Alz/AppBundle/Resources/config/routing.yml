@@ -1,0 +1,3 @@
+alz_app_homepage:
+    path:     /
+    defaults: { _controller: AlzAppBundle:Default:index }

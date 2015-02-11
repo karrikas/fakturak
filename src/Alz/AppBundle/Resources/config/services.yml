@@ -1,0 +1,4 @@
+services:
+#    alz_app.example:
+#        class: Alz\AppBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

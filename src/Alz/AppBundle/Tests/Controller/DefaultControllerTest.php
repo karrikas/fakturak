@@ -1,6 +1,6 @@
 <?php
 
-namespace Alz\UserBundle\Tests\Controller;
+namespace Alz\AppBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
