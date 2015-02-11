@@ -1,0 +1,12 @@
+alz_web_homepage:
+    path:     /
+    defaults: { _controller: AlzWebBundle:Default:index }
+alz_web_comofunciona:
+    path:     /como-funciona/
+    defaults: { _controller: AlzWebBundle:Default:comofunciona }
+alz_web_preguntasfrecuentes:
+    path:     /faqs/
+    defaults: { _controller: AlzWebBundle:Default:faqs }
+alz_web_precios:
+    path:     /precios/
+    defaults: { _controller: AlzWebBundle:Default:precios }

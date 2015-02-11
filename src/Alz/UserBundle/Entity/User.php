@@ -1,5 +1,5 @@
 <?php
-namespace Alz\FakturakBundle\Entity;
+namespace Alz\UserBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
@@ -20,5 +20,6 @@ class User extends BaseUser
     public function __construct()
     {
         parent::__construct();
+        // your own logic
     }
 }

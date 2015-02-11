@@ -1,0 +1,63 @@
+{% extends 'AlzWebBundle::layout.html.twig' %}
+
+{% block title %}{{ "Programa de facturación"|trans }}{% endblock %}
+
+{% block content %}
+<div id="homepage">
+    <div class="jumbotron">
+      <h1>{{ "Programa de facturación"|trans }}</h1>
+      <p>{{ "Registraste para empezar a usar nuestro programa de facturación gratis. Soluciona las necesidades de  pymes y autónomos. Genera la facturas que necesites online y desde cualquier dispositivo."|trans }}</p>
+      <p><a class="btn btn-danger btn-lg" href="#" role="button">{{ "Registrate"|trans }}</a></p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+          <h2>{{ "Gratis"|trans }}</h2>
+          <p>{{ "Usar el programa de facturación es gratuito, registraste para crear tu usuario, confirma tu cuneta de correo y tendrás acceso a un programa de facturación profesional."|trans }}</p>
+      </div>
+      <div class="col-md-4">
+          <h2>{{ "Simple"|trans }}</h2>
+          <p>{{ "Genera tu primera factura en menos de un minuto. No necesitaras ayuda de ningún experto. Este programa de facturación esta hecho para ser usado por cualquiera. No es necesario ningún conocimiento previo."|trans }}</p>
+      </div>
+      <div class="col-md-4">
+          <h2>{{ "Completo"|trans }}</h2>
+          <p>{{ "Todo lo que necesitas para hacer facturas esta incluida en nuestra versión gratuita del programa de facturación. Registraste y accede al programa de facturación para comprobarlo por ti mismo."|trans }}</p>
+      </div>
+    </div>
+
+    <div class="page-header">
+      <h3>{{ "Vuestra opinión"|trans }} <small>{{ "Nuestros usuarios"|trans }}</small></h3>
+    </div>
+
+    <div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-body">
+            {{ "Trabajo con mi hermano realizando trabajos de pintura para particulares. Creo las facturas con el ordenador y luego puedo acceder a ellas desde mi móvil. El mejor programa que he utilizado."|trans }}
+            </div>
+            <div class="panel-footer text-right">Oscar Paredes <small>{{ "Pintor"|trans }}</small></div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-body">
+            {{ "Al principio necesitamos algo gratuito para gestionar nuestras facturas, esta aplicación fue la que mejor se adaptada a nosotras. Ahora se la recomiendo a mis clientes."|trans }}
+            </div>
+            <div class="panel-footer text-right">Maite Egiluz <small>{{ "Consultora marketing Online"|trans }}</small></div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-body">
+            {{ "Muy simple, no necesito más."|trans }}
+            </div>
+            <div class="panel-footer text-right">Juan Pérez <small>{{ "Electricista autónomo"|trans }}</small></div>
+        </div>
+    </div>
+</div>
+
+<div class="background"></div>
+</div>
+{% endblock %}

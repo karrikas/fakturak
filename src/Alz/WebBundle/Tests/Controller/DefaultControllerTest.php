@@ -1,6 +1,6 @@
 <?php
 
-namespace Alz\FakturakBundle\Tests\Controller;
+namespace Alz\WebBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

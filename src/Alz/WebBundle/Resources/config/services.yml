@@ -1,4 +1,4 @@
 services:
-#    alz_fakturak.example:
-#        class: Alz\FakturakBundle\Example
+#    alz_web.example:
+#        class: Alz\WebBundle\Example
 #        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+    <nav id="menumain" class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{{ path('alz_web_homepage') }}">
+                    <img alt="Sis-facturacion.com" src="{{ asset("images/sis-facturacion-logo-50.png") }}">
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{ path('alz_web_comofunciona') }}">{{ "Como funciona"|trans }}</a></li>
+                    <li><a href="{{ path('alz_web_preguntasfrecuentes') }}">{{ "Preguntas frecuentes"|trans }}</a></li>
+                    <li><a href="{{ path('alz_web_precios') }}">{{ "Precios"|trans }}</a></li>
+                    <li><button type="button" class="btn btn-danger navbar-btn">App</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {% block content %}{% endblock %}
+</div>
+{% endblock %}

@@ -7,8 +7,4 @@
 // Import Bootstrap for Sass
 @import "bootstrap";
 
-#proba {
-    & .hau {
-        color: red;
-    }
-}
+@import "main";
