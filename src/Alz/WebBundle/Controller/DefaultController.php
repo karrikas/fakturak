@@ -10,4 +10,14 @@ class DefaultController extends Controller
     {
         return $this->render('AlzWebBundle:Default:index.html.twig');
     }
+
+    public function faqsAction()
+    {
+        return $this->render('AlzWebBundle:Default:faqs.html.twig');
+    }
+
+    public function preciosAction()
+    {
+        return $this->render('AlzWebBundle:Default:precios.html.twig');
+    }
 }

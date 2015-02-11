@@ -1,0 +1,74 @@
+{% extends 'AlzWebBundle::layout.html.twig' %}
+
+{% block title %}{{ "Precios del programa de facturación"|trans }}{% endblock %}
+
+{% block content %}
+<div id="precios">
+    <div class="page-header">
+      <h1>{{ "Tabla de precios"|trans }}</h1>
+    </div>
+
+    <p class="lead">{{ "Disponemos de dos cuentas, una gratuita y otra premium que sólo cuesta 99€. En la siguiente tabla puedes comparar las características principales de cada tipo de cuenta."|trans }}</p>
+
+<div class="rows">
+    <div class="hidden-xs col-md-2"></div>
+    <div class="col-md-8">
+        <table class="table">
+            <tr>
+                <td></td>
+                <th class="text-center">{{ "Gratis"|trans }}</th>
+                <th class="text-center">{{ "Premium"|trans }}</th>
+            </tr>
+            <tr>
+                <td>{{ "Limite facturas"|trans }}</td>
+                <td class="text-center">{{ "100/año"|trans }}</span></td>
+                <td class="text-center">{{ "Sin limite"|trans }}</td>
+            </tr>
+            <tr>
+                <td>{{ "Factura descargable en PDF"|trans }}</td>
+                <td class="text-center"><span class="glyphicon glyphicon-ok green" aria-hidden="true"></span></td>
+                <td class="text-center"><span class="glyphicon glyphicon-ok green" aria-hidden="true"></span></td>
+            </tr>
+            <tr>
+                <td>{{ "Numeración correlativa"|trans }}</td>
+                <td class="text-center"><span class="glyphicon glyphicon-ok green" aria-hidden="true"></span></td>
+                <td class="text-center"><span class="glyphicon glyphicon-ok green" aria-hidden="true"></span></td>
+            </tr>
+            <tr>
+                <td>{{ "Gestión de clientes"|trans }}</td>
+                <td class="text-center"><span class="glyphicon glyphicon-ok green" aria-hidden="true"></span></td>
+                <td class="text-center"><span class="glyphicon glyphicon-ok green" aria-hidden="true"></span></td>
+            </tr>
+            <tr>
+                <td>{{ "Usuario ilimitados"|trans }}</td>
+                <td class="text-center"><span class="glyphicon glyphicon-remove red" aria-hidden="true"></span></td>
+                <td class="text-center"><span class="glyphicon glyphicon-ok green" aria-hidden="true"></span></td>
+            </tr>
+            <tr>
+                <td>{{ "Acceso seguro"|trans }}</td>
+                <td class="text-center"><span class="glyphicon glyphicon-remove red" aria-hidden="true"></span></td>
+                <td class="text-center"><span class="glyphicon glyphicon-ok green" aria-hidden="true"></span></td>
+            </tr>
+            <tr>
+                <td>{{ "Https"|trans }}</td>
+                <td class="text-center"><span class="glyphicon glyphicon-remove red" aria-hidden="true"></span></td>
+                <td class="text-center"><span class="glyphicon glyphicon-ok green" aria-hidden="true"></span></td>
+            </tr>
+            <tr>
+                <td>{{ "Sin publicidad"|trans }}</td>
+                <td class="text-center"><span class="glyphicon glyphicon-remove red" aria-hidden="true"></span></td>
+                <td class="text-center"><span class="glyphicon glyphicon-ok green" aria-hidden="true"></span></td>
+            </tr>
+            <tr>
+                <td></td>
+                <th class="text-center"><a class="btn btn-danger" href="#" role="button">{{ "Registrate gratis"|trans }}</a></th>
+                <th class="text-center"><a class="btn btn-danger" href="#" role="button">{{ "Comprar por 99€"|trans }}</a></th>
+            </tr>
+        </table>
+    </div>
+    <div class="hidden-xs col-md-2"></div>
+
+</div>
+    <div class="background"></div>
+</div>
+{% endblock %}

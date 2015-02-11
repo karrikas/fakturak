@@ -4,12 +4,25 @@
     }
 
     &.navbar-default {
+        margin-top: 20px;
         border-color: transparent;
-        background-color: rgba(255,255,255,0.7);;
+        background-color: rgba(255,255,255,0.9);;
     }
     & a {
         font-size: 14px;
     }
+}
+
+.background {
+    background-image: url("../../images/office-01.jpg");
+    background-color: #ddd;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100px;
+    width: 100%;
+    z-index: -1;
+    background-position: center center;
 }
 
 #homepage {
@@ -22,15 +35,24 @@
         }
     }
     & .background {
-        background-image: url("../../images/office-01.jpg");
-        background-color: #ddd;
-        position: absolute;
-        top: 0;
-        left: 0;
         height: 400px;
-        width: 100%;
-        z-index: -1;
-        background-position: center center;
     }
 }
 
+#faqs {
+    & h2 {
+        font-size: 20px;
+    }
+    & p {
+        font-size: 16px;
+    }
+}
+
+#precios {
+    & .red {
+        color: red;
+    }
+    & .green {
+        color: green;
+    }
+}

@@ -5,6 +5,12 @@
     <nav id="menumain" class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">{{ "Mostrar menú"|trans }}</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
                 <a class="navbar-brand" href="{{ path('alz_web_homepage') }}">
                     <img alt="Sis-facturacion.com" src="{{ asset("images/sis-facturacion-logo-50.png") }}">
                 </a>
@@ -12,8 +18,7 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="{{ path('alz_web_comofunciona') }}">{{ "Como funciona"|trans }}</a></li>
-                    <li><a href="{{ path('alz_web_preguntasfrecuentes') }}">{{ "Preguntas frecuentes"|trans }}</a></li>
+                    <li><a href="{{ path('alz_web_faqs') }}">{{ "Preguntas frecuentes"|trans }}</a></li>
                     <li><a href="{{ path('alz_web_precios') }}">{{ "Precios"|trans }}</a></li>
                     <li><button type="button" class="btn btn-danger navbar-btn">App</button></li>
                 </ul>
