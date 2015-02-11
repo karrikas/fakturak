@@ -7,7 +7,8 @@ security:
 
     # http://symfony.com/doc/current/book/security.html#hierarchical-roles
     role_hierarchy:
-        ROLE_ADMIN:       ROLE_USER
+        ROLE_FREE:        ROLE_FREE
+        ROLE_PREMIUM:     ROLE_PREMIUM
         ROLE_SUPER_ADMIN: ROLE_ADMIN
 
     # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
@@ -22,11 +23,13 @@ security:
             pattern: ^/
             form_login:
                 provider: fos_userbundle
-                csrf_provider: form.csrf_provider
+                login_path: fos_user_security_login
                 check_path: fos_user_security_check
+                csrf_provider: form.csrf_provider
+                default_target_path: alz_app_homepage
             logout:
-                path: /user/logout
-                target: /
+                path: fos_user_security_logout
+                target: alz_app_homepage
             anonymous:    true
 
     # with these settings you can restrict or allow access for different parts
@@ -37,4 +40,4 @@ security:
         - { path: ^/logout$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/app, role: ROLE_ADMIN }
+        - { path: ^/%locale%/app/, role: ROLE_FREE }
