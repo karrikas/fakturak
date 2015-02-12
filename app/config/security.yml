@@ -7,7 +7,7 @@ security:
 
     # http://symfony.com/doc/current/book/security.html#hierarchical-roles
     role_hierarchy:
-        ROLE_FREE:        ROLE_FREE
+        ROLE_USER:        ROLE_USER
         ROLE_PREMIUM:     ROLE_PREMIUM
         ROLE_SUPER_ADMIN: ROLE_ADMIN
 
@@ -40,4 +40,4 @@ security:
         - { path: ^/logout$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/%locale%/app/, role: ROLE_FREE }
+        - { path: ^/%locale%/app/, role: ROLE_USER }

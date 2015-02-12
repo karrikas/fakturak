@@ -1,1 +1,12 @@
+{% extends 'AlzAppBundle::layout.html.twig' %}
+
+{% block title %}{{ "App facturación"|trans }}{% endblock %}
+
+{% block content %}
 Hello!
+
+{{ form_start(form) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}
+
+{% endblock %}
