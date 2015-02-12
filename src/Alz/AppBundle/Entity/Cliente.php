@@ -2,6 +2,8 @@
 namespace Alz\AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Alz\AppBundle\Entity\Factura;
 
 /**
  * @ORM\Entity
@@ -66,6 +68,20 @@ class Cliente
      * @ORM\Column(type="string", length=100, nullable=true)
      */
     protected $email;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Factura")
+     * @ORM\JoinTable(name="clientes_facturas",
+     *      joinColumns={@ORM\JoinColumn(name="cliente_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="factura_id", referencedColumnName="id", unique=true)}
+     *      )
+     **/
+    private $facturas;
+
+    public function __construct()
+    {
+        $this->facturas = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -305,5 +321,38 @@ class Cliente
     public function getEmail()
     {
         return $this->email;
+    }
+
+    /**
+     * Add facturas
+     *
+     * @param \Alz\AppBundle\Entity\Factura $facturas
+     * @return Cliente
+     */
+    public function addFactura(\Alz\AppBundle\Entity\Factura $facturas)
+    {
+        $this->facturas[] = $facturas;
+
+        return $this;
+    }
+
+    /**
+     * Remove facturas
+     *
+     * @param \Alz\AppBundle\Entity\Factura $facturas
+     */
+    public function removeFactura(\Alz\AppBundle\Entity\Factura $facturas)
+    {
+        $this->facturas->removeElement($facturas);
+    }
+
+    /**
+     * Get facturas
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getFacturas()
+    {
+        return $this->facturas;
     }
 }
