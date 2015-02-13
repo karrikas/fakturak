@@ -10,8 +10,14 @@ use Alz\AppBundle\Form\EmpresaType;
 
 class DefaultController extends Controller
 {
-    public function indexAction()
+    public function indexAction(Request $request)
     {
+        /*
+        $request->getSession()->getFlashBag()->add(
+            'success',
+            'Your changes were saved!'
+        );
+         */
         return $this->render('AlzAppBundle:Default:index.html.twig');
     }
 
@@ -63,6 +69,11 @@ class DefaultController extends Controller
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($user);
                 $em->flush();
+
+                $request->getSession()->getFlashBag()->add(
+                    'success',
+                    $this->get('translator')->trans('Los datos se han guardado.')
+                );
 
                 return $this->redirect($this->generateUrl('alz_app_configuracion'));
             }
