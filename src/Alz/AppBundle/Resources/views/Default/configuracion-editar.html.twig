@@ -1,0 +1,64 @@
+{% extends 'AlzAppBundle::layout.html.twig' %}
+
+{% block title %}{{ "App facturación"|trans }}{% endblock %}
+
+{% block content %}
+{{ form_start(form) }}
+
+    {{ form_errors(form) }}
+
+    <div class="rows">
+        <div class="col-md-8">
+            {{ form_row(form.nombre) }}
+        </div>
+
+        <div class="col-md-4">
+            {{ form_row(form.cif) }}
+        </div>
+
+        <div class="col-md-12">
+            <div class="form-group">
+            {{ form_label(form.direccion1) }}
+            {{ form_widget(form.direccion1) }}<br>
+            {{ form_widget(form.direccion2) }}
+            {{ form_errors(form.direccion1) }}
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            {{ form_row(form.region) }}
+        </div>
+
+        <div class="col-md-5">
+            {{ form_row(form.ciudad) }}
+        </div>
+
+        <div class="col-md-2">
+            {{ form_row(form.cp) }}
+        </div>
+
+        <div class="col-md-6">
+            {{ form_row(form.telefono) }}
+        </div>
+
+        <div class="col-md-6">
+            {{ form_row(form.fax) }}
+        </div>
+
+        <div class="col-md-12">
+            {{ form_row(form.email) }}
+        </div>
+
+        <div class="col-md-12">
+            {{ form_row(form.logo) }}
+        </div>
+
+        <div class="col-md-12">
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">{{ "Guardar"|trans }}</button>
+            </div>
+        </div>
+    </div>
+
+{{ form_end(form) }}
+{% endblock %}

@@ -1,3 +1,11 @@
 alz_app_homepage:
     path:     /
     defaults: { _controller: AlzAppBundle:Default:index }
+
+alz_app_configuracion:
+    path: /configuracion
+    defaults: { _controller: AlzAppBundle:Default:configuracion }
+
+alz_app_configuracion_editar:
+    path: /configuracion-editar
+    defaults: { _controller: AlzAppBundle:Default:configuracionEditar }

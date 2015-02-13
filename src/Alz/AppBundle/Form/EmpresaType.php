@@ -15,17 +15,17 @@ class EmpresaType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nombre')
-            ->add('cif')
-            ->add('direccion1')
-            ->add('direccion2')
-            ->add('cp')
-            ->add('region')
-            ->add('ciudad')
-            ->add('telefono')
-            ->add('fax')
-            ->add('email')
-            ->add('logo')
+            ->add('nombre', null, array('label' => 'Razón social'))
+            ->add('cif', null, array('label' => 'CIF o NIF'))
+            ->add('direccion1', null, array('label' => 'Dirección'))
+            ->add('direccion2', null, array('label' => 'Dirección'))
+            ->add('cp', null, array('label' => 'Código postal'))
+            ->add('region', null, array('label' => 'Provincia'))
+            ->add('ciudad', null, array('label' => 'Ciudad'))
+            ->add('telefono', null, array('label' => 'Teléfono'))
+            ->add('fax', null, array('label' => 'Fax'))
+            ->add('email', null, array('label' => 'E-mail'))
+            ->add('logo', null, array('label' => 'Imagen del logotipo'))
         ;
     }
     
