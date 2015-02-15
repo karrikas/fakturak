@@ -34,10 +34,8 @@ class DefaultController extends Controller
             return $this->redirect($this->generateUrl('alz_app_configuracion_editar'));
         }
 
-        $form = $this->createForm(new EmpresaType(), $empresa);
-
         return $this->render('AlzAppBundle:Default:configuracion.html.twig', array(
-            'form' => $form->createView(),
+            'empresa' => $empresa,
         ));
     }
 
@@ -69,14 +67,14 @@ class DefaultController extends Controller
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($user);
                 $em->flush();
-
-                $request->getSession()->getFlashBag()->add(
-                    'success',
-                    $this->get('translator')->trans('Los datos se han guardado.')
-                );
-
-                return $this->redirect($this->generateUrl('alz_app_configuracion'));
             }
+
+            $request->getSession()->getFlashBag()->add(
+                'success',
+                $this->get('translator')->trans('Los datos se han guardado.')
+            );
+
+            return $this->redirect($this->generateUrl('alz_app_configuracion'));
         }
 
         return $this->render('AlzAppBundle:Default:configuracion-editar.html.twig', array(

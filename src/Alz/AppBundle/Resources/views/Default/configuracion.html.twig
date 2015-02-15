@@ -4,4 +4,53 @@
 
 {% block content %}
 
+<div class="btn-group pull-right" role="group" aria-label="">
+  <a type="button" class="btn btn-default" href="{{ path('alz_app_configuracion_editar') }}"><span class="glyphicon glyphicon-wrench" aria-hidden="true"> {{ "Editar"|trans }}</span></a>
+</div>
+
+<div class="page-header">
+    <h1>{{ "Configuración"|trans }}</h1>
+</div>
+
+<dl class="dl-horizontal">
+    <dt>{{ "Razón social"|trans }}</dt>
+    <dd>{{ empresa.nombre }}</dd>
+</dl>
+<dl class="dl-horizontal">
+    <dt>{{ "CIF o NIF"|trans }}</dt>
+    <dd>{{ empresa.cif }}</dd>
+</dl>
+<dl class="dl-horizontal">
+    <dt>{{ "Dirección"|trans }}</dt>
+    <dd>{{ empresa.direccion1 }}<br>
+    {{ empresa.direccion2 }}</dd>
+</dl>
+<dl class="dl-horizontal">
+    <dt>{{ "Provincia"|trans }}</dt>
+    <dd>{{ empresa.region }}</dd>
+</dl>
+<dl class="dl-horizontal">
+    <dt>{{ "Ciudad"|trans }}</dt>
+    <dd>{{ empresa.ciudad }}</dd>
+</dl>
+<dl class="dl-horizontal">
+    <dt>{{ "CP"|trans }}</dt>
+    <dd>{{ empresa.cp }}</dd>
+</dl>
+<dl class="dl-horizontal">
+    <dt>{{ "Teléfono"|trans }}</dt>
+    <dd>{{ empresa.telefono }}</dd>
+</dl>
+<dl class="dl-horizontal">
+    <dt>{{ "Fax"|trans }}</dt>
+    <dd>{{ empresa.fax }}</dd>
+</dl>
+<dl class="dl-horizontal">
+    <dt>{{ "E-mail"|trans }}</dt>
+    <dd>{{ empresa.email }}</dd>
+</dl>
+<dl class="dl-horizontal">
+    <dt>{{ "Logo"|trans }}</dt>
+    <dd>{{ empresa.logo }}</dd>
+</dl>
 {% endblock %}
