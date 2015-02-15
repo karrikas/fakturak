@@ -1,5 +1,10 @@
 {% extends 'base.html.twig' %}
 
+{% block javascripts %}
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
+<script src="{{ asset('bootstrap/javascripts/app.js') }}"></script>
+{% endblock %}
+
 {% block body %}
     <nav id="menuapp" class="navbar navbar-default">
         <div class="navbar-header">
@@ -17,8 +22,8 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="{{ path('alz_web_faqs') }}">{{ "Facturas"|trans }}</a></li>
-                <li><a href="{{ path('alz_web_faqs') }}">{{ "Clientes"|trans }}</a></li>
+                <li><a href="{{ path('alz_app_facturas') }}">{{ "Facturas"|trans }}</a></li>
+                <li><a href="{{ path('alz_app_clientes') }}">{{ "Clientes"|trans }}</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon glyphicon-cog" aria-hidden="true"></span> <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">

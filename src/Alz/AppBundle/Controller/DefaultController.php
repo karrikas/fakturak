@@ -21,6 +21,21 @@ class DefaultController extends Controller
         return $this->render('AlzAppBundle:Default:index.html.twig');
     }
 
+    public function clienteAction(Request $request)
+    {
+        return $this->render('AlzAppBundle:Default:cliente.html.twig', array());
+    }
+
+    public function clientesAction(Request $request)
+    {
+        return $this->render('AlzAppBundle:Default:clientes.html.twig', array());
+    }
+
+    public function facturasAction(Request $request)
+    {
+        return $this->render('AlzAppBundle:Default:facturas.html.twig', array());
+    }
+
     public function configuracionAction()
     {
         $user = $this->getDoctrine()

@@ -2,6 +2,22 @@ alz_app_homepage:
     path:     /
     defaults: { _controller: AlzAppBundle:Default:index }
 
+alz_app_clientes:
+    path: /clientes
+    defaults: { _controller: AlzAppBundle:Default:clientes }
+
+alz_app_cliente:
+    path: /cliente
+    defaults: { _controller: AlzAppBundle:Default:cliente }
+
+alz_app_facturas:
+    path: /facturas
+    defaults: { _controller: AlzAppBundle:Default:facturas }
+
+alz_app_factura:
+    path: /factura
+    defaults: { _controller: AlzAppBundle:Default:factura }
+
 alz_app_configuracion:
     path: /configuracion
     defaults: { _controller: AlzAppBundle:Default:configuracion }

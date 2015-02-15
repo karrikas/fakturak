@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ app.request.locale }}">
+<html lang="{{ app.request.locale }}" ng-app="{% block ngapp %}{% endblock %}">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,11 +15,12 @@
     <![endif]-->
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
   </head>
-  <body>
+
+  <body ng-controller="{% block ngcontroller %}{% endblock %}">
     {% block body %}{% endblock %}
-    {% block javascripts %}{% endblock %}
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="{{ asset('bootstrap/javascripts/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('bootstrap/javascripts/web.js') }}"></script>
+    {% block javascripts %}{% endblock %}
   </body>
 </html>
