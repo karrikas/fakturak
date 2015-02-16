@@ -70,16 +70,17 @@ class Cliente
     protected $email;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Factura")
-     * @ORM\JoinTable(name="clientes_facturas",
-     *      joinColumns={@ORM\JoinColumn(name="cliente_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="factura_id", referencedColumnName="id", unique=true)}
-     *      )
+     * @ORM\ManyToOne(targetEntity="Empresa", inversedBy="clientes")
+     * @ORM\JoinColumn(name="empresa_id", referencedColumnName="id")
+     **/
+    private $empresa;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Factura", mappedBy="cliente")
      **/
     private $facturas;
 
-    public function __construct()
-    {
+    public function __construct() {
         $this->facturas = new ArrayCollection();
     }
 
@@ -354,5 +355,28 @@ class Cliente
     public function getFacturas()
     {
         return $this->facturas;
+    }
+
+    /**
+     * Set empresa
+     *
+     * @param \Alz\AppBundle\Entity\Empresa $empresa
+     * @return Cliente
+     */
+    public function setEmpresa(\Alz\AppBundle\Entity\Empresa $empresa = null)
+    {
+        $this->empresa = $empresa;
+
+        return $this;
+    }
+
+    /**
+     * Get empresa
+     *
+     * @return \Alz\AppBundle\Entity\Empresa 
+     */
+    public function getEmpresa()
+    {
+        return $this->empresa;
     }
 }

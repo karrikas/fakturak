@@ -37,6 +37,12 @@ class FacturaConcepto
     protected $totaliva;
 
     /**
+     * @ORM\ManyToOne(targetEntity="FacturaConcepto", inversedBy="conceptos")
+     * @ORM\JoinColumn(name="factura_id", referencedColumnName="id")
+     **/
+    private $factura;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -136,5 +142,28 @@ class FacturaConcepto
     public function getTotaliva()
     {
         return $this->totaliva;
+    }
+
+    /**
+     * Set factura
+     *
+     * @param \Alz\AppBundle\Entity\Factura $factura
+     * @return FacturaConcepto
+     */
+    public function setFactura(\Alz\AppBundle\Entity\Factura $factura = null)
+    {
+        $this->factura = $factura;
+
+        return $this;
+    }
+
+    /**
+     * Get factura
+     *
+     * @return \Alz\AppBundle\Entity\Factura 
+     */
+    public function getFactura()
+    {
+        return $this->factura;
     }
 }

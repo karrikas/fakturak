@@ -82,28 +82,23 @@ class Empresa
     private $users;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Factura")
-     * @ORM\JoinTable(name="empresas_facturas",
-     *      joinColumns={@ORM\JoinColumn(name="empresa_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="factura_id", referencedColumnName="id", unique=true)}
-     *      )
+     * @ORM\OneToMany(targetEntity="Cliente", mappedBy="empresa")
+     **/
+    private $clientes;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Factura", mappedBy="empresa")
      **/
     private $facturas;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Cliente")
-     * @ORM\JoinTable(name="empresas_clientes",
-     *      joinColumns={@ORM\JoinColumn(name="empresa_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="cliente_id", referencedColumnName="id", unique=true)}
-     *      )
-     **/
-    private $clientes;
-
+     * Constructor
+     */
     public function __construct()
     {
-        $this->facturas = new ArrayCollection();
-        $this->clientes = new ArrayCollection();
         $this->users = new ArrayCollection();
+        $this->clientes = new ArrayCollection();
+        $this->facturas = new ArrayCollection();
     }
 
     /**
@@ -375,7 +370,7 @@ class Empresa
      * @param \Alz\AppBundle\Entity\User $users
      * @return Empresa
      */
-    public function addUser(\Alz\AppBundle\Entity\User $users)
+    public function addUser(\Alz\AppBundle\Entity\UserClone $users)
     {
         $this->users[] = $users;
 
@@ -387,7 +382,7 @@ class Empresa
      *
      * @param \Alz\AppBundle\Entity\User $users
      */
-    public function removeUser(\Alz\AppBundle\Entity\User $users)
+    public function removeUser(\Alz\AppBundle\Entity\UserClone $users)
     {
         $this->users->removeElement($users);
     }
@@ -467,4 +462,6 @@ class Empresa
     {
         return $this->facturas;
     }
+
+
 }

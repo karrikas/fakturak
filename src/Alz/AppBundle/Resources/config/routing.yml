@@ -25,3 +25,18 @@ alz_app_configuracion:
 alz_app_configuracion_editar:
     path: /configuracion-editar
     defaults: { _controller: AlzAppBundle:Default:configuracionEditar }
+
+alz_app_api_cliente_get:
+    path: /api/cliente
+    defaults: { _controller: AlzAppBundle:Api:clienteGet }
+    requirements:
+        _format: json
+        method: GET
+
+alz_app_api_cliente_set:
+    path: /api/cliente
+    defaults: { _controller: AlzAppBundle:Api:clienteSet }
+    requirements:
+        _format: json
+        method: POST
+

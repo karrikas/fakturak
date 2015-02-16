@@ -41,12 +41,12 @@ class Factura
     /**
      * @ORM\Column(type="text", nullable=true)
      */
-    protected $empresa;
+    protected $empresainfo;
 
     /**
      * @ORM\Column(type="text", nullable=true)
      */
-    protected $cliente;
+    protected $clienteinfo;
 
     /**
      * @ORM\Column(type="text", nullable=true)
@@ -54,16 +54,23 @@ class Factura
     protected $informacion;
 
     /**
-     * @ORM\ManyToMany(targetEntity="FacturaConcepto")
-     * @ORM\JoinTable(name="facturas_conceptos",
-     *      joinColumns={@ORM\JoinColumn(name="factura_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="facturaconcepto_id", referencedColumnName="id", unique=true)}
-     *      )
+     * @ORM\ManyToOne(targetEntity="Empresa", inversedBy="facturas")
+     * @ORM\JoinColumn(name="empresa_id", referencedColumnName="id")
+     **/
+    private $empresa;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Cliente", inversedBy="facturas")
+     * @ORM\JoinColumn(name="cliente_id", referencedColumnName="id")
+     **/
+    private $cliente;
+
+    /**
+     * @ORM\OneToMany(targetEntity="FacturaConcepto", mappedBy="factura")
      **/
     private $conceptos;
 
-    public function __construct()
-    {
+    public function __construct() {
         $this->conceptos = new ArrayCollection();
     }
 
@@ -269,5 +276,74 @@ class Factura
     public function getConceptos()
     {
         return $this->conceptos;
+    }
+
+    /**
+     * Set product
+     *
+     * @param \Alz\AppBundle\Entity\Empresa $product
+     * @return Factura
+     */
+    public function setProduct(\Alz\AppBundle\Entity\Empresa $product = null)
+    {
+        $this->product = $product;
+
+        return $this;
+    }
+
+    /**
+     * Get product
+     *
+     * @return \Alz\AppBundle\Entity\Empresa 
+     */
+    public function getProduct()
+    {
+        return $this->product;
+    }
+
+    /**
+     * Set empresainfo
+     *
+     * @param string $empresainfo
+     * @return Factura
+     */
+    public function setEmpresainfo($empresainfo)
+    {
+        $this->empresainfo = $empresainfo;
+
+        return $this;
+    }
+
+    /**
+     * Get empresainfo
+     *
+     * @return string 
+     */
+    public function getEmpresainfo()
+    {
+        return $this->empresainfo;
+    }
+
+    /**
+     * Set clienteinfo
+     *
+     * @param string $clienteinfo
+     * @return Factura
+     */
+    public function setClienteinfo($clienteinfo)
+    {
+        $this->clienteinfo = $clienteinfo;
+
+        return $this;
+    }
+
+    /**
+     * Get clienteinfo
+     *
+     * @return string 
+     */
+    public function getClienteinfo()
+    {
+        return $this->clienteinfo;
     }
 }
