@@ -11,17 +11,21 @@ class ApiController extends Controller
     public function clienteGetAction(Request $request)
     {
         $id = $request->get('id');
+        if (!$id) {
+            return new JsonResponse();
+        }
 
         $cliente = $this->getDoctrine()
         ->getRepository('AlzAppBundle:Cliente')
         ->find($id);
 
-
         if (!$cliente) {
             return new JsonResponse();
         }
 
-        echo $cliente->getEmpresa()->getNombre();
+        if (!$cliente->getEmpresa()->hasUser($this->getUser()->getId())) {
+            return new JsonResponse();
+        }
 
         $arr = array(
             'nombre' => $cliente->getNombre(),
