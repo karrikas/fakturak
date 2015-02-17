@@ -1,0 +1,24 @@
+Alz\AppBundle\Entity\Empresa:
+    properties:
+        nombre: 
+            - NotBlank: ~
+        cif: 
+            - NotBlank: ~
+        direccion1: 
+            - NotBlank: ~
+        ciudad: 
+            - NotBlank: ~
+        telefono: 
+            - NotBlank: ~
+        nombre: 
+            - NotBlank: ~
+        email:
+            - NotBlank: ~
+            - Email: ~
+
+Alz\AppBundle\Entity\Cliente:
+    properties:
+        nombre: 
+            - NotBlank: ~
+        email:
+            - Email: ~

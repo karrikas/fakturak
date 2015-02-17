@@ -4,10 +4,12 @@ namespace Alz\AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Alz\AppBundle\Entity\Factura;
+use Alz\AppBundle\Entity\ClienteRepository;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="cliente")
+ * @ORM\Entity(repositoryClass="Alz\AppBundle\Entity\ClienteRepository")
  */
 class Cliente
 {

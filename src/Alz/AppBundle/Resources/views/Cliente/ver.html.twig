@@ -1,0 +1,51 @@
+{% extends 'AlzAppBundle::layout.html.twig' %}
+
+{% block title %}{{ "Clientes"|trans }}{% endblock %}
+
+{% block content %}
+    <div class="btn-group pull-right" role="group">
+        <a href="{{ path('alz_app_cliente_listado') }}" type="button" class="btn btn-default">{{ "Listado de clientes"|trans }}</a>
+        <a href="{{ path('alz_app_cliente_editar', { id: cliente.id }) }}" type="button" class="btn btn-default">{{ "Editar cliente"|trans }}</a>
+    </div>
+
+    <div class="page-header">
+        <h1>{{ "Cliente"|trans }}</h1>
+    </div>
+
+    <dl class="dl-horizontal">
+        <dt>{{ "Razón social"|trans }}</dt>
+        <dd>{{ cliente.nombre }}</dd>
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>{{ "CIF o NIF"|trans }}</dt>
+        <dd>{{ cliente.cif }}</dd>
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>{{ "Dirección"|trans }}</dt>
+        <dd>{{ cliente.direccion1 }}<br>{{ cliente.direccion2 }}</dd>
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>{{ "CP"|trans }}</dt>
+        <dd>{{ cliente.cp }}</dd>
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>{{ "Provincia"|trans }}</dt>
+        <dd>{{ cliente.region }}</dd>
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>{{ "Ciudad"|trans }}</dt>
+        <dd>{{ cliente.ciudad }}</dd>
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>{{ "Teléfono"|trans }}</dt>
+        <dd>{{ cliente.telefono }}</dd>
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>{{ "Fax"|trans }}</dt>
+        <dd>{{ cliente.fax }}</dd>
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>{{ "E-mail"|trans }}</dt>
+        <dd>{{ cliente.email }}</dd>
+    </dl>
+{% endblock %}

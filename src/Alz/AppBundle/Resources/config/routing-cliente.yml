@@ -1,0 +1,15 @@
+alz_app_cliente_listado:
+    path:     /
+    defaults: { _controller: AlzAppBundle:Cliente:listado }
+
+alz_app_cliente_nuevo:
+    path:     /nuevo
+    defaults: { _controller: AlzAppBundle:Cliente:nuevo }
+
+alz_app_cliente_editar:
+    path:     /editar
+    defaults: { _controller: AlzAppBundle:Cliente:editar }
+
+alz_app_cliente_ver:
+    path:     /ver
+    defaults: { _controller: AlzAppBundle:Cliente:ver }

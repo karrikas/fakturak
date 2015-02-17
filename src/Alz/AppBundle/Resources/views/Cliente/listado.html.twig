@@ -1,0 +1,37 @@
+{% extends 'AlzAppBundle::layout.html.twig' %}
+
+{% block title %}{{ "Clientes"|trans }}{% endblock %}
+
+{% block content %}
+<div class="btn-group pull-right" role="group" aria-label="">
+  <a type="button" class="btn btn-default" href="{{ path('alz_app_cliente_nuevo') }}"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> {{ "Nuevo cliente"|trans }}</a>
+</div>
+
+<div class="page-header">
+    <h1>{{ "Clientes"|trans }}</h1>
+</div>
+
+<div class="table-responsive">
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>{{ "Nombre"|trans }}</th>
+                <th>{{ "Cif"|trans }}</th>
+                <th>{{ "Teléfono"|trans }}</th>
+                <th>{{ "Email"|trans }}</th>
+            </tr>
+        </tbody>
+        <tbody>
+            {% for cliente in clientes %}
+            <tr>
+                <td><a href="{{ path('alz_app_cliente_ver', { id: cliente.id }) }}">{{ cliente.nombre }}</a></td>
+                <td>{{ cliente.cif }}</td>
+                <td>{{ cliente.telefono }}</td>
+                <td>{{ cliente.email }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+</div>
+{% endblock %}

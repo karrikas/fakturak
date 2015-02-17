@@ -1,14 +1,10 @@
+alz_app:
+    resource: "@AlzAppBundle/Resources/config/routing-cliente.yml"
+    prefix:   /cliente
+
 alz_app_homepage:
     path:     /
     defaults: { _controller: AlzAppBundle:Default:index }
-
-alz_app_clientes:
-    path: /clientes
-    defaults: { _controller: AlzAppBundle:Default:clientes }
-
-alz_app_cliente:
-    path: /cliente
-    defaults: { _controller: AlzAppBundle:Default:cliente }
 
 alz_app_facturas:
     path: /facturas
@@ -25,18 +21,3 @@ alz_app_configuracion:
 alz_app_configuracion_editar:
     path: /configuracion-editar
     defaults: { _controller: AlzAppBundle:Default:configuracionEditar }
-
-alz_app_api_cliente_get:
-    path: /api/cliente
-    defaults: { _controller: AlzAppBundle:Api:clienteGet }
-    requirements:
-        _format: json
-        method: GET
-
-alz_app_api_cliente_set:
-    path: /api/cliente
-    defaults: { _controller: AlzAppBundle:Api:clienteSet }
-    requirements:
-        _format: json
-        method: POST
-

@@ -1,11 +1,20 @@
 {% extends 'AlzAppBundle::layout.html.twig' %}
 
-{% block title %}{{ "App facturación"|trans }}{% endblock %}
+{% block title %}{{ "Cliente"|trans }}{% endblock %}
 
 {% block content %}
-<div class="page-header">
-    <h1>{{ "Configuración"|trans }}</h1>
+<div class="btn-group pull-right" role="group">
+    <a href="{{ path('alz_app_cliente_listado') }}" type="button" class="btn btn-default">{{ "Listado de clientes"|trans }}</a>
 </div>
+
+<div class="page-header">
+    {% if nuevo %}
+    <h1>{{ "Nuevo cliente"|trans }}</h1>
+    {% else %}
+    <h1>{{ "Editar cliente"|trans }}</h1>
+    {% endif %}
+</div>
+
 {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
 
     {{ form_errors(form) }}
@@ -53,12 +62,12 @@
         </div>
 
         <div class="col-md-12">
-            {{ form_row(form.logo) }}
-        </div>
-
-        <div class="col-md-12">
             <div class="form-group">
+                {% if nuevo %}
+                <button type="submit" class="btn btn-primary">{{ "Crear nuevo cliente"|trans }}</button>
+                {% else %}
                 <button type="submit" class="btn btn-primary">{{ "Guardar"|trans }}</button>
+                {% endif %}
             </div>
         </div>
     </div>

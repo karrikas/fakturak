@@ -462,14 +462,4 @@ class Empresa
     {
         return $this->facturas;
     }
-
-    public function hasUser($user_id)
-    {
-        foreach ($this->getUsers() as $user) {
-            if ($user->getId() == $user_id) {
-                return true;
-            }
-        }
-        return false;
-    }
 }

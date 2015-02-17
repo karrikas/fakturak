@@ -1,5 +1,4 @@
 <?php
-
 namespace Alz\AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -12,12 +11,6 @@ class DefaultController extends Controller
 {
     public function indexAction(Request $request)
     {
-        /*
-        $request->getSession()->getFlashBag()->add(
-            'success',
-            'Your changes were saved!'
-        );
-         */
         return $this->render('AlzAppBundle:Default:index.html.twig');
     }
 
