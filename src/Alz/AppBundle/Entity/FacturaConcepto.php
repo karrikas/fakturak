@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity
  * @ORM\Table(name="factura_concepto")
+ * @ORM\Entity(repositoryClass="Alz\AppBundle\Entity\FacturaConceptoRepository")
  */
 class FacturaConcepto
 {
@@ -20,6 +21,16 @@ class FacturaConcepto
      * @ORM\Column(type="string", length=100, nullable=true)
      */
     protected $nombre;
+
+    /**
+     * @ORM\Column(type="decimal", nullable=true)
+     */
+    protected $precio;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    protected $cantidad;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
@@ -37,7 +48,7 @@ class FacturaConcepto
     protected $totaliva;
 
     /**
-     * @ORM\ManyToOne(targetEntity="FacturaConcepto", inversedBy="conceptos")
+     * @ORM\ManyToOne(targetEntity="Factura", inversedBy="conceptos")
      * @ORM\JoinColumn(name="factura_id", referencedColumnName="id")
      **/
     private $factura;
@@ -165,5 +176,74 @@ class FacturaConcepto
     public function getFactura()
     {
         return $this->factura;
+    }
+
+    /**
+     * Set precio
+     *
+     * @param string $precio
+     * @return FacturaConcepto
+     */
+    public function setPrecio($precio)
+    {
+        $this->precio = $precio;
+
+        return $this;
+    }
+
+    /**
+     * Get precio
+     *
+     * @return string 
+     */
+    public function getPrecio()
+    {
+        return $this->precio;
+    }
+
+    /**
+     * Set integer
+     *
+     * @param integer $integer
+     * @return FacturaConcepto
+     */
+    public function setInteger($integer)
+    {
+        $this->integer = $integer;
+
+        return $this;
+    }
+
+    /**
+     * Get integer
+     *
+     * @return integer 
+     */
+    public function getInteger()
+    {
+        return $this->integer;
+    }
+
+    /**
+     * Set cantidad
+     *
+     * @param integer $cantidad
+     * @return FacturaConcepto
+     */
+    public function setCantidad($cantidad)
+    {
+        $this->cantidad = $cantidad;
+
+        return $this;
+    }
+
+    /**
+     * Get cantidad
+     *
+     * @return integer 
+     */
+    public function getCantidad()
+    {
+        return $this->cantidad;
     }
 }

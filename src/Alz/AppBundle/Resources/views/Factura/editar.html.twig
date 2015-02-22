@@ -1,0 +1,125 @@
+{% extends 'AlzAppBundle::layout.html.twig' %}
+
+{% block title %}{{ "Crear facturas"|trans }}{% endblock %}
+
+{% block javascripts %}
+<script>
+var apiurlconceptos = "{{ path('alz_app_api_facturaconceptos_get') }}?facturaid={{ factura.id }}";
+var apiurlconceptopost = "{{ path('alz_app_api_facturaconcepto_post') }}";
+var factura_id = {{ factura.id }};
+</script>
+
+{{ parent() }}
+{% endblock %}
+
+{% block content %}
+<div class="btn-group pull-right" role="group" aria-label="">
+  <a type="button" class="btn btn-default" href="{{ path('alz_app_factura_listado') }}"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> {{ "Listado de facturas"|trans }}</a>
+</div>
+
+<div class="page-header">
+    <h1>{{ "Factura"|trans }}</h1>
+</div>
+
+<div ng-controller="FacturaController as factura">
+
+{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+
+    {{ form_errors(form) }}
+
+    <div class="rows">
+        <div class="col-md-3">
+            {{ form_row(form.numero) }}
+        </div>
+
+        <div class="col-md-6"></div>
+
+        <div class="col-md-3 text-right">
+            {{ form_row(form.fecha) }}
+        </div>
+    </div>
+
+    <div class="rows">
+        <div class="col-md-10"></div>
+        <div class="col-md-2">
+            {{ form_row(form.totaliva) }}
+        </div>
+    </div>
+
+    <div class="rows">
+        <div class="col-md-10"></div>
+        <div class="col-md-2">
+            {{ form_row(form.total) }}
+        </div>
+    </div>
+
+    <div class="rows">
+        <div class="col-md-6">
+            {{ form_row(form.clienteinfo) }}
+        </div>
+
+        <div class="col-md-6 text-right">
+            {{ form_row(form.empresainfo) }}
+        </div>
+    </div>
+
+    <div class="rows">
+        <div class="col-md-12">
+            {{ form_row(form.informacion) }}
+        </div>
+    </div>
+
+    <div class="rows">
+        <div class="col-md-12 text-right">
+            <button type="submit" class="btn btn-danger btn-lg">{{ "Crear factura"|trans }}</button>
+        </div>
+    </div>
+{{ form_end(form) }}
+
+    <div class="rows">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>{{ "Concepto"|trans }}</th>
+                        <th>{{ "Precio"|trans }}</th>
+                        <th>{{ "Cantidad"|trans }}</th>
+                        <th>{{ "IVA"|trans }}</th>
+                        <th>{{ "Total"|trans }}</th>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="concepto in conceptos">
+                        <td>{% verbatim %}{{ concepto.nombre }}{% endverbatim %}</td>
+                        <td>{% verbatim %}{{ concepto.precio }}{% endverbatim %}</td>
+                        <td>{% verbatim %}{{ concepto.cantidad }}{% endverbatim %}</td>
+                        <td>{% verbatim %}{{ concepto.iva }}{% endverbatim %}</td>
+                        <td>{% verbatim %}{{ concepto.total }}{% endverbatim %}</td>
+                        <td class="text-right">
+                            <a type="button" class="btn btn-danger btn-xs" aria-label="Left Align">
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            </a>
+                        </td>
+                    </tr>
+                    <form ng-controller="ConceptoFormController" ng-submit="addConcepto(concepto)">
+                    <tr>
+                        <td><input required ng-model="concepto.nombre" placeholder="{{ "Concepto"|trans }}" id="concepto" type="text"></td>
+                        <td><input required type="number" ng-model="concepto.precio" placeholder="{{ "Precio"|trans }}" id="precio" type="text"></td>
+                        <td><input required type="number" ng-model="concepto.cantidad" placeholder="{{ "Cantidad"|trans }}" id="cantidad" type="text"></td>
+                        <td><input required type="number" ng-model="concepto.iva" placeholder="{{ "IVA"|trans }}" id="iva" type="text"></td>
+                        <td></td>
+                        <td class="text-right">
+                            <button type="submit" class="btn btn-success btn-xs">
+                                <span class="glyphicon glyphicon-plus"></span>
+                            </button>
+                        </td>
+                    </tr>
+                    </form>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

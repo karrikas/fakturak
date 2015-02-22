@@ -4,10 +4,12 @@ namespace Alz\AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Alz\AppBundle\Entity\FacturaConcepto;
+use Symfony\Component\Validator\Constraints\Date;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="factura")
+ * @ORM\Entity(repositoryClass="Alz\AppBundle\Entity\FacturaRepository")
  */
 class Factura
 {
@@ -115,7 +117,7 @@ class Factura
      */
     public function setFecha($fecha)
     {
-        $this->fecha = $fecha;
+        $this->fecha = new \DateTime($fecha);
 
         return $this;
     }

@@ -1,23 +1,19 @@
-alz_app:
+alz_app_api:
+    resource: "@AlzAppBundle/Resources/config/routing-api.yml"
+    prefix:   /api
+
+alz_app_factura:
+    resource: "@AlzAppBundle/Resources/config/routing-factura.yml"
+    prefix:   /factura
+
+alz_app_cliente:
     resource: "@AlzAppBundle/Resources/config/routing-cliente.yml"
     prefix:   /cliente
+
+alz_app_empresa:
+    resource: "@AlzAppBundle/Resources/config/routing-empresa.yml"
+    prefix:   /empresa
 
 alz_app_homepage:
     path:     /
     defaults: { _controller: AlzAppBundle:Default:index }
-
-alz_app_facturas:
-    path: /facturas
-    defaults: { _controller: AlzAppBundle:Default:facturas }
-
-alz_app_factura:
-    path: /factura
-    defaults: { _controller: AlzAppBundle:Default:factura }
-
-alz_app_configuracion:
-    path: /configuracion
-    defaults: { _controller: AlzAppBundle:Default:configuracion }
-
-alz_app_configuracion_editar:
-    path: /configuracion-editar
-    defaults: { _controller: AlzAppBundle:Default:configuracionEditar }

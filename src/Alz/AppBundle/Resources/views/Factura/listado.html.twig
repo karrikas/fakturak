@@ -1,0 +1,13 @@
+{% extends 'AlzAppBundle::layout.html.twig' %}
+
+{% block title %}{{ "Listado de facturas"|trans }}{% endblock %}
+
+{% block content %}
+<div class="btn-group pull-right" role="group" aria-label="">
+  <a type="button" class="btn btn-default" href="{{ path('alz_app_factura_nuevo') }}"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> {{ "Crear factura"|trans }}</a>
+</div>
+
+<div class="page-header">
+    <h1>{{ "Facturas"|trans }}</h1>
+</div>
+{% endblock %}

@@ -1,0 +1,7 @@
+alz_app_empresa_editar:
+    path:     /editar
+    defaults: { _controller: AlzAppBundle:Empresa:editar }
+
+alz_app_empresa_ver:
+    path:     /ver
+    defaults: { _controller: AlzAppBundle:Empresa:ver }

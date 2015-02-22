@@ -1,0 +1,15 @@
+alz_app_factura_listado:
+    path:     /
+    defaults: { _controller: AlzAppBundle:Factura:listado }
+
+alz_app_factura_nuevo:
+    path:     /nuevo
+    defaults: { _controller: AlzAppBundle:Factura:nuevo }
+
+alz_app_factura_editar:
+    path:     /editar
+    defaults: { _controller: AlzAppBundle:Factura:editar }
+
+alz_app_factura_ver:
+    path:     /ver
+    defaults: { _controller: AlzAppBundle:Factura:ver }

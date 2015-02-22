@@ -1,15 +1,15 @@
 {% extends 'AlzAppBundle::layout.html.twig' %}
 
-{% block title %}{{ "App facturación"|trans }}{% endblock %}
+{% block title %}{{ "Empresa"|trans }}{% endblock %}
 
 {% block content %}
 
 <div class="btn-group pull-right" role="group" aria-label="">
-  <a type="button" class="btn btn-default" href="{{ path('alz_app_configuracion_editar') }}"><span class="glyphicon glyphicon-wrench" aria-hidden="true"> {{ "Editar"|trans }}</span></a>
+  <a type="button" class="btn btn-default" href="{{ path('alz_app_empresa_editar') }}"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> {{ "Editar"|trans }}</a>
 </div>
 
 <div class="page-header">
-    <h1>{{ "Configuración"|trans }}</h1>
+    <h1>{{ "Información de la empresa"|trans }}</h1>
 </div>
 
 <dl class="dl-horizontal">

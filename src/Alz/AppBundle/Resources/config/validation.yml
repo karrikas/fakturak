@@ -22,3 +22,17 @@ Alz\AppBundle\Entity\Cliente:
             - NotBlank: ~
         email:
             - Email: ~
+
+Alz\AppBundle\Entity\FacturaConcepto:
+    properties:
+        nombre:
+            - NotBlank: ~
+        precio:
+            - NotBlank: ~
+            #- Type: number
+        cantidad:
+            - NotBlank: ~
+            - Type: integer
+        iva:
+            - NotBlank: ~
+            - Type: integer
