@@ -9,6 +9,10 @@ appApp.controller("FacturaController", ['$http', '$scope', function($http, $scop
 
 appApp.controller("ConceptoFormController", ['$http', '$scope', function($http, $scope) {
 
+    $scope.getFormClass = function(ngmodel) {
+        console.log(ngmodel);
+    }
+
     $scope.addConcepto = function() {
         var total = $scope.concepto.cantidad * $scope.concepto.precio;
         var totaliva = total/100*$scope.concepto.iva;

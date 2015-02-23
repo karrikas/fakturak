@@ -40,6 +40,49 @@ var factura_id = {{ factura.id }};
     </div>
 
     <div class="rows">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>{{ "Concepto"|trans }}</th>
+                        <th>{{ "Precio"|trans }}</th>
+                        <th>{{ "Cantidad"|trans }}</th>
+                        <th>{{ "IVA"|trans }}</th>
+                        <th>{{ "Total"|trans }}</th>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="concepto in conceptos">
+                        <td>{% verbatim %}{{ concepto.nombre }}{% endverbatim %}</td>
+                        <td>{% verbatim %}{{ concepto.precio }}{% endverbatim %}</td>
+                        <td>{% verbatim %}{{ concepto.cantidad }}{% endverbatim %}</td>
+                        <td>{% verbatim %}{{ concepto.iva }}{% endverbatim %}</td>
+                        <td>{% verbatim %}{{ concepto.total }}{% endverbatim %}</td>
+                        <td class="text-right">
+                            <a type="button" class="btn btn-danger btn-xs" aria-label="Left Align">
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr ng-controller="ConceptoFormController">
+                        <td><input ng-required ng-model="concepto.nombre" ng-class="getFormClass(concepto.nombre)" placeholder="{{ "Concepto"|trans }}" id="concepto" type="text"></td>
+                        <td><input required type="number" ng-model="concepto.precio" placeholder="{{ "Precio"|trans }}" id="precio" type="text"></td>
+                        <td><input required type="number" ng-model="concepto.cantidad" placeholder="{{ "Cantidad"|trans }}" id="cantidad" type="text"></td>
+                        <td><input required type="number" ng-model="concepto.iva" placeholder="{{ "IVA"|trans }}" id="iva" type="text"></td>
+                        <td></td>
+                        <td class="text-right">
+                            <button ng-click="addConcepto(concepto)" type="button" class="btn btn-success btn-xs">
+                                <span class="glyphicon glyphicon-plus"></span>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="rows">
         <div class="col-md-10"></div>
         <div class="col-md-2">
             {{ form_row(form.totaliva) }}
@@ -76,50 +119,6 @@ var factura_id = {{ factura.id }};
     </div>
 {{ form_end(form) }}
 
-    <div class="rows">
-        <div class="col-md-12">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>{{ "Concepto"|trans }}</th>
-                        <th>{{ "Precio"|trans }}</th>
-                        <th>{{ "Cantidad"|trans }}</th>
-                        <th>{{ "IVA"|trans }}</th>
-                        <th>{{ "Total"|trans }}</th>
-                        <td></td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="concepto in conceptos">
-                        <td>{% verbatim %}{{ concepto.nombre }}{% endverbatim %}</td>
-                        <td>{% verbatim %}{{ concepto.precio }}{% endverbatim %}</td>
-                        <td>{% verbatim %}{{ concepto.cantidad }}{% endverbatim %}</td>
-                        <td>{% verbatim %}{{ concepto.iva }}{% endverbatim %}</td>
-                        <td>{% verbatim %}{{ concepto.total }}{% endverbatim %}</td>
-                        <td class="text-right">
-                            <a type="button" class="btn btn-danger btn-xs" aria-label="Left Align">
-                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <form ng-controller="ConceptoFormController" ng-submit="addConcepto(concepto)">
-                    <tr>
-                        <td><input required ng-model="concepto.nombre" placeholder="{{ "Concepto"|trans }}" id="concepto" type="text"></td>
-                        <td><input required type="number" ng-model="concepto.precio" placeholder="{{ "Precio"|trans }}" id="precio" type="text"></td>
-                        <td><input required type="number" ng-model="concepto.cantidad" placeholder="{{ "Cantidad"|trans }}" id="cantidad" type="text"></td>
-                        <td><input required type="number" ng-model="concepto.iva" placeholder="{{ "IVA"|trans }}" id="iva" type="text"></td>
-                        <td></td>
-                        <td class="text-right">
-                            <button type="submit" class="btn btn-success btn-xs">
-                                <span class="glyphicon glyphicon-plus"></span>
-                            </button>
-                        </td>
-                    </tr>
-                    </form>
-                </tbody>
-            </table>
-        </div>
-    </div>
 
 </div>
 {% endblock %}
