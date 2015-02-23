@@ -5,15 +5,20 @@ appApp.controller("FacturaController", ['$http', '$scope', function($http, $scop
     $http.get(apiurlconceptos).success(function(data){
         $scope.conceptos = data;
     });
+
+    $scope.removeConcepto = function (concepto_id) {
+        console.log(concepto_id);
+    };
 }]);
 
 appApp.controller("ConceptoFormController", ['$http', '$scope', function($http, $scope) {
 
-    $scope.getFormClass = function(ngmodel) {
-        console.log(ngmodel);
-    }
-
     $scope.addConcepto = function() {
+        if($scope.FormConcepto.$invalid) {
+            $scope.FormConcepto.$setSubmited();
+            return false;
+        }
+
         var total = $scope.concepto.cantidad * $scope.concepto.precio;
         var totaliva = total/100*$scope.concepto.iva;
 
@@ -36,7 +41,6 @@ appApp.controller("ConceptoFormController", ['$http', '$scope', function($http, 
         $scope.concepto.totaliva = "";
 
         $http.post(apiurlconceptopost, values).success(function(data, status, headers, config) {
-            console.log(data);
         });
     };
 }]);

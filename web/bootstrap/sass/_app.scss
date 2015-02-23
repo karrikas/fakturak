@@ -11,3 +11,7 @@
 .infodat {
     font-weight: bold;
 }
+
+input.ng-invalid.ng-touched {
+    border: 2px solid #FA787E;
+}

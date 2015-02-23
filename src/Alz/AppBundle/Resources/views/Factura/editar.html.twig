@@ -60,13 +60,13 @@ var factura_id = {{ factura.id }};
                         <td>{% verbatim %}{{ concepto.iva }}{% endverbatim %}</td>
                         <td>{% verbatim %}{{ concepto.total }}{% endverbatim %}</td>
                         <td class="text-right">
-                            <a type="button" class="btn btn-danger btn-xs" aria-label="Left Align">
+                            <a ng-click="removeConcepto(concepto.id)" type="button" class="btn btn-danger btn-xs" aria-label="Left Align">
                                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                             </a>
                         </td>
                     </tr>
-                    <tr ng-controller="ConceptoFormController">
-                        <td><input ng-required ng-model="concepto.nombre" ng-class="getFormClass(concepto.nombre)" placeholder="{{ "Concepto"|trans }}" id="concepto" type="text"></td>
+                    <tr ng-controller="ConceptoFormController" ng-form="FormConcepto" >
+                        <td><input ng-required ng-model="concepto.nombre" placeholder="{{ "Concepto"|trans }}" id="concepto" type="text"></td>
                         <td><input required type="number" ng-model="concepto.precio" placeholder="{{ "Precio"|trans }}" id="precio" type="text"></td>
                         <td><input required type="number" ng-model="concepto.cantidad" placeholder="{{ "Cantidad"|trans }}" id="cantidad" type="text"></td>
                         <td><input required type="number" ng-model="concepto.iva" placeholder="{{ "IVA"|trans }}" id="iva" type="text"></td>
