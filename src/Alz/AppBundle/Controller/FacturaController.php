@@ -10,7 +10,13 @@ class FacturaController extends AlzController
 {
     public function ListadoAction(Request $request)
     {
-        return $this->render('AlzAppBundle:Factura:listado.html.twig', array());
+        $em = $this->getDoctrine()->getManager();
+        $facturas = $em->getRepository('AlzAppBundle:Factura')
+        ->findByUser($this->getUser()->getId());
+
+        return $this->render('AlzAppBundle:Factura:listado.html.twig', array(
+            'facturas' => $facturas
+        ));
     }
 
     public function NuevoAction(Request $request)
@@ -52,6 +58,20 @@ DIRECCION;
         $form->handleRequest($request);
 
         if ($form->isValid()) {
+            $conceptos = $this->getDoctrine()
+            ->getRepository('AlzAppBundle:FacturaConcepto')
+            ->findByFactura($request->get('id'));
+
+            $total = 0;
+            $totaliva = 0;
+            foreach ($conceptos as $concepto) {
+                $total += $concepto->getTotal();
+                $totaliva += $concepto->getTotaliva();
+            }
+
+            $factura->setTotal($total);
+            $factura->setTotaliva($totaliva);
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($factura);
             $em->flush();
@@ -71,5 +91,23 @@ DIRECCION;
             'nuevo' => true
         ));
     }
-}
 
+    public function verAction(Request $request)
+    {
+        $factura = $this->getDoctrine()
+        ->getRepository('AlzAppBundle:Factura')
+        ->find($request->get('id'));
+
+        $this->checkEmpresa($factura->getEmpresa()->getId());
+
+        $conceptos = $this->getDoctrine()
+        ->getRepository('AlzAppBundle:FacturaConcepto')
+        ->findByFactura($request->get('id'));
+
+
+        return $this->render('AlzAppBundle:Factura:ver.html.twig', array(
+            'factura' => $factura,
+            'conceptos' => $conceptos
+        ));
+    }
+}

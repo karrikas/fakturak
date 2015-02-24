@@ -10,10 +10,12 @@ class FacturaRepository extends EntityRepository
     {
         $query = $this->getEntityManager()
             ->getRepository('AlzAppBundle:Factura')->createQueryBuilder('f')
-            ->innerJoin('c.empresa', 'e')
+            ->innerJoin('f.empresa', 'e')
             ->innerJoin('e.users', 'u')
             ->where('u.id = :userid')
             ->setParameter('userid', $user_id)
+            ->orderBy('f.fecha', 'DESC')
+            ->orderBy('f.numero', 'DESC')
             ->getQuery();
 
         return $query->getResult();

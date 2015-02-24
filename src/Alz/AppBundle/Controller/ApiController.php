@@ -68,7 +68,7 @@ class ApiController extends AlzController
         return new JsonResponse($result);
     }
 
-    public function FacturaconceptoPostAction(Request $request)
+    public function FacturaconceptoPutAction(Request $request)
     {
         $data = json_decode($request->getContent(), true);
 
@@ -81,6 +81,8 @@ class ApiController extends AlzController
         $concepto->setPrecio($data['precio']);
         $concepto->setCantidad((int)$data['cantidad']);
         $concepto->setIva((int)$data['iva']);
+        $concepto->setTotal((float)$data['total']);
+        $concepto->setTotaliva((float)$data['totaliva']);
         $concepto->setFactura($factura);
 
         $validator = $this->get('validator');
@@ -91,12 +93,28 @@ class ApiController extends AlzController
                 var_dump($err->getMessage());
             }
             $response = new Response();
-            $response->setStatusCode(500);
+            //$response->setStatusCode(500);
             return $response;
         }
 
         $em = $this->getDoctrine()->getManager();
         $em->persist($concepto);
+        $em->flush();
+
+        return new JsonResponse();
+    }
+
+    public function FacturaconceptoDeleteAction($id)
+    {
+        $concepto = $this->getDoctrine()
+        ->getRepository('AlzAppBundle:FacturaConcepto')
+        ->find($id);
+
+        $empresaId = $concepto->getFactura()->getEmpresa()->getId();
+        $this->checkEmpresa($empresaId);
+
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($concepto);
         $em->flush();
 
         return new JsonResponse();

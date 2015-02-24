@@ -18,10 +18,11 @@ class FacturaType extends AbstractType
             ->add('numero', null, array('label' => 'Número'))
             ->add('fecha', 'date', array(
                 'label' => 'Fecha',
-                'widget' => 'single_text'
+                'widget' => 'single_text',
+                'format' => 'dd/MM/yyyy',
             ))
-            ->add('total', null, array('label' => 'Total'))
-            ->add('totaliva', null, array('label' => 'Total con IVA'))
+            ->add('total', 'hidden', array('label' => 'Total'))
+            ->add('totaliva', 'hidden', array('label' => 'Total con IVA'))
             ->add('empresainfo', null, array('label' => 'Empresa'))
             ->add('clienteinfo', null, array('label' => 'Cliente'))
             ->add('informacion')
