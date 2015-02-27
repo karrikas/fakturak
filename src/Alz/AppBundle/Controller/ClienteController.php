@@ -16,6 +16,13 @@ class ClienteController extends AlzController
         $clientes = $em->getRepository('AlzAppBundle:Cliente')
         ->findByUser($this->getUser()->getId());
 
+        $paginator  = $this->get('knp_paginator');
+        $clientes = $paginator->paginate(
+            $clientes,
+            $request->query->get('page', 1),
+            10
+        );
+
         return $this->render('AlzAppBundle:Cliente:listado.html.twig', array(
             'clientes' => $clientes
         ));

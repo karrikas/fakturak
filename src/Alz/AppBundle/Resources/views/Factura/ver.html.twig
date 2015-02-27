@@ -5,8 +5,6 @@
 {% block content %}
 <div class="btn-group pull-right" role="group" aria-label="">
   <a type="button" class="btn btn-default" href="{{ path('alz_app_factura_listado') }}"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> {{ "Listado de facturas"|trans }}</a>
-  <a type="button" class="btn btn-default" href="{{ path('alz_app_factura_editar', { id: factura.id }) }}"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> {{ "Editar factura"|trans }}</a>
-  <a type="button" class="btn btn-default" href="{{ path('alz_app_factura_listado') }}"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> {{ "Descargar en PDF"|trans }}</a>
 </div>
 
 <div class="page-header">
@@ -19,7 +17,7 @@
 </dl>
 <dl class="dl-horizontal">
     <dt>{{ "Fecha"|trans }}</dt>
-    <dd>{{ factura.fecha|date("m/d/Y") }}</dd>
+    <dd>{{ factura.fecha|date("d/m/Y") }}</dd>
 </dl>
 <dl class="dl-horizontal">
     <dt>{{ "Total"|trans }}</dt>
@@ -46,5 +44,9 @@
     {% endfor %}
     </dd>
 </dl>
+<div class="pull-right">
+  <a type="button" class="btn btn-link" href="{{ path('alz_app_factura_editar', { id: factura.id }) }}"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> {{ "Editar factura"|trans }}</a>
+  <a type="button" class="btn btn-danger" href="{{ path('alz_app_factura_listado') }}"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> {{ "Descargar en PDF"|trans }}</a>
+</div>
 {% endblock %}
 

@@ -1,14 +1,21 @@
-alz_app_api_cliente_get:
-    path:     /cliente
-    defaults: { _controller: AlzAppBundle:Api:clienteGet }
+alz_app_api_clientes_get:
+    path:     /clientes
+    defaults: { _controller: AlzAppBundle:Api:clientesGet }
     methods: GET
     requirements:
         _format: json
 
-alz_app_api_cliente_post:
+alz_app_api_cliente_put:
     path:     /cliente
-    defaults: { _controller: AlzAppBundle:Api:clientePost }
+    defaults: { _controller: AlzAppBundle:Api:clientePut }
     methods: PUT 
+    requirements:
+        _format: json
+
+alz_app_api_cliente_get:
+    path:     /cliente
+    defaults: { _controller: AlzAppBundle:Api:clienteGet }
+    methods: GET
     requirements:
         _format: json
 
@@ -30,5 +37,12 @@ alz_app_api_facturaconcepto_put:
     path:     /factura-concepto
     defaults: { _controller: AlzAppBundle:Api:FacturaconceptoPut }
     methods: PUT
+    requirements:
+        _format: json
+
+alz_app_api_factura_put:
+    path:     /factura
+    defaults: { _controller: AlzAppBundle:Api:facturaPut }
+    #methods: PUT 
     requirements:
         _format: json

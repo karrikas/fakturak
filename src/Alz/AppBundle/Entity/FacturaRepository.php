@@ -15,7 +15,7 @@ class FacturaRepository extends EntityRepository
             ->where('u.id = :userid')
             ->setParameter('userid', $user_id)
             ->orderBy('f.fecha', 'DESC')
-            ->orderBy('f.numero', 'DESC')
+            ->addOrderBy('f.numero', 'DESC')
             ->getQuery();
 
         return $query->getResult();

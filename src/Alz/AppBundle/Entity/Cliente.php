@@ -82,6 +82,11 @@ class Cliente
      **/
     private $facturas;
 
+    public function __toString()
+    {
+        return $this->getNombre();
+    }
+
     public function __construct() {
         $this->facturas = new ArrayCollection();
     }

@@ -14,6 +14,13 @@ class FacturaController extends AlzController
         $facturas = $em->getRepository('AlzAppBundle:Factura')
         ->findByUser($this->getUser()->getId());
 
+        $paginator  = $this->get('knp_paginator');
+        $facturas = $paginator->paginate(
+            $facturas,
+            $request->query->get('page', 1),
+            10
+        );
+
         return $this->render('AlzAppBundle:Factura:listado.html.twig', array(
             'facturas' => $facturas
         ));
@@ -37,7 +44,7 @@ DIRECCION;
         $factura->setEmpresa($empresa);
         $factura->setEmpresainfo($direccion);
         $factura->setNumero($numerofactura);
-        $factura->setFecha(date('Y-m-d'));
+        $factura->setFecha(new \DateTime(date('Y-m-d')));
         $em = $this->getDoctrine()->getManager();
         $em->persist($factura);
         $em->flush();
@@ -54,7 +61,7 @@ DIRECCION;
 
         $this->checkEmpresa($factura->getEmpresa()->getId());
 
-        $form = $this->createForm(new FacturaType(), $factura);
+        $form = $this->createForm(new FacturaType(), $factura, array('attr' => array('user_id' => $this->getUser()->getId())));
         $form->handleRequest($request);
 
         if ($form->isValid()) {
@@ -104,10 +111,29 @@ DIRECCION;
         ->getRepository('AlzAppBundle:FacturaConcepto')
         ->findByFactura($request->get('id'));
 
-
         return $this->render('AlzAppBundle:Factura:ver.html.twig', array(
             'factura' => $factura,
             'conceptos' => $conceptos
         ));
+    }
+
+    public function eliminarAction($id, Request $request)
+    {
+        $factura = $this->getDoctrine()
+        ->getRepository('AlzAppBundle:Factura')
+        ->find($id);
+
+        $this->checkEmpresa($factura->getEmpresa()->getId());
+
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($factura);
+        $em->flush();
+
+        $request->getSession()->getFlashBag()->add(
+            'danger',
+            $this->get('translator')->trans('Los datos se han eliminado.')
+        );
+
+        return $this->redirect($this->generateUrl('alz_app_factura_listado'));
     }
 }

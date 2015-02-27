@@ -13,3 +13,7 @@ alz_app_factura_editar:
 alz_app_factura_ver:
     path:     /ver
     defaults: { _controller: AlzAppBundle:Factura:ver }
+
+alz_app_factura_eliminar:
+    path:     /eliminar/{id}
+    defaults: { _controller: AlzAppBundle:Factura:eliminar }

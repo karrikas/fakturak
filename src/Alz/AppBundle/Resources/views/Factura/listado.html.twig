@@ -28,11 +28,13 @@
                 <td><a href="{{ path('alz_app_factura_ver', { id: factura.id }) }}">{{ factura.numero }}</a></td>
                 <td>{{ factura.fecha|date("m/d/Y") }}</td>
                 <td>{# factura.cliente.nombre #}</td>
-                <td>{{ factura.totaliva|number_format(2, ',', '.') }} €</td>
+                <td class="text-right">{{ factura.totaliva|number_format(2, ',', '.') }} €</td>
             </tr>
             {% endfor %}
         </tbody>
 
     </table>
 </div>
+
+{{ knp_pagination_render(facturas) }}
 {% endblock %}

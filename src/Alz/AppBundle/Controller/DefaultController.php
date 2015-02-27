@@ -11,6 +11,6 @@ class DefaultController extends AlzController
 {
     public function indexAction(Request $request)
     {
-        return $this->render('AlzAppBundle:Default:index.html.twig');
+        return $this->redirect($this->generateUrl('alz_app_factura_listado'));
     }
 }

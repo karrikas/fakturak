@@ -6,6 +6,9 @@
 <script>
 var apiurlconceptos = "{{ path('alz_app_api_facturaconceptos_get') }}?facturaid={{ factura.id }}";
 var apiurlconcepto = "{{ path('alz_app_api_facturaconcepto_put') }}";
+var apiurlclientes = "{{ path('alz_app_api_clientes_get') }}";
+var apiurlcliente = "{{ path('alz_app_api_cliente_get') }}";
+var apiurlfactura = "{{ path('alz_app_api_factura_put') }}";
 var factura_id = {{ factura.id }};
 </script>
 
@@ -29,13 +32,16 @@ var factura_id = {{ factura.id }};
 
     <div class="rows">
         <div class="col-md-3">
-            {{ form_row(form.numero) }}
+            <label class="control-label required">{{ "Número"|trans }}</label>
+            <div contentEditable="true" ng-change="numeroChange()" ng-model="factura.numero" title="{{ "Click para editar"|trans }}">{{ factura.numero }}</div>
         </div>
 
         <div class="col-md-6"></div>
 
         <div class="col-md-3 text-right">
-            {{ form_row(form.fecha) }}
+            {{ form_widget(form.fecha) }}
+            <label class="control-label required">{{ "Fecha"|trans }}</label>
+            <div contentEditable="true" ng-model="factura.fecha" ng-change="fechaChange()" title="{{ "Click para editar"|trans }}">{{ factura.fecha|date('d/m/Y') }}</div>
         </div>
     </div>
 
@@ -67,11 +73,11 @@ var factura_id = {{ factura.id }};
                             </a>
                         </td>
                     </tr>
-                    <tr ng-controller="ConceptoFormController" ng-form="FormConcepto" >
+                    <tr ng-controller="ConceptoFormController" ng-form="FormConcepto">
                         <td><input ng-enter="addConcepto(concepto)" required ng-model="concepto.nombre" placeholder="{{ "Concepto"|trans }}" id="concepto" type="text"></td>
-                        <td><input ng-enter="addConcepto(concepto)" required type="number" ng-model="concepto.precio" placeholder="{{ "Precio"|trans }}" id="precio" type="text"></td>
-                        <td><input ng-enter="addConcepto(concepto)" required type="number" ng-model="concepto.cantidad" placeholder="{{ "Cantidad"|trans }}" id="cantidad" type="text"></td>
-                        <td><input ng-enter="addConcepto(concepto)" required type="number" ng-model="concepto.iva" placeholder="{{ "IVA"|trans }}" id="iva" type="text"></td>
+                        <td><input ng-enter="addConcepto(concepto)" required type="number" ng-model="concepto.precio" placeholder="{{ "Precio"|trans }}" id="precio"></td>
+                        <td><input ng-enter="addConcepto(concepto)" required type="number" ng-model="concepto.cantidad" placeholder="{{ "Cantidad"|trans }}" id="cantidad"></td>
+                        <td><input ng-enter="addConcepto(concepto)" required type="number" ng-model="concepto.iva" placeholder="{{ "IVA"|trans }}" id="iva"></td>
                         <td></td>
                         <td></td>
                         <td class="text-right">
@@ -92,23 +98,81 @@ var factura_id = {{ factura.id }};
 
     <div class="rows">
         <div class="col-md-6">
-            {{ form_row(form.clienteinfo) }}
+            <div id="clienteSeleccionar">
+
+                <label class="control-label required">{{ "Cliente"|trans }}</label><br>
+                <div class="input-group">
+                    <select ng-init="factura.cliente={% if factura.cliente %}{{ factura.cliente.id }}{% endif %}" class="form-control" ng-change="clienteChange()" ng-options="cliente.id as cliente.nombre for cliente in clientes" ng-model="factura.cliente"></select>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="clienteNuevo()">{{ "Nuevo cliente"|trans }}</button>
+                    </span>
+                </div>
+
+                <br>
+                <div contentEditable="true" ng-change="clienteInfoChange()" ng-model="factura.clienteinfo" title="{{ "Click para editar"|trans }}">{{ factura.clienteinfo|nl2br }}</div>
+                <br>
+            </div>
+
+            <div ng-controller="ClienteFormController" ng-form="ClienteForm" id="clienteNuevo" class="form-horizontal">
+                <h3>{{ "Crear cliente"|trans }}</h3>
+                <div class="form-group">
+                    <label for="cliente_nombre" class="col-sm-2 control-label">{{ "Nombre"|trans }}</label>
+                    <div class="col-sm-10">
+                        <input id="cliente_nombre" required ng-model="cliente.nombre" type="text" class="form-control" placeholder="{{ "Nombre"|trans }}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cliente_cif" class="col-sm-2 control-label">{{ "CIF o NIF"|trans }}</label>
+                    <div class="col-sm-10">
+                        <input id="cliente_cif" required ng-model="cliente.cif" type="text" class="form-control" placeholder="{{ "CIF o NIF"|trans }}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cliente_direccion1" class="col-sm-2 control-label">{{ "Dirección"|trans }}</label>
+                    <div class="col-sm-10">
+                        <input id="cliente_direccion1" required ng-model="cliente.direccion1" type="text" class="form-control" placeholder="{{ "Dirección"|trans }}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cliente_cp" class="col-sm-2 control-label">{{ "CP"|trans }}</label>
+                    <div class="col-sm-10">
+                        <input id="cliente_cp" required ng-model="cliente.cp" type="text" class="form-control" placeholder="{{ "Código postal"|trans }}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cliente_ciudad" class="col-sm-2 control-label">{{ "Ciudad"|trans }}</label>
+                    <div class="col-sm-10">
+                        <input id="cliente_ciudad" required ng-model="cliente.ciudad" type="text" class="form-control" placeholder="{{ "Ciudad"|trans }}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="button" ng-click="clienteAdd()" class="btn btn-default">{{ "Añadir cliente"|trans }}</button>
+                        <button type="button" ng-click="clienteNuevoCancelar()" class="btn btn-link">{{ "Cancelar"|trans }}</button>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
         <div class="col-md-6 text-right">
-            {{ form_row(form.empresainfo) }}
+            <label class="control-label required" for="alz_appbundle_factura_cliente">{{ "Empresa de facturación"|trans }}</label>
+            <div contentEditable="true" ng-change="empresaChange()" ng-model="factura.empresainfo" title="{{ "Click para editar"|trans }}">{{ factura.empresainfo|nl2br }}</div>
         </div>
     </div>
 
     <div class="rows">
         <div class="col-md-12">
-            {{ form_row(form.informacion) }}
+            {{ form_row(form.informacion, { attr: { 'ng-model': 'factura.informacion'}}) }}
         </div>
     </div>
 
     <div class="rows">
-        <div class="col-md-12 text-right">
-            <button type="submit" class="btn btn-danger btn-lg">{{ "Crear factura"|trans }}</button>
+        <div class="col-md-4">
+            <a href="{{ path('alz_app_factura_eliminar', { id: factura.id }) }}" class="btn btn-link">{{ "Eliminar factura"|trans }}</a>
+        </div>
+        <div class="col-md-8 text-right">
+            <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-cloud-download"></span> {{ "Desdargar factura"|trans }}</button>
         </div>
     </div>
 {{ form_end(form) }}

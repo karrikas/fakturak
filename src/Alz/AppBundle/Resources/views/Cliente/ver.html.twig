@@ -5,7 +5,6 @@
 {% block content %}
     <div class="btn-group pull-right" role="group">
     <a href="{{ path('alz_app_cliente_listado') }}" type="button" class="btn btn-default"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> {{ "Listado de clientes"|trans }}</a>
-        <a href="{{ path('alz_app_cliente_editar', { id: cliente.id }) }}" type="button" class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> {{ "Editar cliente"|trans }}</a>
     </div>
 
     <div class="page-header">
@@ -48,4 +47,7 @@
         <dt>{{ "E-mail"|trans }}</dt>
         <dd>{{ cliente.email }}</dd>
     </dl>
+    <div class="btn-group pull-right" role="group">
+        <a href="{{ path('alz_app_cliente_editar', { id: cliente.id }) }}" type="button" class="btn btn-link"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> {{ "Editar cliente"|trans }}</a>
+    </div>
 {% endblock %}

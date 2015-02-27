@@ -6,9 +6,18 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Alz\AppBundle\Entity\FacturaConcepto;
+use Alz\AppBundle\Entity\Cliente;
 
 class ApiController extends AlzController
 {
+    public function ClientesGetAction(Request $request)
+    {
+        $clientes = $this->getDoctrine()
+        ->getRepository('AlzAppBundle:Cliente')
+        ->findByUser($this->getUser()->getId(), 'array');
+
+        return new JsonResponse($clientes);
+    }
     public function ClienteGetAction(Request $request)
     {
         $id = $request->get('id');
@@ -38,8 +47,34 @@ class ApiController extends AlzController
         return new JsonResponse($result[0]);
     }
 
-    public function ClientePostAction(Request $request)
+    public function ClientePutAction(Request $request)
     {
+        $data = json_decode($request->getContent(), true);
+
+        $cliente = new Cliente();
+        $cliente->setNombre($data['nombre']);
+        $cliente->setCif($data['cif']);
+        $cliente->setDireccion1($data['direccion1']);
+        $cliente->setCp($data['cp']);
+        $cliente->setCiudad($data['ciudad']);
+        $cliente->setEmpresa($this->getEmpresa());
+
+        $validator = $this->get('validator');
+        $errors = $validator->validate($cliente);
+
+        if(count($errors) > 0) {
+            $response = new Response();
+            $response->setStatusCode(500);
+            return $response;
+        }
+
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($cliente);
+        $em->flush();
+
+        $return = array('id' => $cliente->getId());
+
+        return new JsonResponse($return);
     }
 
     public function FacturaconceptosGetAction(Request $request)
@@ -93,7 +128,7 @@ class ApiController extends AlzController
                 var_dump($err->getMessage());
             }
             $response = new Response();
-            //$response->setStatusCode(500);
+            $response->setStatusCode(500);
             return $response;
         }
 
@@ -115,6 +150,59 @@ class ApiController extends AlzController
 
         $em = $this->getDoctrine()->getManager();
         $em->remove($concepto);
+        $em->flush();
+
+        return new JsonResponse();
+    }
+
+    public function FacturaPutAction(Request $request)
+    {
+        $data = json_decode($request->getContent(), true);
+
+
+        $factura = $this->getDoctrine()
+        ->getRepository('AlzAppBundle:Factura')
+        ->find($data['id']);
+
+        $this->checkEmpresa($factura->getEmpresa()->getId());
+
+        if (isset($data['cliente'])) {
+            $cliente = $this->getDoctrine()
+            ->getRepository('AlzAppBundle:Cliente')
+            ->find($data['cliente']);
+
+            $this->checkEmpresa($cliente->getEmpresa()->getId());
+
+            $factura->setCliente($cliente);
+        }
+
+        if (isset($data['numero'])) {
+            $factura->setNumero($data['numero']);
+        }
+
+        if (isset($data['fecha'])) {
+            $date = \DateTime::createFromFormat('d/m/Y', $data['fecha']);
+            $factura->setFecha(new \DateTime($date->format('Y-m-d')));
+        }
+
+        if (isset($data['clienteinfo'])) {
+            $factura->setClienteinfo(str_replace("<br>", "\r", $data['clienteinfo']));
+        }
+
+        if (isset($data['empresainfo'])) {
+            $factura->setEmpresainfo(str_replace("<br>", "\r", $data['empresainfo']));
+        }
+
+        if (isset($data['total'])) {
+            $factura->setTotal($data['total']);
+        }
+
+        if (isset($data['total'])) {
+            $factura->setTotaliva($data['totaliva']);
+        }
+
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($factura);
         $em->flush();
 
         return new JsonResponse();

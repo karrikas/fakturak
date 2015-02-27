@@ -21,7 +21,7 @@ class Factura
     protected $id;
 
     /**
-     * @ORM\Column(type="string", length=100, nullable=true)
+     * @ORM\Column(type="integer", nullable=true)
      */
     protected $numero;
 
@@ -68,7 +68,7 @@ class Factura
     private $cliente;
 
     /**
-     * @ORM\OneToMany(targetEntity="FacturaConcepto", mappedBy="factura")
+     * @ORM\OneToMany(targetEntity="FacturaConcepto", mappedBy="factura", cascade={"remove"})
      **/
     private $conceptos;
 
@@ -117,7 +117,7 @@ class Factura
      */
     public function setFecha($fecha)
     {
-        $this->fecha = new \DateTime($fecha);
+        $this->fecha = $fecha;
 
         return $this;
     }
