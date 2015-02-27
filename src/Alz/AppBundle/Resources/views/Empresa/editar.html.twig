@@ -19,13 +19,8 @@
             {{ form_row(form.cif) }}
         </div>
 
-        <div class="col-md-12 {% if form.direccion1.vars.errors|length %}has-error{% endif %}">
-            <div class="form-group">
-            {{ form_label(form.direccion1) }}
-            {{ form_widget(form.direccion1) }}<br>
-            {{ form_widget(form.direccion2) }}
-            {{ form_errors(form.direccion1) }}
-            </div>
+        <div class="col-md-12">
+            {{ form_row(form.direccion1) }}
         </div>
 
         <div class="col-md-5">
@@ -54,6 +49,7 @@
 
         <div class="col-md-12">
             {{ form_row(form.logo) }}
+            <img src="{{ asset('empresa/' ~ empresa.logo) }}" height="100px">
         </div>
 
         <div class="col-md-12">

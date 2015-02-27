@@ -349,7 +349,11 @@ class Empresa
      */
     public function setLogo($logo)
     {
-        $this->logo = $logo;
+        if (null === $logo) {
+            $this->logo = $this->getLogo();
+        } else {
+            $this->logo = $logo;
+        }
 
         return $this;
     }
@@ -461,5 +465,29 @@ class Empresa
     public function getFacturas()
     {
         return $this->facturas;
+    }
+
+    public function upload()
+    {
+        if (null === $this->getLogo()) {
+            return;
+        }
+
+        $filename = $this->id . '.' .$this->getlogo()->guessextension();
+
+        // you must throw an exception here if the file cannot be moved
+        // so that the entity is not persisted to the database
+        // which the UploadedFile move() method does
+        $this->getLogo()->move(
+            $this->getUploadDir(),
+            $filename
+        );
+
+        $this->setLogo($filename);
+    }
+
+    private function getUploadDir()
+    {
+        return __DIR__ . '/../../../../web/empresa/';
     }
 }

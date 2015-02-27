@@ -53,6 +53,7 @@ class EmpresaController extends AlzController
         $form->handleRequest($request);
 
         if ($form->isValid()) {
+            $empresa->upload();
             $em = $this->getDoctrine()->getManager();
             $em->persist($empresa);
             $em->flush();
@@ -76,6 +77,7 @@ class EmpresaController extends AlzController
 
         return $this->render('AlzAppBundle:Empresa:editar.html.twig', array(
             'form' => $form->createView(),
+            'empresa' => $empresa
         ));
     }
 }
