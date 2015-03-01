@@ -172,7 +172,7 @@ var factura_id = {{ factura.id }};
             <a href="{{ path('alz_app_factura_eliminar', { id: factura.id }) }}" class="btn btn-link">{{ "Eliminar factura"|trans }}</a>
         </div>
         <div class="col-md-8 text-right">
-            <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-cloud-download"></span> {{ "Desdargar factura"|trans }}</button>
+            <a class="btn btn-danger" href="{{ path('alz_app_factura_descargar', { id: factura.id }) }}"><span class="glyphicon glyphicon-cloud-download"></span> {{ "Desdargar factura"|trans }}</a>
         </div>
     </div>
 {{ form_end(form) }}

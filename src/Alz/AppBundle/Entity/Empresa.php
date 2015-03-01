@@ -484,10 +484,65 @@ class Empresa
         );
 
         $this->setLogo($filename);
+
+        $this->imageResize();
     }
 
     private function getUploadDir()
     {
         return __DIR__ . '/../../../../web/empresa/';
+    }
+
+    private function imageResize($w = 150)
+    {
+        $file = $this->getUploadDir() . $this->logo;
+        $ext = pathinfo($file, PATHINFO_EXTENSION);
+
+        copy($file, $this->getUploadDir() . $this->id . '_original.' . $ext);
+    
+        list($width, $height) = getimagesize($file);
+        $per = $w * 100 / $width;
+        $h = $per * $height / 100;
+
+        
+        $thumb = imagecreatetruecolor($w, $h);
+        switch ($ext) {
+            case 'gif':
+                $source = imageCreateFromGif($file);
+            break;
+            case 'jpeg':
+            case 'jpg':
+                $source = imageCreateFromJpeg($file);
+            break;
+            case 'png':
+                $source = imageCreateFromPng($file);
+                imagealphablending($thumb, false);
+                imagesavealpha($thumb, true);
+                $transparent = imagecolorallocatealpha($thumb, 255, 255, 255, 127);
+                imagefilledrectangle($thumb, 0, 0, $w, $h, $transparent);
+            break;
+            case 'bmp' :
+                $source = imageCreateFromBmp($file);
+            break;
+        }    
+
+        // Resize
+        imagecopyresized($thumb, $source, 0, 0, 0, 0, $w, $h, $width, $height);
+
+        // Output
+        switch ($ext) {
+            case 'gif': 
+                imagegif($thumb, $file); 
+                break;
+            case 'jpeg': 
+            case 'jpg': 
+                imagejpeg($thumb, $file, 100); 
+                break; // best quality
+            case 'png': 
+                imagepng($thumb, $file, 0); 
+                break; // no compression
+            default: 
+                // nothing
+        }
     }
 }

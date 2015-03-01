@@ -17,3 +17,9 @@ alz_app_factura_ver:
 alz_app_factura_eliminar:
     path:     /eliminar/{id}
     defaults: { _controller: AlzAppBundle:Factura:eliminar }
+
+alz_app_factura_descargar:
+    path:     /descargar/{id}
+    defaults: 
+        _controller: AlzAppBundle:Factura:descargar
+        _format: pdf

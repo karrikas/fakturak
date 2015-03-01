@@ -18,7 +18,6 @@ class ClienteType extends AbstractType
             ->add('nombre', null, array('label' => 'Razón social'))
             ->add('cif', null, array('label' => 'CIF o NIF'))
             ->add('direccion1', null, array('label' => 'Dirección'))
-            ->add('direccion2', null, array('label' => 'Dirección'))
             ->add('cp', null, array('label' => 'Código postal'))
             ->add('region', null, array('label' => 'Provincia'))
             ->add('ciudad', null, array('label' => 'Ciudad'))

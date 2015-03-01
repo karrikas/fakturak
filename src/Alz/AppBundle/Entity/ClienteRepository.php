@@ -14,6 +14,7 @@ class ClienteRepository extends EntityRepository
             ->innerJoin('e.users', 'u')
             ->where('u.id = :userid')
             ->setParameter('userid', $user_id)
+            ->orderBy('c.nombre', 'ASC')
             ->getQuery();
 
         if ($type == 'object') {

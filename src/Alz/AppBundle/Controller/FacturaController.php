@@ -5,6 +5,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Alz\AppBundle\Entity\Factura;
 use Alz\AppBundle\Form\FacturaType;
+use Ps\PdfBundle\Annotation\Pdf;
 
 class FacturaController extends AlzController
 {
@@ -135,5 +136,24 @@ DIRECCION;
         );
 
         return $this->redirect($this->generateUrl('alz_app_factura_listado'));
+    }
+
+    /**
+     * @Pdf()
+     */
+    public function descargarAction($id)
+    {
+        $factura = $this->getDoctrine()
+        ->getRepository('AlzAppBundle:Factura')
+        ->find($id);
+
+        $this->checkEmpresa($factura->getEmpresa()->getId());
+
+        return $this->render('AlzAppBundle:Factura:descargar.pdf.twig', array(
+            'filename' => 'proba',
+            'conceptosextra' => 15 - count($factura->getConceptos()),
+            'factura' => $factura,
+            'logo' => __DIR__ . '/../../../../web/empresa/' . $factura->getEmpresa()->getLogo()
+        ));
     }
 }

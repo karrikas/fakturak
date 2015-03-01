@@ -22,7 +22,8 @@
         "friendsofsymfony/user-bundle": "~2.0@dev",
         "symfony/finder": "~2.6",
         "jms/i18n-routing-bundle": "dev-master",
-        "knplabs/knp-paginator-bundle": "~2.4"
+        "knplabs/knp-paginator-bundle": "~2.4",
+        "psliwa/pdf-bundle": "~1.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

@@ -1,48 +1,34 @@
 alz_app_api_clientes_get:
     path:     /clientes
-    defaults: { _controller: AlzAppBundle:Api:clientesGet }
+    defaults: { _controller: AlzAppBundle:Api:clientesGet, _format: json }
     methods: GET
-    requirements:
-        _format: json
 
 alz_app_api_cliente_put:
     path:     /cliente
-    defaults: { _controller: AlzAppBundle:Api:clientePut }
+    defaults: { _controller: AlzAppBundle:Api:clientePut, _format: json }
     methods: PUT 
-    requirements:
-        _format: json
 
 alz_app_api_cliente_get:
     path:     /cliente
-    defaults: { _controller: AlzAppBundle:Api:clienteGet }
+    defaults: { _controller: AlzAppBundle:Api:clienteGet, _format: json }
     methods: GET
-    requirements:
-        _format: json
 
 alz_app_api_facturaconceptos_get:
     path:     /factura-conceptos
-    defaults: { _controller: AlzAppBundle:Api:FacturaconceptosGet }
+    defaults: { _controller: AlzAppBundle:Api:FacturaconceptosGet, _format: json }
     methods: GET
-    requirements:
-        _format: json
 
 alz_app_api_facturaconcepto_delete:
     path:     /factura-concepto/{id}
-    defaults: { _controller: AlzAppBundle:Api:FacturaconceptoDelete }
+    defaults: { _controller: AlzAppBundle:Api:FacturaconceptoDelete, _format: json }
     methods: DELETE
-    requirements:
-        _format: json
 
 alz_app_api_facturaconcepto_put:
     path:     /factura-concepto
-    defaults: { _controller: AlzAppBundle:Api:FacturaconceptoPut }
+    defaults: { _controller: AlzAppBundle:Api:FacturaconceptoPut, _format: json }
     methods: PUT
-    requirements:
-        _format: json
 
 alz_app_api_factura_put:
     path:     /factura
-    defaults: { _controller: AlzAppBundle:Api:facturaPut }
-    #methods: PUT 
-    requirements:
-        _format: json
+    defaults: { _controller: AlzAppBundle:Api:facturaPut, _format: json }
+    methods: PUT 

@@ -20,6 +20,14 @@ Alz\AppBundle\Entity\Cliente:
     properties:
         nombre: 
             - NotBlank: ~
+        cif: 
+            - NotBlank: ~
+        direccion1: 
+            - NotBlank: ~
+        cp: 
+            - NotBlank: ~
+        ciudad: 
+            - NotBlank: ~
         email:
             - Email: ~
 

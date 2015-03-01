@@ -1,0 +1,83 @@
+<pdf Author="{{ factura.empresa.nombre }}" Title="{{ filename }}">
+    <dynamic-page>
+        <div>
+            <div style="font-size:32px;font-style:bold;">{{ factura.empresa.nombre }}</div>
+            <div style="font-size: 12px">
+                {% if factura.empresa.telefono %}
+                Telf: {{ factura.empresa.telefono }}<br/>
+                {% endif %}
+                {% if factura.empresa.email %}
+                E-mail: {{ factura.empresa.email }}
+                {% endif %}
+            </div>
+        </div>
+
+        <div style="height: 50px;"></div>
+
+        <div style="float:left; width: 200px;">
+            {{ factura.empresainfo|nl2br }}
+        </div>
+
+        <div style="float:right;text-align:right; width: 200px;">
+            {{ factura.clienteinfo|nl2br }}
+        </div>
+
+{{ logo }}
+        <img src="{{ logo }}" />
+
+        <div style="height: 50px;"></div>
+
+        <div>
+            <div style="width: 40%; float:left;">
+                <span style="font-size: 10px;">Número factura</span><br/>
+                {{ factura.numero }}
+            </div>
+
+            <div style="width: 40%; float:rigth;text-align:right;">
+                <span style="font-size: 10px;">Fecha</span><br/>
+                {{ factura.fecha|date("d/m/Y") }}</div>
+        </div>
+
+        <div style="height: 10px;"></div>
+
+        <table>
+            <tr style="font-size: 9px;">
+                <td width="330px" style="padding: 5px;" border.color="#cccccc" background.color="#eeeeee" border.size="0.2px">Concepto</td>
+                <td style="padding: 5px;" border.color="#cccccc" background.color="#eeeeee" border.size="0.2px">Precio €</td>
+                <td style="padding: 5px;" border.color="#cccccc" background.color="#eeeeee" border.size="0.2px">Cantidad</td>
+                <td style="padding: 5px;" border.color="#cccccc" background.color="#eeeeee" border.size="0.2px">Total €</td>
+                <td style="padding: 5px;" border.color="#cccccc" background.color="#eeeeee" border.size="0.2px">IVA %</td>
+                <td style="padding: 5px;" border.color="#cccccc" background.color="#eeeeee" border.size="0.2px">Total con IVA €</td>
+            </tr>
+            {% for concepto in factura.conceptos %}
+            <tr style="font-size: 10px;">
+                <td style="padding: 5px;" border.color="#cccccc" border.size="0.2px">{{ concepto.nombre }}</td>
+                <td text-align="right" style="padding: 5px;" border.color="#cccccc" border.size="0.2px">{{ concepto.precio|number_format(2, ',', '.') }} €</td>
+                <td text-align="right" style="padding: 5px;" border.color="#cccccc" border.size="0.2px">{{ concepto.cantidad }}</td>
+                <td text-align="right" style="padding: 5px;" border.color="#cccccc" border.size="0.2px">{{ concepto.total|number_format(2, ',', '.') }} €</td>
+                <td text-align="right" style="padding: 5px;" border.color="#cccccc" border.size="0.2px">{{ concepto.iva }} %</td>
+                <td text-align="right" style="padding: 5px;" border.color="#cccccc" border.size="0.2px">{{ concepto.totaliva|number_format(2, ',', '.') }} €</td>
+            </tr>
+            {% endfor %}
+            {% for i in 1..conceptosextra %}
+            <tr style="font-size: 10px;color:white;">
+                <td style="padding: 5px;" border.color="#cccccc" border.size="0.2px"> - </td>
+                <td text-align="right" style="padding: 5px;" border.color="#cccccc" border.size="0.2px"> </td>
+                <td text-align="right" style="padding: 5px;" border.color="#cccccc" border.size="0.2px"> </td>
+                <td text-align="right" style="padding: 5px;" border.color="#cccccc" border.size="0.2px"> </td>
+                <td text-align="right" style="padding: 5px;" border.color="#cccccc" border.size="0.2px"> </td>
+                <td text-align="right" style="padding: 5px;" border.color="#cccccc" border.size="0.2px"> </td>
+            </tr>
+            {% endfor %}
+            <tr style="font-size: 10px;">
+                <td border.type="none"></td>
+                <td border.type="none"></td>
+                <td text-align="right" style="padding: 5px;font-size: 9px;" border.type="none">Total</td>
+                <td text-align="right" style="padding: 5px;font-style:bold;" border.color="#cccccc" border.size="0.2px">{{ factura.total|number_format(2, ',', '.') }} €</td>
+                <td text-align="right" style="padding: 5px;font-size: 9px;" border.type="none">Total con IVA</td>
+                <td text-align="right" style="padding: 5px;font-style:bold;" border.color="#cccccc" border.size="0.2px">{{ factura.totaliva|number_format(2, ',', '.') }} €</td>
+            </tr>
+      </table>
+
+    </dynamic-page>
+</pdf>

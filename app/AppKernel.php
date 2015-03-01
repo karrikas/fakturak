@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             new Alz\WebBundle\AlzWebBundle(),
             new Alz\AppBundle\AlzAppBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+            new Ps\PdfBundle\PsPdfBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
