@@ -20,6 +20,7 @@
                 <th>{{ "Cliente"|trans }}</th>
                 <th>{{ "Total"|trans }}</th>
                 <th>{{ "Total con IVA"|trans }}</th>
+                <td></td>
             </tr>
         </thead>
         <tbody>
@@ -30,6 +31,12 @@
                 <td>{% if factura.cliente %}{{ factura.cliente.nombre }}{% endif %}</td>
                 <td class="text-right">{{ factura.total|number_format(2, ',', '.') }} €</td>
                 <td class="text-right">{{ factura.totaliva|number_format(2, ',', '.') }} €</td>
+                <td>
+                    <div class="btn-group btn-group-xs pull-right" role="group">
+                        <a href="{{ path('alz_app_factura_editar', { id: factura.id }) }}" class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> {{ "Editar"|trans }}</a>
+                        <a href="{{ path('alz_app_factura_descargar', { id: factura.id }) }}" class="btn btn-danger"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> {{ "Descargar"|trans }}</a>
+                    </div>
+                </td>
             </tr>
             {% endfor %}
         </tbody>

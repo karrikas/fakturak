@@ -34,12 +34,17 @@ class FacturaController extends AlzController
         $numerofactura = $em->getRepository('AlzAppBundle:Factura')
         ->getNumero($this->getUser()->getId(), date('Y'));
 
-        $direccion = <<<DIRECCION
-{$empresa->getNombre()}\n
-{$empresa->getDireccion1()}\n
-{$empresa->getDireccion2()}\n
-{$empresa->getRegion()} {$empresa->getCiudad()} {$empresa->getCp()}
-DIRECCION;
+        $direccion = '';
+        $direccion .= $empresa->getNombre() . "\r";
+        $direccion .= $empresa->getCif() . "\r";
+        $direccion .= $empresa->getDireccion1() . "\r";
+        $direccion .= $empresa->getCiudad() . "\r";
+        if ($empresa->getCp() != null) {
+            $direccion .= $empresa->getCp() . "\r";
+        }
+        if ($empresa->getRegion() != null) {
+            $direccion .= $empresa->getRegion() . "\r";
+        }
 
         $factura = new Factura();
         $factura->setEmpresa($empresa);
