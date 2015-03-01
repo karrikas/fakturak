@@ -493,7 +493,7 @@ class Empresa
         return __DIR__ . '/../../../../web/empresa/';
     }
 
-    private function imageResize($w = 150)
+    private function imageResize($w = 100)
     {
         $file = $this->getUploadDir() . $this->logo;
         $ext = pathinfo($file, PATHINFO_EXTENSION);

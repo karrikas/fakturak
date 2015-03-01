@@ -11,7 +11,6 @@
     <h1>{{ "Facturas"|trans }}</h1>
 </div>
 
-
 <div class="table-responsive">
     <table class="table table-hover">
         <thead>
@@ -20,6 +19,7 @@
                 <th>{{ "Fecha"|trans }}</th>
                 <th>{{ "Cliente"|trans }}</th>
                 <th>{{ "Total"|trans }}</th>
+                <th>{{ "Total con IVA"|trans }}</th>
             </tr>
         </thead>
         <tbody>
@@ -27,7 +27,8 @@
             <tr>
                 <td><a href="{{ path('alz_app_factura_ver', { id: factura.id }) }}">{{ factura.numero }}</a></td>
                 <td>{{ factura.fecha|date("m/d/Y") }}</td>
-                <td>{# factura.cliente.nombre #}</td>
+                <td>{% if factura.cliente %}{{ factura.cliente.nombre }}{% endif %}</td>
+                <td class="text-right">{{ factura.total|number_format(2, ',', '.') }} €</td>
                 <td class="text-right">{{ factura.totaliva|number_format(2, ',', '.') }} €</td>
             </tr>
             {% endfor %}

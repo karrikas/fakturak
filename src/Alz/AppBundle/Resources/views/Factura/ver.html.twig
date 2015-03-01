@@ -46,7 +46,7 @@
 </dl>
 <div class="pull-right">
   <a type="button" class="btn btn-link" href="{{ path('alz_app_factura_editar', { id: factura.id }) }}"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> {{ "Editar factura"|trans }}</a>
-  <a type="button" class="btn btn-danger" href="{{ path('alz_app_factura_listado') }}"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> {{ "Descargar en PDF"|trans }}</a>
+  <a type="button" class="btn btn-danger" href="{{ path('alz_app_factura_descargar', { id: factura.id }) }}"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> {{ "Descargar en PDF"|trans }}</a>
 </div>
 {% endblock %}
 

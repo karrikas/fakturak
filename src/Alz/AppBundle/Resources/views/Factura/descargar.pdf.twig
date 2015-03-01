@@ -1,14 +1,20 @@
 <pdf Author="{{ factura.empresa.nombre }}" Title="{{ filename }}">
     <dynamic-page>
         <div>
-            <div style="font-size:32px;font-style:bold;">{{ factura.empresa.nombre }}</div>
-            <div style="font-size: 12px">
-                {% if factura.empresa.telefono %}
-                Telf: {{ factura.empresa.telefono }}<br/>
-                {% endif %}
-                {% if factura.empresa.email %}
-                E-mail: {{ factura.empresa.email }}
-                {% endif %}
+            <div style="float: left; width: 50%;">
+                <img src="{{ logo }}" />
+            </div>
+
+            <div style="float: right; width: 50%; text-align: right;">
+                <div style="font-size:32px;font-style:bold;">{{ factura.empresa.nombre }}</div>
+                <div style="font-size: 12px">
+                    {% if factura.empresa.telefono %}
+                    Telf: {{ factura.empresa.telefono }}<br/>
+                    {% endif %}
+                    {% if factura.empresa.email %}
+                    E-mail: {{ factura.empresa.email }}
+                    {% endif %}
+                </div>
             </div>
         </div>
 
@@ -22,8 +28,6 @@
             {{ factura.clienteinfo|nl2br }}
         </div>
 
-{{ logo }}
-        <img src="{{ logo }}" />
 
         <div style="height: 50px;"></div>
 

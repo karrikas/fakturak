@@ -100,6 +100,8 @@ appApp.controller("FacturaController", ['$http', '$scope', function($http, $scop
         });
         $scope.totales();
         $http.delete(apiurlconcepto + '/' + concepto_id).success(function(data, status, headers, config) {});
+
+        $scope.facturaUpdate();
     };
 
     $scope.fechaChange = function() {
