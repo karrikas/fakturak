@@ -62,11 +62,11 @@ var factura_id = {{ factura.id }};
                 <tbody>
                     <tr ng-repeat="concepto in conceptos">
                         <td>{% verbatim %}{{ concepto.nombre }}{% endverbatim %}</td>
-                        <td>{% verbatim %}{{ concepto.precio|currency:"":2  }}{% endverbatim %}</td>
-                        <td>{% verbatim %}{{ concepto.cantidad }}{% endverbatim %}</td>
-                        <td>{% verbatim %}{{ concepto.iva }}{% endverbatim %}</td>
-                        <td>{% verbatim %}{{ concepto.total|currency:"":2 }} €{% endverbatim %}</td>
-                        <td>{% verbatim %}{{ concepto.totaliva|currency:"":2 }} €{% endverbatim %}</td>
+                        <td align="right">{% verbatim %}{{ concepto.precio|currency:"":2  }} €{% endverbatim %}</td>
+                        <td align="right">{% verbatim %}{{ concepto.cantidad }}{% endverbatim %}</td>
+                        <td align="right">{% verbatim %}{{ concepto.iva }}{% endverbatim %}</td>
+                        <td align="right">{% verbatim %}{{ concepto.total|currency:"":2 }} €{% endverbatim %}</td>
+                        <td align="right">{% verbatim %}{{ concepto.totaliva|currency:"":2 }} €{% endverbatim %}</td>
                         <td class="text-right">
                             <a ng-click="removeConcepto(concepto.id)" type="button" class="btn btn-danger btn-xs" aria-label="Left Align">
                                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
@@ -163,7 +163,7 @@ var factura_id = {{ factura.id }};
 
     <div class="rows">
         <div class="col-md-12">
-            {{ form_row(form.informacion, { attr: { 'ng-model': 'factura.informacion'}}) }}
+            {{ form_row(form.informacion, { attr: { 'ng-model': 'factura.informacion', 'ng-init': 'factura.informacion="' ~ factura.informacion ~ '"'}}) }}
         </div>
     </div>
 
@@ -172,7 +172,8 @@ var factura_id = {{ factura.id }};
             <a href="{{ path('alz_app_factura_eliminar', { id: factura.id }) }}" class="btn btn-link">{{ "Eliminar factura"|trans }}</a>
         </div>
         <div class="col-md-8 text-right">
-            <a class="btn btn-danger" href="{{ path('alz_app_factura_descargar', { id: factura.id }) }}"><span class="glyphicon glyphicon-cloud-download"></span> {{ "Desdargar factura"|trans }}</a>
+            <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-floppy-disk"></span> {{ "Guardar"|trans }}</button>
+            <button type="submit" class="btn btn-danger" name="descargar"><span class="glyphicon glyphicon-cloud-download"></span> {{ "Desdargar factura"|trans }}</button>
         </div>
     </div>
 {{ form_end(form) }}

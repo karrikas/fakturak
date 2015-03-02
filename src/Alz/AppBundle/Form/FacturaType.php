@@ -14,8 +14,6 @@ class FacturaType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $user_id = $options['attr']['user_id'];
-
         $builder
             ->add('numero', 'hidden', array('label' => 'Número'))
             ->add('fecha', 'date', array(
@@ -28,20 +26,7 @@ class FacturaType extends AbstractType
             ->add('totaliva', 'hidden', array('label' => 'Total con IVA'))
             ->add('empresainfo', 'hidden', array('label' => 'Empresa'))
             ->add('clienteinfo', 'hidden', array('label' => 'Cliente'))
-            ->add('informacion')
-            /*
-            ->add('cliente', 'entity', array(
-                'class' => 'AlzAppBundle:Cliente',
-                'query_builder' => function(EntityRepository $er) use ($user_id) {
-                    return $er->createQueryBuilder('c')
-                        ->innerJoin('c.empresa', 'e')
-                        ->innerJoin('e.users', 'u')
-                        ->where('u.id = :userid')
-                        ->setParameter('userid', $user_id);
-                },
-                'empty_data'  => false
-            ))
-             */
+            ->add('informacion', null, array('label' => 'Texto información'))
         ;
     }
     

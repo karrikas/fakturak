@@ -3,6 +3,7 @@ namespace Alz\AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Alz\AppBundle\Entity\Factura;
 use Alz\AppBundle\Form\FacturaType;
 use Ps\PdfBundle\Annotation\Pdf;
@@ -67,7 +68,7 @@ class FacturaController extends AlzController
 
         $this->checkEmpresa($factura->getEmpresa()->getId());
 
-        $form = $this->createForm(new FacturaType(), $factura, array('attr' => array('user_id' => $this->getUser()->getId())));
+        $form = $this->createForm(new FacturaType(), $factura);
         $form->handleRequest($request);
 
         if ($form->isValid()) {
@@ -89,10 +90,16 @@ class FacturaController extends AlzController
             $em->persist($factura);
             $em->flush();
 
+            $descargar = $request->get('descargar');
+            if (null !== $descargar) {
+                return $this->redirect($this->generateUrl('alz_app_factura_descargar', array('id' => $factura->getId())));
+            }
+
             $request->getSession()->getFlashBag()->add(
                 'success',
                 $this->get('translator')->trans('Los datos se han guardado.')
             );
+
 
             return $this->redirect($this->generateUrl('alz_app_factura_ver', array('id' => $factura->getId())));
         }
@@ -154,11 +161,27 @@ class FacturaController extends AlzController
 
         $this->checkEmpresa($factura->getEmpresa()->getId());
 
-        return $this->render('AlzAppBundle:Factura:descargar.pdf.twig', array(
+        $logo = null;
+        if ($factura->getEmpresa()->getLogo()) {
+            $logo = __DIR__ . '/../../../../web/empresa/' . $factura->getEmpresa()->getLogo();
+        }
+
+        $response = new Response();
+        $response = $this->render('AlzAppBundle:Factura:descargar.pdf.twig', array(
             'filename' => 'proba',
             'conceptosextra' => 15 - count($factura->getConceptos()),
             'factura' => $factura,
-            'logo' => __DIR__ . '/../../../../web/empresa/' . $factura->getEmpresa()->getLogo()
+            'logo' => $logo
         ));
+
+        $filename = sprintf('%s_%s.pdf', 
+            $factura->getFecha()->format('Y-m-d'),
+            $factura->getNumero()
+        );
+
+        $response->headers->set('Content-Type', 'application/pdf');
+        $response->headers->set('Content-Disposition', 'attachment; filename="' . $filename . '"');
+
+        return $response;
     }
 }

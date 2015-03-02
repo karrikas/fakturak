@@ -31,12 +31,12 @@ class Factura
     protected $fecha;
 
     /**
-     * @ORM\Column(type="decimal", nullable=true)
+     * @ORM\Column(type="float", nullable=true)
      */
     protected $total;
 
     /**
-     * @ORM\Column(type="decimal", nullable=true)
+     * @ORM\Column(type="float", nullable=true)
      */
     protected $totaliva;
 

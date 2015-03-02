@@ -18,6 +18,7 @@ class ApiController extends AlzController
 
         return new JsonResponse($clientes);
     }
+
     public function ClienteGetAction(Request $request)
     {
         $id = $request->get('id');
@@ -113,7 +114,7 @@ class ApiController extends AlzController
 
         $concepto = new FacturaConcepto();
         $concepto->setNombre($data['nombre']);
-        $concepto->setPrecio($data['precio']);
+        $concepto->setPrecio((float)$data['precio']);
         $concepto->setCantidad((int)$data['cantidad']);
         $concepto->setIva((int)$data['iva']);
         $concepto->setTotal((float)$data['total']);
@@ -158,7 +159,6 @@ class ApiController extends AlzController
     public function FacturaPutAction(Request $request)
     {
         $data = json_decode($request->getContent(), true);
-
 
         $factura = $this->getDoctrine()
         ->getRepository('AlzAppBundle:Factura')

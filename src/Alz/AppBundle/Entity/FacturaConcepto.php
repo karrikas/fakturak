@@ -23,7 +23,7 @@ class FacturaConcepto
     protected $nombre;
 
     /**
-     * @ORM\Column(type="decimal", nullable=true)
+     * @ORM\Column(type="float", nullable=true)
      */
     protected $precio;
 
@@ -38,12 +38,12 @@ class FacturaConcepto
     protected $iva;
 
     /**
-     * @ORM\Column(type="decimal", nullable=true)
+     * @ORM\Column(type="float", nullable=true)
      */
     protected $total;
 
     /**
-     * @ORM\Column(type="decimal", nullable=true)
+     * @ORM\Column(type="float", nullable=true)
      */
     protected $totaliva;
 
