@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Alz\AppBundle\Entity\Factura;
 use Alz\AppBundle\Form\FacturaType;
 use Ps\PdfBundle\Annotation\Pdf;
+use Alz\AppBundle\Controller\AppInController;
 
 class FacturaController extends AlzController
 {
@@ -99,7 +100,6 @@ class FacturaController extends AlzController
                 'success',
                 $this->get('translator')->trans('Los datos se han guardado.')
             );
-
 
             return $this->redirect($this->generateUrl('alz_app_factura_ver', array('id' => $factura->getId())));
         }

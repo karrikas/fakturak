@@ -17,3 +17,11 @@ alz_app_empresa:
 alz_app_homepage:
     path:     /
     defaults: { _controller: AlzAppBundle:Default:index }
+
+alz_app_premium_comprar:
+    path:     /premium/comprar/
+    defaults: { _controller: AlzAppBundle:Default:premiumComprar }
+
+alz_app_premium_cancelar:
+    path:     /premium/cancelar/
+    defaults: { _controller: AlzAppBundle:Default:premiumCancelar }

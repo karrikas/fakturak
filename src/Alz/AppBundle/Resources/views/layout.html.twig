@@ -15,7 +15,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="{{ path('alz_app_homepage') }}">
-                <img alt="Sis-facturacion.com" src="{{ asset("images/sis-facturacion-logo-50.png") }}">
+                <img alt="SisFacturacion.com" height=50" src="{{ asset("images/logo.png") }}">
             </a>
             <p class="navbar-text"><img width="20px" src="{{ app.user.email|gravatarimage(20) }}" class="img-rounded"> {{ app.user.username }}</p>
         </div>
@@ -27,7 +27,8 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon glyphicon-cog" aria-hidden="true"></span> <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        {# <li><a href="{{ path('fos_user_profile_show') }}">{{ "Tú cuenta"|trans }}</a></li> #}
+                        <li><a href="{{ path('alz_app_premium_comprar') }}">{{ "Acceder a cuenta Premium"|trans }}</a></li>
+                        <li class="divider"></li>
                         <li><a href="{{ path('alz_app_empresa_ver') }}">{{ "Datos de la empresa"|trans }}</a></li>
                         <li class="divider"></li>
                         <li><a href="{{ path('fos_user_security_logout') }}">{{ "Salir"|trans }}</a></li>

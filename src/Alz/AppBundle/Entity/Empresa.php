@@ -77,6 +77,11 @@ class Empresa
     protected $logo;
 
     /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    protected $premium = 0;
+
+    /**
      * @ORM\ManyToMany(targetEntity="UserClone", mappedBy="empresas")
      **/
     private $users;
@@ -473,6 +478,10 @@ class Empresa
             return;
         }
 
+        if (is_string($this->getLogo())) {
+            return;
+        }
+
         $filename = $this->id . '.' .$this->getlogo()->guessextension();
 
         // you must throw an exception here if the file cannot be moved
@@ -544,5 +553,28 @@ class Empresa
             default: 
                 // nothing
         }
+    }
+
+    /**
+     * Set premium
+     *
+     * @param boolean $premium
+     * @return Empresa
+     */
+    public function setPremium($premium)
+    {
+        $this->premium = $premium;
+
+        return $this;
+    }
+
+    /**
+     * Get premium
+     *
+     * @return boolean 
+     */
+    public function getPremium()
+    {
+        return $this->premium;
     }
 }

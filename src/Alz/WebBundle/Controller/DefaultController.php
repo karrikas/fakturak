@@ -3,6 +3,8 @@
 namespace Alz\WebBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Cookie;
+use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
@@ -19,5 +21,14 @@ class DefaultController extends Controller
     public function preciosAction()
     {
         return $this->render('AlzWebBundle:Default:precios.html.twig');
+    }
+
+    public function toPremiumAction()
+    {
+        $response = new Response();
+        $response->headers->setCookie(new Cookie('premium', 'on'));
+        $response->send();
+        
+        return $this->redirect($this->generateUrl('fos_user_registration_register'));
     }
 }
