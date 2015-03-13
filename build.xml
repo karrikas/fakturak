@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="${project.name}" basedir="." default="setup">
+    <!-- Definitu zure common fitxategiaren kokapena. -->
+    <import file="${project.basedir}/bin/phing-common/build.common.xml"/> 
+    
+    <!-- Propietateen fitxategiaren kokepan definitu. -->
+    <property file="${project.basedir}/.properties" />
+    
+    <!-- Proiektua makina berri batean instalatzeko funtzioa. -->
+    <target name="setup">
+        
+    </target>
+</project>

@@ -8,12 +8,20 @@
     <h1>{{ "Activar cuenta Premium"|trans }}</h1>
 </div>
 
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="GNQCDXAQR6QWU">
-<input type="image" src="https://www.paypalobjects.com/es_ES/ES/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal. La forma rápida y segura de pagar en Internet.">
-<img alt="" border="0" src="https://www.paypalobjects.com/es_ES/i/scr/pixel.gif" width="1" height="1">
-</form>
-
-<a href="{{ path('alz_app_premium_cancelar') }}">{{ "Cancelar"|trans }}</a>
+<div class="rows">
+    <div class="col-md-12">
+        <p>{% trans %}Paga sólo 99€ y tendras acceso PREMIUM para siempre. Sin limite de facturas, ni publicidad. Y con un nivel de seguridad adicional. No dejes pasar este oportunidad.{% endtrans %}</p>
+    </div>
+    <div class="col-md-6">
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="hosted_button_id" value="PB5Y6BHJ397GA">
+        <input type="image" src="https://www.paypalobjects.com/es_ES/ES/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal. La forma rápida y segura de pagar en Internet.">
+        <img alt="" border="0" src="https://www.paypalobjects.com/es_ES/i/scr/pixel.gif" width="1" height="1">
+        </form>
+    </div>
+    <div class="col-md-6">
+        <a class="btn btn-link pull-right" href="{{ path('alz_app_premium_cancelar') }}">{{ "Cancelar"|trans }}</a>
+    </div>
+</div>
 {% endblock %}

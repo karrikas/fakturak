@@ -13,3 +13,7 @@ alz_web_precios:
 alz_web_to_premium:
     path:     /premium/
     defaults: { _controller: AlzWebBundle:Default:toPremium }
+
+alz_web_hacer_facturas:
+    path:     /programa-para-hacer-facturas/
+    defaults: { _controller: AlzWebBundle:Default:hacerFacturas }

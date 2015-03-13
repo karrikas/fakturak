@@ -1,0 +1,16 @@
+{% extends 'AlzAppBundle::layout.html.twig' %}
+
+{% block title %}{{ "App facturación"|trans }}{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <h1>{{ "Cancelar cuenta Premium"|trans }}</h1>
+</div>
+
+<div class="rows">
+    <div class="col-md-12">
+        <p>{% trans %}No se ha podido finalizar la compra. Si tienes problemas ponte en contacto con nosotros en la dirección <a href="mailto:info@sisfacturacion.com">info@sisfacturacion.com</a>.{% endtrans %}</p>
+    </div>
+</div>
+{% endblock %}

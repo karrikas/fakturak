@@ -25,3 +25,11 @@ alz_app_premium_comprar:
 alz_app_premium_cancelar:
     path:     /premium/cancelar/
     defaults: { _controller: AlzAppBundle:Default:premiumCancelar }
+
+alz_app_premium_paypal_cancelar:
+    path:     /premium/paypal-cancelar/
+    defaults: { _controller: AlzAppBundle:Default:premiumPaypalCancelar }
+
+alz_app_premium_paypal_ok:
+    path:     /premium/paypal-ok/
+    defaults: { _controller: AlzAppBundle:Default:premiumPaypalOk }

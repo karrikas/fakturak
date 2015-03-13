@@ -1,0 +1,32 @@
+*.txt
+.git
+.svn
+.buildpath
+.project
+.properties
+.settings
+README.md
+.htaccess
+sitemap.xml
+sitemap.xml.gz
+build.xml
+rsync_exclude
+error_log
+*.swp
+parameters.yml
+parameters.ini
+
+- build
+- phing-common
+
+# symfony2 common ignored
+- app/build
+- app/config/*
+- app/logs/*
+- app/sql
+- app/cache
+- web/empresa/*
+
+# wordpress common ignored
+- wp-content/uploads
+- wp-content/infinitewp

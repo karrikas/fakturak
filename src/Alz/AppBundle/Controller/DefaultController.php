@@ -23,11 +23,20 @@ class DefaultController extends AlzController
 
     public function premiumCancelarAction(Request $request)
     {
-        
         $response = new Response();
         $response->headers->clearCookie('premium');
         $response->send();
 
         return $this->redirect($this->generateUrl('alz_app_homepage'));
+    }
+
+    public function premiumPaypalCancelarAction()
+    {
+        return $this->render('AlzAppBundle:Default:premium-paypal-cancelar.html.twig', array());
+    }
+
+    public function premiumPaypalOkAction()
+    {
+        return $this->render('AlzAppBundle:Default:premium-paypal-ok.html.twig', array());
     }
 }
