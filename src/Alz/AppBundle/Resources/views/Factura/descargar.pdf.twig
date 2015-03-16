@@ -2,11 +2,24 @@
     <dynamic-page>
         <placeholders>
             <footer>
+                <div height="{% if not factura.empresa.premium %}80px{% else %}30px{% endif %}">
+                {% if factura.informacion %}
                 <div height="20px" width="100%">
-                    {% if factura.informacion %}
                     <div font-size="11px" font-style="bold">{% trans %}Información{% endtrans %}</div>
                     <div>{{ factura.informacion }}</div>
-                    {% endif %}
+                </div>
+                {% endif %}
+
+                {% if not factura.empresa.premium %}
+                <div height="40px" width="100%">
+                    <div text-align="center" style="margin-left: 265px;margin-top:20px;">
+                        <img style="margin-left:300px" href="http://sisfacturacion.com" width="150px" src="{{ logosis }}" />
+                    </div>
+                    <div text-align="center" style="padding:0 230px;font-size: 10px;">
+                        {{ "SisFacturacion.com aplicación para crear las facturas para tu empresa."|trans }}
+                    </div>
+                </div>
+                {% endif %}
                 </div>
             </footer>
         </placeholders>

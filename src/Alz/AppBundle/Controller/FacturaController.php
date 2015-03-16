@@ -9,12 +9,21 @@ use Alz\AppBundle\Form\FacturaType;
 use Ps\PdfBundle\Annotation\Pdf;
 use Alz\AppBundle\Controller\AppInController;
 
+/**
+ * controller
+ */
 class FacturaController extends AlzController
 {
+    /**
+     * action
+     * @param Request $request
+     *
+     * @return object
+     */
     public function ListadoAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
-        $facturas = $em->getRepository('AlzAppBundle:Factura')
+        $ema = $this->getDoctrine()->getManager();
+        $facturas = $ema->getRepository('AlzAppBundle:Factura')
         ->findByUser($this->getUser()->getId());
 
         $paginator  = $this->get('knp_paginator');
@@ -29,11 +38,16 @@ class FacturaController extends AlzController
         ));
     }
 
-    public function NuevoAction(Request $request)
+    /**
+     * action
+     *
+     * @return object
+     */
+    public function NuevoAction()
     {
         $empresa = $this->getEmpresa();
-        $em = $this->getDoctrine()->getManager();
-        $numerofactura = $em->getRepository('AlzAppBundle:Factura')
+        $ema = $this->getDoctrine()->getManager();
+        $numerofactura = $ema->getRepository('AlzAppBundle:Factura')
         ->getNumero($this->getUser()->getId(), date('Y'));
 
         $direccion = '';
@@ -53,14 +67,20 @@ class FacturaController extends AlzController
         $factura->setEmpresainfo($direccion);
         $factura->setNumero($numerofactura);
         $factura->setFecha(new \DateTime(date('Y-m-d')));
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($factura);
-        $em->flush();
+        $ema = $this->getDoctrine()->getManager();
+        $ema->persist($factura);
+        $ema->flush();
 
 
         return $this->redirect($this->generateUrl('alz_app_factura_editar', array('id' => $factura->getId())));
     }
 
+    /**
+     * action
+     * @param Request $request
+     *
+     * @return object
+     */
     public function EditarAction(Request $request)
     {
         $factura = $this->getDoctrine()
@@ -87,9 +107,9 @@ class FacturaController extends AlzController
             $factura->setTotal($total);
             $factura->setTotaliva($totaliva);
 
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($factura);
-            $em->flush();
+            $ema = $this->getDoctrine()->getManager();
+            $ema->persist($factura);
+            $ema->flush();
 
             $descargar = $request->get('descargar');
             if (null !== $descargar) {
@@ -103,7 +123,7 @@ class FacturaController extends AlzController
 
             return $this->redirect($this->generateUrl('alz_app_factura_ver', array('id' => $factura->getId())));
         }
-        
+
         return $this->render('AlzAppBundle:Factura:editar.html.twig', array(
             'form' => $form->createView(),
             'empresa' => $this->getEmpresa(),
@@ -112,6 +132,12 @@ class FacturaController extends AlzController
         ));
     }
 
+    /**
+     * action
+     * @param Request $request
+     *
+     * @return object
+     */
     public function verAction(Request $request)
     {
         $factura = $this->getDoctrine()
@@ -130,17 +156,24 @@ class FacturaController extends AlzController
         ));
     }
 
-    public function eliminarAction($id, Request $request)
+    /**
+     * action
+     * @param integer $ida
+     * @param Request $request
+     *
+     * @return object
+     */
+    public function eliminarAction($ida, Request $request)
     {
         $factura = $this->getDoctrine()
         ->getRepository('AlzAppBundle:Factura')
-        ->find($id);
+        ->find($ida);
 
         $this->checkEmpresa($factura->getEmpresa()->getId());
 
-        $em = $this->getDoctrine()->getManager();
-        $em->remove($factura);
-        $em->flush();
+        $ema = $this->getDoctrine()->getManager();
+        $ema->remove($factura);
+        $ema->flush();
 
         $request->getSession()->getFlashBag()->add(
             'danger',
@@ -152,6 +185,9 @@ class FacturaController extends AlzController
 
     /**
      * @Pdf()
+     * @param integer $id
+     *
+     * @return object
      */
     public function descargarAction($id)
     {
@@ -165,16 +201,18 @@ class FacturaController extends AlzController
         if ($factura->getEmpresa()->getLogo()) {
             $logo = __DIR__ . '/../../../../web/empresa/' . $factura->getEmpresa()->getLogo();
         }
+        $logosis = __DIR__ . '/../../../../web/images/logo.png';
 
         $response = new Response();
         $response = $this->render('AlzAppBundle:Factura:descargar.pdf.twig', array(
             'filename' => 'proba',
             'conceptosextra' => 15 - count($factura->getConceptos()),
             'factura' => $factura,
-            'logo' => $logo
+            'logo' => $logo,
+            'logosis' => $logosis
         ));
 
-        $filename = sprintf('%s_%s.pdf', 
+        $filename = sprintf('%s_%s.pdf',
             $factura->getFecha()->format('Y-m-d'),
             $factura->getNumero()
         );
