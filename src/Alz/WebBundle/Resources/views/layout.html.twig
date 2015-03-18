@@ -35,5 +35,15 @@
     </nav>
 
     {% block content %}{% endblock %}
+
+</div>
+
+<div id="footer" class="">
+    <div class="container rows">
+        <div class="col-md-8">
+            {{ render(controller('AlzWebBundle:Default:contacto', { 'request' : app.request })) }}
+        </div>
+        <div class="col-md-4 text-right">{% trans %}SisFacturacion.com<br>Programa de facturación simple y gratuito{% endtrans %}</div>
+    </div>
 </div>
 {% endblock %}

@@ -1,0 +1,10 @@
+        {% if enviado %}
+        <div class="col-md-12">{{ "Hemos recibido tu respuesta. En breve nos pondremos en contacto. Gracias."|trans }}</div>
+        {% endif %}
+        {{ form_start(form) }}
+            <div class="col-md-12"><h4>{{ "¿Alguna duda? Consultanos"|trans }}</h4></div>
+            <div class="col-md-6">{{ form_row(form.nombre) }}</div>
+            <div class="col-md-6">{{ form_row(form.email) }}</div>
+            <div class="col-md-12">{{ form_row(form.mensaje) }}</div>
+            <div class="col-md-12">{{ form_row(form.submit) }}</div>
+        {{ form_end(form) }}

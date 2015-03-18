@@ -25,6 +25,15 @@
     background-position: center center;
 }
 
+#footer {
+    border-top: 1px solid #ddd;
+    overflow: hidden;
+    margin-top: 75px;
+    padding-top: 20px;
+    padding-bottom: 150px;
+    background-color: rgba(0,0,0,0.015);
+}
+
 #homepage {
     & .jumbotron {
         background-color: transparent;

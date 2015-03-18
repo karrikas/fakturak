@@ -22,6 +22,43 @@ class DefaultController extends Controller
     }
 
     /**
+     * Action
+     * @param object $request
+     *
+     * @return object
+     */
+    public function contactoAction($request)
+    {
+        $form = $this->createFormBuilder()
+            ->add('nombre', 'text', array('label' => 'Tu nombre'))
+            ->add('email', 'email', array('label' => 'E-mail de contacto'))
+            ->add('mensaje', 'textarea', array('label' => '¿Qué quieres saber?'))
+            ->add('submit', 'submit', array('label' => 'Preguntar'))
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        $enviado = false;
+        if ($form->isValid()) {
+            $fReq = $request->get('form');
+            $mailer = $this->get('mailer');
+            $message = $mailer->createMessage()
+                ->setSubject('[sisfacturacion.com] Pregunta')
+                ->setFrom($fReq['email'])
+                ->setTo('karrikas@gmail.com')
+                ->setBody('Pregunta de ' . $fReq['nombre'] . ":\r\r" . $fReq['mensaje']);
+
+            $mailer->send($message);
+            $enviado = true;
+        }
+
+        return $this->render('AlzWebBundle:Default:contacto.html.twig', array(
+            'form' => $form->createView(),
+            'enviado' => $enviado
+        ));
+    }
+
+    /**
      * index
      *
      * @return object

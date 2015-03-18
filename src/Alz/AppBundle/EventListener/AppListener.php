@@ -8,8 +8,17 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Alz\AppBundle\Controller\AppInController;
 
+/**
+ * listener
+ */
 class AppListener
 {
+    /**
+     * listener
+     * @param object $event
+     *
+     * @return empty|void
+     */
     public function onKernelController(FilterControllerEvent $event)
     {
         $controller = $event->getController();
@@ -32,7 +41,9 @@ class AppListener
 
         if ($event->getRequest()->cookies->has('premium')) {
             $url = $controller[0]->generateUrl('alz_app_premium_comprar');
+
             return $event->setController(function() use ($url) {
+
                 return new RedirectResponse($url);
             });
         }
@@ -41,6 +52,9 @@ class AppListener
             return;
         }
 
+        /**
+         * Sino a rellenado los datos de la empresa enviar a editar
+         */
         if (!$controller[0]->getEmpresa()) {
             $event->getRequest()->getSession()->getFlashBag()->add(
                 'warning',
@@ -48,6 +62,28 @@ class AppListener
             );
 
             $url = $controller[0]->generateUrl('alz_app_empresa_editar');
+
+            return $event->setController(function() use ($url) {
+                return new RedirectResponse($url);
+            });
+        }
+
+
+        if ('alz_app_empresa_config_editar' === $event->getRequest()->get('_route')) {
+            return;
+        }
+
+        /**
+         * Si no se ha rellenado la configuración, se redirige
+         */
+        if (is_null($controller[0]->getEmpresa()->getMonedatipo())) {
+            $event->getRequest()->getSession()->getFlashBag()->add(
+                'warning',
+                $controller[0]->get('translator')->trans('Revisa y guarda la configuración para empezar a hacer facturas.')
+            );
+
+            $url = $controller[0]->generateUrl('alz_app_empresa_config_editar');
+
             return $event->setController(function() use ($url) {
                 return new RedirectResponse($url);
             });
