@@ -6,9 +6,51 @@ use Symfony\Component\HttpFoundation\Request;
 use Alz\AppBundle\Entity\Empresa;
 use Alz\AppBundle\Entity\UserClone;
 use Alz\AppBundle\Form\EmpresaType;
+use Alz\AppBundle\Form\EmpresaConfiguracionType;
 
 class EmpresaController extends AlzController
 {
+    public function configuracionAction()
+    {
+        $empresa = $this->getEmpresa();
+
+        // empresa oraindik ez bada konfiguratu
+        if (!isSet($empresa)) {
+            return $this->redirect($this->generateUrl('alz_app_empresa_editar'));
+        }
+
+        return $this->render('AlzAppBundle:Empresa:configuracion.html.twig', array(
+            'empresa' => $empresa,
+        ));
+    }
+
+    public function configuracionEditarAction(Request $request)
+    {
+        $empresa = $this->getEmpresa();
+
+        $form = $this->createForm(new EmpresaConfiguracionType(), $empresa);
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($empresa);
+            $em->flush();
+
+            $request->getSession()->getFlashBag()->add(
+                'success',
+                $this->get('translator')->trans('Los datos se han guardado.')
+            );
+
+            return $this->redirect($this->generateUrl('alz_app_empresa_config_ver'));
+        }
+
+        return $this->render('AlzAppBundle:Empresa:configuracion-editar.html.twig', array(
+            'form' => $form->createView(),
+            'empresa' => $empresa
+        ));
+
+    }
+
     public function VerAction()
     {
         $user = $this->getDoctrine()

@@ -1,0 +1,35 @@
+{% extends 'AlzAppBundle::layout.html.twig' %}
+
+{% block title %}{{ "App facturación"|trans }}{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>{{ "Configuración de la empresa"|trans }}</h1>
+</div>
+{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+
+    {{ form_errors(form) }}
+
+    <div class="rows">
+        <div class="col-md-6">
+            {{ form_row(form.monedatipo) }}
+        </div>
+
+        <div class="col-md-6">
+            {{ form_row(form.monedaformato) }}
+        </div>
+
+        <div class="col-md-12">
+            {{ form_row(form.mensajefacturas) }}
+            <span id="helpBlock" class="help-block">{{ "Este mensaje aparece en todas las facturas. Utilizala para poner la forma de pago o alguna forma de contacto. Se puede modificar en cada factura. "|trans }}</span>
+        </div>
+
+        <div class="col-md-12">
+            <div class="form-group pull-right">
+                <button type="submit" class="btn btn-danger">{{ "Guardar"|trans }}</button>
+            </div>
+        </div>
+    </div>
+
+{{ form_end(form) }}
+{% endblock %}

@@ -238,3 +238,26 @@ appApp.directive('contenteditable', function() {
     }
   };
 });
+
+appApp.filter('sfcurrency', function() {
+    return function(numero, decimales, decimalesSep, milesSep, simboloPos, simbolo) {
+        var n = numero, 
+        c = isNaN(decimales = Math.abs(decimales)) ? 2 : decimales, 
+        d = decimalesSep == undefined ? "." : decimalesSep, 
+        t = milesSep == undefined ? "," : milesSep, 
+        s = n < 0 ? "-" : "", 
+        i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "", 
+        j = (j = i.length) > 3 ? j % 3 : 0;
+        var moneda = s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+ 
+        if (simboloPos == "i") {
+            return simbolo + " " + moneda;
+        }
+
+        if (simboloPos == "f") {
+            return  moneda + " " + simbolo;
+        }
+
+        return moneda;
+    };
+})

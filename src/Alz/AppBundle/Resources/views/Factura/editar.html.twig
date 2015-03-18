@@ -1,5 +1,7 @@
 {% extends 'AlzAppBundle::layout.html.twig' %}
 
+{% set formatoangular = empresa.monedaformato|monedaformatoangular(empresa.monedatipo) %}
+
 {% block title %}{{ "Crear facturas"|trans }}{% endblock %}
 
 {% block javascripts %}
@@ -51,22 +53,22 @@ var factura_id = {{ factura.id }};
                 <thead>
                     <tr>
                         <th>{{ "Concepto"|trans }}</th>
-                        <th>{{ "Precio"|trans }}</th>
-                        <th>{{ "Cantidad"|trans }}</th>
-                        <th>{{ "IVA"|trans }}</th>
-                        <th>{{ "Total"|trans }}</th>
-                        <th>{{ "Total con IVA"|trans }}</th>
+                        <th class="text-center">{{ "Precio"|trans }}</th>
+                        <th class="text-center">{{ "Cantidad"|trans }}</th>
+                        <th class="text-center">{{ "IVA"|trans }}</th>
+                        <th class="text-center">{{ "Total"|trans }}</th>
+                        <th class="text-center">{{ "Total con IVA"|trans }}</th>
                         <td></td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="concepto in conceptos">
                         <td>{% verbatim %}{{ concepto.nombre }}{% endverbatim %}</td>
-                        <td align="right">{% verbatim %}{{ concepto.precio|currency:"":2  }} €{% endverbatim %}</td>
+                        <td align="right">{% verbatim %}{{{% endverbatim %} concepto.precio|sfcurrency{{ formatoangular }}  {% verbatim %}}}{% endverbatim %}</td>
                         <td align="right">{% verbatim %}{{ concepto.cantidad }}{% endverbatim %}</td>
                         <td align="right">{% verbatim %}{{ concepto.iva }}{% endverbatim %}</td>
-                        <td align="right">{% verbatim %}{{ concepto.total|currency:"":2 }} €{% endverbatim %}</td>
-                        <td align="right">{% verbatim %}{{ concepto.totaliva|currency:"":2 }} €{% endverbatim %}</td>
+                        <td align="right">{% verbatim %}{{{% endverbatim %} concepto.total|sfcurrency{{ formatoangular }}  {% verbatim %}}}{% endverbatim %}</td>
+                        <td align="right">{% verbatim %}{{{% endverbatim %} concepto.totaliva|sfcurrency{{ formatoangular }}  {% verbatim %}}}{% endverbatim %}</td>
                         <td class="text-right">
                             <a ng-click="removeConcepto(concepto.id)" type="button" class="btn btn-danger btn-xs" aria-label="Left Align">
                                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
@@ -88,8 +90,8 @@ var factura_id = {{ factura.id }};
                     </tr>
                     <tr>
                         <td colspan="4"></td>
-                        <td>{% verbatim %}{{ factura.total|currency:"":2 }} €{% endverbatim %}</td>
-                        <td>{% verbatim %}{{ factura.totaliva|currency:"":2 }} €{% endverbatim %}</td>
+                        <td align="right">{% verbatim %}{{{% endverbatim %} factura.total|sfcurrency{{ formatoangular }}{% verbatim %}}}{% endverbatim %}</td>
+                        <td align="right">{% verbatim %}{{{% endverbatim %} factura.totaliva|sfcurrency{{ formatoangular }} {% verbatim %}}}{% endverbatim %}</td>
                     <tr>
                 </tbody>
             </table>

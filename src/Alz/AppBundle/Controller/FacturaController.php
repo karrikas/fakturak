@@ -34,7 +34,8 @@ class FacturaController extends AlzController
         );
 
         return $this->render('AlzAppBundle:Factura:listado.html.twig', array(
-            'facturas' => $facturas
+            'facturas' => $facturas,
+            'empresa' => $this->getEmpresa()
         ));
     }
 
@@ -54,12 +55,12 @@ class FacturaController extends AlzController
         $direccion .= $empresa->getNombre() . "\r";
         $direccion .= $empresa->getCif() . "\r";
         $direccion .= $empresa->getDireccion1() . "\r";
-        $direccion .= $empresa->getCiudad() . "\r";
+        $direccion .= $empresa->getCiudad();
         if ($empresa->getCp() != null) {
-            $direccion .= $empresa->getCp() . "\r";
+            $direccion .= ', ' . $empresa->getCp();
         }
         if ($empresa->getRegion() != null) {
-            $direccion .= $empresa->getRegion() . "\r";
+            $direccion .= ', ' . $empresa->getRegion();
         }
 
         $factura = new Factura();
@@ -67,10 +68,10 @@ class FacturaController extends AlzController
         $factura->setEmpresainfo($direccion);
         $factura->setNumero($numerofactura);
         $factura->setFecha(new \DateTime(date('Y-m-d')));
+        $factura->setInformacion($empresa->getMensajeFacturas());
         $ema = $this->getDoctrine()->getManager();
         $ema->persist($factura);
         $ema->flush();
-
 
         return $this->redirect($this->generateUrl('alz_app_factura_editar', array('id' => $factura->getId())));
     }
@@ -152,7 +153,8 @@ class FacturaController extends AlzController
 
         return $this->render('AlzAppBundle:Factura:ver.html.twig', array(
             'factura' => $factura,
-            'conceptos' => $conceptos
+            'conceptos' => $conceptos,
+            'empresa' => $this->getEmpresa()
         ));
     }
 

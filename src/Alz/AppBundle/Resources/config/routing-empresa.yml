@@ -5,3 +5,11 @@ alz_app_empresa_editar:
 alz_app_empresa_ver:
     path:     /ver
     defaults: { _controller: AlzAppBundle:Empresa:ver }
+
+alz_app_empresa_config_editar:
+    path:     /configuracion/editar
+    defaults: { _controller: AlzAppBundle:Empresa:configuracionEditar }
+
+alz_app_empresa_config_ver:
+    path:     /configuracion
+    defaults: { _controller: AlzAppBundle:Empresa:configuracion }

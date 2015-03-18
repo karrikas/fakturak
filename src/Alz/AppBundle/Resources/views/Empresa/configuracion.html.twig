@@ -1,0 +1,26 @@
+{% extends 'AlzAppBundle::layout.html.twig' %}
+
+{% block title %}{{ "Configuración"|trans }}{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>{{ "Configuración de la empresa"|trans }}</h1>
+</div>
+
+<dl class="dl-horizontal">
+    <dt>{{ "Tipo de moneda"|trans }}</dt>
+    <dd>{{ empresa.monedatipo }} - {{ empresa.monedatipo|monedatipo }}</dd>
+</dl>
+<dl class="dl-horizontal">
+    <dt>{{ "Formato de la moneda"|trans }}</dt>
+    <dd>{{ 1234.00|monedaformato(empresa.monedaformato, empresa.monedatipo) }}</dd>
+</dl>
+<dl class="dl-horizontal">
+    <dt>{{ "Mensaje facturas"|trans }}</dt>
+    <dd>{{ empresa.mensajefacturas|nl2br }}</dd>
+</dl>
+
+<div class="btn-group pull-right" role="group" aria-label="">
+  <a type="button" class="btn btn-link" href="{{ path('alz_app_empresa_config_editar') }}"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> {{ "Editar"|trans }}</a>
+</div>
+{% endblock %}

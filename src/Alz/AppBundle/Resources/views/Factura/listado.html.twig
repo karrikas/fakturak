@@ -29,8 +29,8 @@
                 <td><a href="{{ path('alz_app_factura_ver', { id: factura.id }) }}">{{ factura.numero }}</a></td>
                 <td>{{ factura.fecha|date("m/d/Y") }}</td>
                 <td>{% if factura.cliente %}{{ factura.cliente.nombre }}{% endif %}</td>
-                <td class="text-right">{{ factura.total|number_format(2, ',', '.') }} €</td>
-                <td class="text-right">{{ factura.totaliva|number_format(2, ',', '.') }} €</td>
+                <td class="text-right">{{ factura.total|monedaformato(empresa.monedaformato, empresa.monedatipo) }}</td>
+                <td class="text-right">{{ factura.totaliva|monedaformato(empresa.monedaformato, empresa.monedatipo) }}</td>
                 <td>
                     <div class="btn-group btn-group-xs pull-right" role="group">
                         <a href="{{ path('alz_app_factura_editar', { id: factura.id }) }}" class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> {{ "Editar"|trans }}</a>
@@ -40,7 +40,6 @@
             </tr>
             {% endfor %}
         </tbody>
-
     </table>
 </div>
 

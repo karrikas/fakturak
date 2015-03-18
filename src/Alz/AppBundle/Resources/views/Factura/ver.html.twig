@@ -21,11 +21,11 @@
 </dl>
 <dl class="dl-horizontal">
     <dt>{{ "Total"|trans }}</dt>
-    <dd>{{ factura.total|number_format(2, ',', '.') }} €</dd>
+    <dd>{{ factura.total|monedaformato(empresa.monedaformato, empresa.monedatipo) }}</dd>
 </dl>
 <dl class="dl-horizontal">
     <dt>{{ "Total con IVA"|trans }}</dt> 
-    <dd>{{ factura.totaliva|number_format(2, ',', '.') }} €</dd>
+    <dd>{{ factura.totaliva|monedaformato(empresa.monedaformato, empresa.monedatipo) }}</dd>
 </dl>
 <dl class="dl-horizontal">
     <dt>{{ "Empresa"|trans }}</dt>
@@ -40,7 +40,7 @@
     <dt>{{ "Conpeptos"|trans }}</dt>
     <dd>
     {% for concepto in conceptos %}
-    {{ concepto.nombre }} {{ concepto.totaliva|number_format(2, ',','.') }} €<br>
+    {{ concepto.nombre }} {{ concepto.totaliva|monedaformato(empresa.monedaformato, empresa.monedatipo) }}<br>
     {% endfor %}
     </dd>
 </dl>

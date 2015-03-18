@@ -77,6 +77,21 @@ class Empresa
     protected $logo;
 
     /**
+     * @ORM\Column(type="string", length=3, nullable=true)
+     */
+    protected $monedatipo;
+
+    /**
+     * @ORM\Column(type="string", length=10, nullable=true)
+     */
+    protected $monedaformato;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    protected $mensajefacturas;
+
+    /**
      * @ORM\Column(type="boolean", nullable=true)
      */
     protected $premium = 0;
@@ -576,5 +591,74 @@ class Empresa
     public function getPremium()
     {
         return $this->premium;
+    }
+
+    /**
+     * Set monedatipo
+     *
+     * @param string $monedatipo
+     * @return Empresa
+     */
+    public function setMonedatipo($monedatipo)
+    {
+        $this->monedatipo = $monedatipo;
+
+        return $this;
+    }
+
+    /**
+     * Get monedatipo
+     *
+     * @return string 
+     */
+    public function getMonedatipo()
+    {
+        return $this->monedatipo;
+    }
+
+    /**
+     * Set monedaformato
+     *
+     * @param string $monedaformato
+     * @return Empresa
+     */
+    public function setMonedaformato($monedaformato)
+    {
+        $this->monedaformato = $monedaformato;
+
+        return $this;
+    }
+
+    /**
+     * Get monedaformato
+     *
+     * @return string 
+     */
+    public function getMonedaformato()
+    {
+        return $this->monedaformato;
+    }
+
+    /**
+     * Set mensajefacturas
+     *
+     * @param string $mensajefacturas
+     * @return Empresa
+     */
+    public function setMensajefacturas($mensajefacturas)
+    {
+        $this->mensajefacturas = $mensajefacturas;
+
+        return $this;
+    }
+
+    /**
+     * Get mensajefacturas
+     *
+     * @return string 
+     */
+    public function getMensajefacturas()
+    {
+        return $this->mensajefacturas;
     }
 }

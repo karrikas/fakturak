@@ -2,11 +2,11 @@
     <dynamic-page>
         <placeholders>
             <footer>
-                <div height="{% if not factura.empresa.premium %}80px{% else %}30px{% endif %}">
+                <div height="{% if not factura.empresa.premium %}120px{% else %}30px{% endif %}">
                 {% if factura.informacion %}
-                <div height="20px" width="100%">
+                <div height="40px" width="100%">
                     <div font-size="11px" font-style="bold">{% trans %}Información{% endtrans %}</div>
-                    <div>{{ factura.informacion }}</div>
+                    <div>{{ factura.informacion|nl2br }}</div>
                 </div>
                 {% endif %}
 
@@ -16,7 +16,7 @@
                         <img style="margin-left:300px" href="http://sisfacturacion.com" width="150px" src="{{ logosis }}" />
                     </div>
                     <div text-align="center" style="padding:0 230px;font-size: 10px;">
-                        {{ "SisFacturacion.com aplicación para crear las facturas para tu empresa."|trans }}
+                        {{ "SisFacturacion.com aplicación para crear las facturas de tu empresa."|trans }}
                     </div>
                 </div>
                 {% endif %}
@@ -59,12 +59,12 @@
         <div style="height: 50px;"></div>
 
         <div>
-            <div style="width: 40%; float:left;">
+            <div style="width: 40%; float:left; margin-left: 5px;">
                 <span style="font-size: 10px;">{% trans %}Número factura{% endtrans %}</span><br/>
                 {{ factura.numero }}
             </div>
 
-            <div style="width: 40%; float:rigth;text-align:right;">
+            <div style="width: 40%; float:rigth;text-align:right;margin-right: 5px;">
                 <span style="font-size: 10px;">{% trans %}Fecha{% endtrans %}</span><br/>
                 {{ factura.fecha|date("d/m/Y") }}</div>
         </div>
@@ -74,20 +74,20 @@
         <table>
             <tr style="font-size: 9px;">
                 <td width="330px" style="padding: 5px;" border.color="#cccccc" background.color="#eeeeee" border.size="0.2px">{% trans %}Concepto{% endtrans %}</td>
-                <td style="padding: 5px;" border.color="#cccccc" background.color="#eeeeee" border.size="0.2px">{% trans %}Precio{% endtrans %} €</td>
-                <td style="padding: 5px;" border.color="#cccccc" background.color="#eeeeee" border.size="0.2px">{% trans %}Cantidad{% endtrans %}</td>
-                <td style="padding: 5px;" border.color="#cccccc" background.color="#eeeeee" border.size="0.2px">{% trans %}Total{% endtrans %} €</td>
-                <td style="padding: 5px;" border.color="#cccccc" background.color="#eeeeee" border.size="0.2px">{% trans %}IVA{% endtrans %} %</td>
-                <td style="padding: 5px;" border.color="#cccccc" background.color="#eeeeee" border.size="0.2px">{% trans %}Total con IVA{% endtrans %} €</td>
+                <td text-align="center" style="padding: 5px;" border.color="#cccccc" background.color="#eeeeee" border.size="0.2px">{% trans %}Precio{% endtrans %}</td>
+                <td text-align="center" width="50px" style="padding: 5px;" border.color="#cccccc" background.color="#eeeeee" border.size="0.2px">{% trans %}Cantidad{% endtrans %}</td>
+                <td text-align="center" style="padding: 5px;" border.color="#cccccc" background.color="#eeeeee" border.size="0.2px">{% trans %}Total{% endtrans %}</td>
+                <td text-align="center" width="70px" style="padding: 5px;" border.color="#cccccc" background.color="#eeeeee" border.size="0.2px">{% trans %}IVA{% endtrans %} %</td>
+                <td text-align="center" style="padding: 5px;" border.color="#cccccc" background.color="#eeeeee" border.size="0.2px">{% trans %}Total con IVA{% endtrans %}</td>
             </tr>
             {% for concepto in factura.conceptos %}
             <tr style="font-size: 10px;">
                 <td style="padding: 5px;" border.color="#cccccc" border.size="0.2px">{{ concepto.nombre }}</td>
-                <td text-align="right" style="padding: 5px;" border.color="#cccccc" border.size="0.2px">{{ concepto.precio|number_format(2, ',', '.') }} €</td>
+                <td text-align="right" style="padding: 5px;" border.color="#cccccc" border.size="0.2px">{{ concepto.precio|monedaformato(factura.empresa.monedaformato, factura.empresa.monedatipo) }}</td>
                 <td text-align="right" style="padding: 5px;" border.color="#cccccc" border.size="0.2px">{{ concepto.cantidad }}</td>
-                <td text-align="right" style="padding: 5px;" border.color="#cccccc" border.size="0.2px">{{ concepto.total|number_format(2, ',', '.') }} €</td>
+                <td text-align="right" style="padding: 5px;" border.color="#cccccc" border.size="0.2px">{{ concepto.total|monedaformato(factura.empresa.monedaformato, factura.empresa.monedatipo) }}</td>
                 <td text-align="right" style="padding: 5px;" border.color="#cccccc" border.size="0.2px">{{ concepto.iva }} %</td>
-                <td text-align="right" style="padding: 5px;" border.color="#cccccc" border.size="0.2px">{{ concepto.totaliva|number_format(2, ',', '.') }} €</td>
+                <td text-align="right" style="padding: 5px;" border.color="#cccccc" border.size="0.2px">{{ concepto.totaliva|monedaformato(factura.empresa.monedaformato, factura.empresa.monedatipo) }}</td>
             </tr>
             {% endfor %}
             {% for i in 1..conceptosextra %}
@@ -104,9 +104,9 @@
                 <td border.type="none"></td>
                 <td border.type="none"></td>
                 <td text-align="right" style="padding: 5px;font-size: 9px;" border.type="none">{% trans %}Total{% endtrans %}</td>
-                <td text-align="right" style="padding: 5px;font-style:bold;" border.color="#cccccc" border.size="0.2px">{{ factura.total|number_format(2, ',', '.') }} €</td>
+                <td text-align="right" style="padding: 5px;font-style:bold;" border.color="#cccccc" border.size="0.2px">{{ factura.total|monedaformato(factura.empresa.monedaformato, factura.empresa.monedatipo) }}</td>
                 <td text-align="right" style="padding: 5px;font-size: 9px;" border.type="none">{% trans %}Total con IVA{% endtrans %}</td>
-                <td text-align="right" style="padding: 5px;font-style:bold;" border.color="#cccccc" border.size="0.2px">{{ factura.totaliva|number_format(2, ',', '.') }} €</td>
+                <td text-align="right" style="padding: 5px;font-style:bold;" border.color="#cccccc" border.size="0.2px">{{ factura.totaliva|monedaformato(factura.empresa.monedaformato, factura.empresa.monedatipo) }}</td>
             </tr>
       </table>
 
