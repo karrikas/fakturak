@@ -15,6 +15,7 @@ error_log
 *.swp
 parameters.yml
 parameters.ini
+*~
 
 - build
 - phing-common

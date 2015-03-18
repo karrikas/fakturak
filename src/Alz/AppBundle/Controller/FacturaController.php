@@ -160,16 +160,16 @@ class FacturaController extends AlzController
 
     /**
      * action
-     * @param integer $ida
+     * @param integer $id
      * @param Request $request
      *
      * @return object
      */
-    public function eliminarAction($ida, Request $request)
+    public function eliminarAction($id, Request $request)
     {
         $factura = $this->getDoctrine()
         ->getRepository('AlzAppBundle:Factura')
-        ->find($ida);
+        ->find($id);
 
         $this->checkEmpresa($factura->getEmpresa()->getId());
 
