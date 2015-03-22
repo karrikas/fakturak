@@ -40,4 +40,4 @@ security:
         - { path: ^/logout$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/[a-z]+/app/, role: ROLE_USER }
+        - { path: ^/[\-a-z]+/app/, role: ROLE_USER }

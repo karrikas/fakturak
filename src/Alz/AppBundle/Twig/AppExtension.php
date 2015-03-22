@@ -18,7 +18,24 @@ class AppExtension extends \Twig_Extension
             new \Twig_SimpleFilter('monedatipo', array($this, 'monedaTipoFilter')),
             new \Twig_SimpleFilter('monedaformato', array($this, 'monedaFormatoFilter')),
             new \Twig_SimpleFilter('monedaformatoangular', array($this, 'monedaFormatoToAngularFilter')),
+            new \Twig_SimpleFilter('premiumvalor', array($this, 'premiumValorFilter')),
         );
+    }
+
+    /**
+     * Coste de cuenta premium para la parte publica
+     * @param string $locale
+     * @param array  $premium
+     * 
+     * @return string
+     */
+    public function premiumValorFilter($locale, $premium)
+    {
+        if ($locale == 'es' || $locale == 'eu') {
+            return $premium['EUR'] . $this->monedaTipoFilter('EUR');
+        } else {
+            return $premium['USD'] . $this->monedaTipoFilter('USD');
+        }
     }
 
     /**

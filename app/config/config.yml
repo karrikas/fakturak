@@ -31,6 +31,9 @@ twig:
     strict_variables: "%kernel.debug%"
     form_themes:
         - 'bootstrap_3_layout.html.twig'
+    globals:
+        hreflangs: %hreflangs%
+        premium: %premium%
 
 # Assetic Configuration
 assetic:
@@ -84,7 +87,7 @@ fos_user:
 
 jms_i18n_routing:
     default_locale: es
-    locales: [es, eu]
+    locales: "%hreflangs%"
     strategy: prefix
 
 knp_paginator:

@@ -9,40 +9,40 @@
     </div>
 
     <div>
-        <p>¿Eres autónomo o posees una pequeña empresa? Acelera y optimiza  la facturación de tu negocio a través de la simple utilización de un nuevo programa para hacer facturas.   A partir de ahora, podrás ahorrarte trabajo, tiempo y dinero en un solo clic.</p>
+        <p>{% trans %}¿Eres autónomo o posees una pequeña empresa? Acelera y optimiza la facturación de tu negocio a través de la simple utilización de un nuevo programa para hacer facturas. A partir de ahora, podrás ahorrarte trabajo, tiempo y dinero en un solo clic.{% endtrans %}</p>
 
-    <h2>Emite, descarga y envía tus facturas gratis</h2>
+    <h2>{% trans %}Emite, descarga y envía tus facturas gratis{% endtrans %}</h2>
 
-    <p>El mundo laboral actual se mueve a ritmo vertiginoso y, por ello, ahorrar tiempo, trabajo y dinero en los procesos esenciales de un negocio, es indispensable. El programa para hacer facturas desarrollado por sisfacturacion.com es la solución más sencilla y rentable para autónomos y pequeñas empresas que desean optimizar sus recursos.  ¿Te preguntas por qué? Conoce los beneficios, las opciones disponibles y los proyectos de innovación continua que te permitirán de manera rápida y efectiva mantener un registro organizado de cada uno de tus clientes, emitir facturas personalizadas,  editar y descargar dichas facturas, y enviarlas por email.</p>
+    <p>{% trans %}El mundo laboral actual se mueve a ritmo vertiginoso y, por ello, ahorrar tiempo, trabajo y dinero en los procesos esenciales de un negocio, es indispensable. El programa para hacer facturas desarrollado por sisfacturacion.com es la solución más sencilla y rentable para autónomos y pequeñas empresas que desean optimizar sus recursos. ¿Te preguntas por qué? Conoce los beneficios, las opciones disponibles y los proyectos de innovación continua que te permitirán de manera rápida y efectiva mantener un registro organizado de cada uno de tus clientes, emitir facturas personalizadas, editar y descargar dichas facturas, y enviarlas por email.{% endtrans %}</p>
 
-    <h2>Guarda los datos de tus clientes para nuevas emisiones</h2>
+    <h2>{% trans %}Guarda los datos de tus clientes para nuevas emisiones{% endtrans %}</h2>
 
-    <p>El programa para hacer facturas de sisfacturación.com es gratuito y posee una interfaz muy intuitiva, que te permite emitir facturas sin necesidad de tener conocimientos avanzados en finanzas o en tecnología.  El paso a paso es muy sencillo y rápido. Una vez que te registras y validas tu cuenta, puedes personalizar tus facturas agregándoles un logo personal y guardar los datos de tus clientes para acceder a ellos cada vez que lo necesites.  Emitir la primera factura te demandará menos de un minuto y luego puedes optar por guardarla o descargarla en formato PDF para enviarla a tu cliente.</p>
+    <p>{% trans %}El programa para hacer facturas de sisfacturación.com es gratuito y posee una interfaz muy intuitiva, que te permite emitir facturas sin necesidad de tener conocimientos avanzados en finanzas o en tecnología. El paso a paso es muy sencillo y rápido. Una vez que te registras y validas tu cuenta, puedes personalizar tus facturas agregándoles un logo personal y guardar los datos de tus clientes para acceder a ellos cada vez que lo necesites. Emitir la primera factura te demandará menos de un minuto y luego puedes optar por guardarla o descargarla en formato PDF para enviarla a tu cliente.{% endtrans %}</p>
 
-    <h2>Elige tu cuenta</h2>
+    <h2>{% trans %}Elige tu cuenta{% endtrans %}</h2>
 
-    <p>De acuerdo a la cantidad de clientes que poseas y al número de facturas que necesites emitir durante un año, puedes elegir entre dos tipos de cuentas:</p>
+    <p>{% trans %}De acuerdo a la cantidad de clientes que poseas y al número de facturas que necesites emitir durante un año, puedes elegir entre dos tipos de cuentas:{% endtrans %}</p>
 
-    <h3>Cuenta gratuita</h3>
+    <h3>{% trans %}Cuenta gratuita{% endtrans %}</h3>
     
-    <p>Esta es una opción excelente en los comienzos de una pequeña empresa y para aquellos autónomos que poseen un grupo selecto de clientes. La cuenta gratuita te permitirá emitir hasta 30 facturas al año, con numeración correlativa, y descargarlas en PDF. Esta cuenta también te ofrece el servicio de gestión de clientes. Y todo esto de manera absolutamente ¡gratuita!</p>
+    <p>{% trans %}Esta es una opción excelente en los comienzos de una pequeña empresa y para aquellos autónomos que poseen un grupo selecto de clientes. La cuenta gratuita te permitirá emitir hasta 30 facturas al año, con numeración correlativa, y descargarlas en PDF. Esta cuenta también te ofrece el servicio de gestión de clientes. Y todo esto de manera absolutamente ¡gratuita!{% endtrans %}</p>
 
-    <h3>Cuenta Premium</h3>
+    <h3>{% trans %}Cuenta Premium{% endtrans %}</h3>
 
-    <p>Este tipo de cuenta es el ideal si necesitas emitir muchas facturas al año, ya que te ofrece la posibilidad de generarlas de manera ilimitada y te brinda, además, algunos beneficios adicionales. Adquirir una cuenta Premium en  sisfacturacion.com te otorgará muchos beneficios exclusivos a cambio de un único pago de 99€.  Así es como, a las ventajas disponibles en la cuenta gratuita podrás sumarles una cuenta libre de publicidad, con acceso seguro, https://, y cantidad ilimitada de usuarios.</p>
+    <p>{{ "Este tipo de cuenta es el ideal si necesitas emitir muchas facturas al año, ya que te ofrece la posibilidad de generarlas de manera ilimitada y te brinda, además, algunos beneficios adicionales. Adquirir una cuenta Premium en sisfacturacion.com te otorgará muchos beneficios exclusivos a cambio de un único pago de %val%. Así es como, a las ventajas disponibles en la cuenta gratuita podrás sumarles una cuenta libre de publicidad, con acceso seguro, https://, y cantidad ilimitada de usuarios."|trans({'%val%': app.request.locale|premiumvalor(premium)}) }}</p>
 
-    <h2>Descargar tus facturas en PDF</h2>
+    <h2>{% trans %}Descargar tus facturas en PDF{% endtrans %}</h2>
 
-    <p>¿Cómo? En cuatro pasos rapidísimos y muy fáciles:</p>
+    <p>{% trans %}¿Cómo? En cuatro pasos rapidísimos y muy fáciles:{% endtrans %}</p>
 
     <ol>
-        <li>Regístrate y valida la cuenta.</li>
-        <li>Carga los datos de tu cliente y haz la primera factura.</li>
-        <li>Guarda los datos y descarga la factura en PDF.</li>
-        <li>Envía un email a tu cliente con su factura.</li>
+        <li>{% trans %}Regístrate y valida la cuenta.{% endtrans %}</li>
+        <li>{% trans %}Carga los datos de tu cliente y haz la primera factura.{% endtrans %}</li>
+        <li>{% trans %}Guarda los datos y descarga la factura en PDF.{% endtrans %}</li>
+        <li>{% trans %}Envía un email a tu cliente con su factura.{% endtrans %}</li>
     </ol>
 
-    <p>¡Listo! El mundo de los negocios corre aprisa y tú necesitas innovar para ganar la carrera. Contar con el programa para hacer facturas de sisfacturacion.com no solo te simplificará el trabajo, sino que también te dará más tiempo y dinero para dedicar a tu negocio.  Pruébalo, ¡es gratis!</p>
+    <p>{% trans %}¡Listo! El mundo de los negocios corre aprisa y tú necesitas innovar para ganar la carrera. Contar con el programa para hacer facturas de sisfacturacion.com no solo te simplificará el trabajo, sino que también te dará más tiempo y dinero para dedicar a tu negocio. Pruébalo, ¡es gratis!{% endtrans %}</p>
     </div>
 
     <div class="background"></div>

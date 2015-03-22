@@ -40,7 +40,7 @@
 
     <div class="faq">
         <h2>{{ "¿Cuanto cuesta la cuenta Premium?"|trans }}</h2>
-        <p>{{"La cuenta Premium de nuestro programa de facturación sólo cuesta 99€."|trans }}</p>
+        <p>{{"La cuenta Premium de nuestro programa de facturación sólo cuesta %val%."|trans({'%val%': app.request.locale|premiumvalor(premium)}) }}</p>
     </div>
 
     <div class="faq">

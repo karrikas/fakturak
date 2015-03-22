@@ -25,7 +25,7 @@
       </div>
       <div class="col-md-4">
           <h2>{{ "Cuenta Premium"|trans }}</h2>
-          <p>{{ "Suma beneficios exclusivos a tu sistema de facturación con un pago único de 99€. Solo pagas una vez y accedes a una cuenta libre de publicidad, emisión ilimitada de facturas, usuarios ilimitados y acceso seguro. Si necesitas comenzar a emitir facturas en cantidad, pásate a la cuenta Premium y agiliza los procesos de facturación y registro de clientes."|trans }}</p>
+          <p>{{ "Suma beneficios exclusivos a tu sistema de facturación con un pago único de %val%. Solo pagas una vez y accedes a una cuenta libre de publicidad, emisión ilimitada de facturas, usuarios ilimitados y acceso seguro. Si necesitas comenzar a emitir facturas en cantidad, pásate a la cuenta Premium y agiliza los procesos de facturación y registro de clientes."|trans({'%val%': app.request.locale|premiumvalor(premium)}) }}</p>
       </div>
       <div class="col-md-4">
           <h2>{{ "Facturas en PDF"|trans }}</h2>

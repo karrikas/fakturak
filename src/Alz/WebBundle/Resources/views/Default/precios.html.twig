@@ -10,7 +10,7 @@
 
     <p class="lead">{{ "En Sisfacturacion, desarrollamos dos tipos de cuentas para satisfacer las distintas necesidades de nuestros clientes."|trans }}</p>
     <p class="lead">{{ "Si eres un autónomo o estás comenzando una pequeña empresa, puedes acceder a nuestra cuenta gratuita, que te otorgará todas las herramientas necesarias para emitir y enviar a tus clientes facturas personalizadas con un solo clic."|trans }}</p>
-    <p class="lead">{{ "Si tu negocio está creciendo y necesitas emitir una gran cantidad de facturas al año, tu mejor opción es nuestra cuenta Premium, que por un pago único de 99€ te ofrece un paquete de beneficios exclusivos por tiempo ilimitado."|trans }}</p>
+    <p class="lead">{{ "Si tu negocio está creciendo y necesitas emitir una gran cantidad de facturas al año, tu mejor opción es nuestra cuenta Premium, que por un pago único de %val% te ofrece un paquete de beneficios exclusivos por tiempo ilimitado."|trans({'%val%': app.request.locale|premiumvalor(premium)}) }}</p>
     <p class="lead">{{ "En la siguiente tabla puedes comparar las características principales de cada tipo de cuenta."|trans }}</p>
 
 <div class="rows">
@@ -67,7 +67,7 @@
             <tr>
                 <td></td>
                 <th class="text-center"><a class="btn btn-danger" href="{{ path('fos_user_registration_register') }}" role="button">{{ "Registrate gratis"|trans }}</a></th>
-                <th class="text-center"><a class="btn btn-danger" href="{{ path('alz_web_to_premium') }}" role="button">{{ "Comprar por 99€"|trans }}</a></th>
+                <th class="text-center"><a class="btn btn-danger" href="{{ path('alz_web_to_premium') }}" role="button">{{ "Comprar por %val%"|trans({'%val%': app.request.locale|premiumvalor(premium)}) }}</a></th>
             </tr>
         </table>
     </div>

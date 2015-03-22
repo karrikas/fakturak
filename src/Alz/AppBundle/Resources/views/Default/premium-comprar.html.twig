@@ -1,4 +1,12 @@
-{% extends 'AlzAppBundle::layout.html.twig' %}
+{% extends "AlzAppBundle::layout.html.twig" %}
+
+{% if empresa.monedatipo == "GBP" %}
+{% set premiumvalor = premium.GBP %}
+{% set premiumvalormostrar = premium.GBP|monedaformato(empresa.monedaformato,empresa.monedatipo)  %}
+{% else %}
+{% set premiumvalor = premium.EUR %}
+{% set premiumvalormostrar = premium.EUR|monedaformato(empresa.monedaformato,empresa.monedatipo)  %}
+{% endif %}
 
 {% block title %}{{ "App facturación"|trans }}{% endblock %}
 
@@ -10,18 +18,38 @@
 
 <div class="rows">
     <div class="col-md-12">
-        <p>{% trans %}Paga sólo 99€ y tendras acceso PREMIUM para siempre. Sin limite de facturas, ni publicidad. Y con un nivel de seguridad adicional. No dejes pasar este oportunidad.{% endtrans %}</p>
+        <p>{% trans with {'%val%': premiumvalormostrar} %}Paga sólo %val% y tendrás acceso PREMIUM para siempre. Sin límite de facturas, ni publicidad. Y con un nivel de seguridad adicional. No dejes pasar este oportunidad.{% endtrans %}</p>
     </div>
     <div class="col-md-6">
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-        <input type="hidden" name="cmd" value="_s-xclick">
-        <input type="hidden" name="hosted_button_id" value="PB5Y6BHJ397GA">
-        <input type="image" src="https://www.paypalobjects.com/es_ES/ES/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal. La forma rápida y segura de pagar en Internet.">
-        <img alt="" border="0" src="https://www.paypalobjects.com/es_ES/i/scr/pixel.gif" width="1" height="1">
-        </form>
+{% if "dev" == app.environment %}
+<form name="formTpv" method="post" action="https://www.sandbox.paypal.com/cgi-bin/webscr">
+{% else %}
+<form name="formTpv" method="post" action="https://www.paypal.com/cgi-bin/webscr">
+{% endif %}
+	<input type="hidden" name="cmd" value="_xclick">
+	<input type="hidden" name="business" value="info@sisfacturacion.com">
+	<input type="hidden" name="item_name" value="Cuenta Premium">
+	<input type="hidden" name="item_number" value="E-{{ empresa.id }}">
+	<input type="hidden" name="amount" value="{{ premiumvalor }}">
+	<input type="hidden" name="page_style" value="primary">
+	<input type="hidden" name="no_shipping" value="1">
+	<input type="hidden" name="return" value="{{ url("alz_app_premium_paypal_ok") }}">
+	<input type="hidden" name="rm" value="2">
+	<input type="hidden" name="cancel_return" value="{{ url("alz_app_premium_paypal_cancelar") }}">
+	<input type="hidden" name="no_note" value="1">
+	<input type="hidden" name="currency_code" value="{{ empresa.monedatipo }}">
+	<input type="hidden" name="cn" value="PP-BuyNowBF">
+	<input type="hidden" name="custom" value="">
+	<input type="hidden" name="lc" value="es">
+	<input type="hidden" name="country" value="ES">
+
+    <button class="btn btn-warning" type="submit">Pagar con PAYPAL</button>
+</form>
+
+
     </div>
     <div class="col-md-6">
-        <a class="btn btn-link pull-right" href="{{ path('alz_app_premium_cancelar') }}">{{ "Cancelar"|trans }}</a>
+        <a class="btn btn-link pull-right" href="{{ path("alz_app_premium_cancelar") }}">{{ "Cancelar"|trans }}</a>
     </div>
 </div>
 {% endblock %}

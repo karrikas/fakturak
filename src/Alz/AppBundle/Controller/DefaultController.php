@@ -31,7 +31,11 @@ class DefaultController extends AlzController
      */
     public function premiumComprarAction()
     {
-        return $this->render('AlzAppBundle:Default:premium-comprar.html.twig', array());
+        $empresa = $this->getEmpresa();
+
+        return $this->render('AlzAppBundle:Default:premium-comprar.html.twig', array(
+            'empresa' => $empresa
+        ));
     }
 
     /**
