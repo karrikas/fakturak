@@ -273,4 +273,4 @@ msgid "¿Qué es la cuenta Premium?"
 msgstr "Zer da Premium kontua?"
 
 msgid "¿Qué quieres saber?"
-msgstr "Zer nahi duzu jakin?"
+msgstr "Zer jakin nahi duzu?"

@@ -43,7 +43,15 @@
         <div class="col-md-8">
             {{ render(controller('AlzWebBundle:Default:contacto', { 'request' : app.request })) }}
         </div>
-        <div class="col-md-4 text-right">{% trans %}SisFacturacion.com<br>Programa de facturación simple y gratuito{% endtrans %}</div>
+        <div class="col-md-4 text-right">
+            <div class="col-md-12">
+                <p><a href="{{ path(app.request.attributes.get('_route'), { '_locale': 'es'}) }}" rel="alternate" hreflang="es">Español</a> | 
+                <a href="{{ path(app.request.attributes.get('_route'), { '_locale': 'eu'}) }}" rel="alternate" hreflang="eu">Euskara</a> </p>
+            </div>
+            <div class="col-md-12">
+            <p>{% trans %}SisFacturacion.com<br>Programa de facturación simple y gratuito{% endtrans %}</p>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}
