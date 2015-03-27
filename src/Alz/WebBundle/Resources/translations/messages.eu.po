@@ -18,46 +18,46 @@ msgid "Acceso seguro"
 msgstr "Sarbide segurua"
 
 msgid "Acompaña a tu negocio en el crecimiento. Simplifica los procesos. Gana tiempo y dinero. Mantén un registro ordenado y útil de tus clientes. Comienza a facturar de manera rápida y eficiente. Sisfacturacion.com te lo hace fácil. ¡Pruébalo gratis!"
-msgstr "Acompaña a tu negocio en el crecimiento. Simplifica los procesos. Gana tiempo y dinero. Mantén un registro ordenado y útil de tus clientes. Comienza a facturar de manera rápida y eficiente. Sisfacturacion.com te lo hace fácil. ¡Pruébalo gratis!"
+msgstr "Enpresaren hastapenetik handitze prozesuan lagunduko dizugu. Prozesuak erraztu. Denbora eta dirua irabazi. Zure bezeroak zerrendatu eta berrerabilgarri izan. Faktura modu azkar eta eraginkorrean erabiltzen hasi. Sisfacturacion.com zure lana errazten du. Probatu dohainik!"
 
 msgid "Al principio necesitamos algo gratuito para gestionar nuestras facturas, esta aplicación fue la que mejor se adaptada a nosotras. Ahora se la recomiendo a mis clientes."
-msgstr "Al principio necesitamos algo gratuito para gestionar nuestras facturas, esta aplicación fue la que mejor se adaptada a nosotras. Ahora se la recomiendo a mis clientes."
+msgstr "Hasieran denbaldko aplikazio bat behar genuen gure fakturak sortzeko, aplikazio hau izan gure beharrak betetzen zituena. Orain nire bezeroei ere gomendatzen diet. "
 
 msgid "Carga los datos de tu cliente y haz la primera factura."
-msgstr "Carga los datos de tu cliente y haz la primera factura."
+msgstr "Sartu zure bezeroaren datua eta sortu zure lehen faktura. "
 
 msgid "Completo"
-msgstr "Osoa"
+msgstr "Beharrezko guztia"
 
 msgid "Comprar por %val%"
-msgstr "Erosi %val% gatik"
+msgstr "Erosi ezazu %val%tik"
 
 msgid "Consultora marketing Online"
-msgstr "Online marketing kontsultora"
+msgstr "Online marketing aholkularia"
 
 msgid "Cuenta Premium"
 msgstr "Premium kontua"
 
 msgid "Cuenta gratuita"
-msgstr "Debaldeko kontua"
+msgstr "Dohaineko kontua"
 
 msgid "De acuerdo a la cantidad de clientes que poseas y al número de facturas que necesites emitir durante un año, puedes elegir entre dos tipos de cuentas:"
-msgstr "De acuerdo a la cantidad de clientes que poseas y al número de facturas que necesites emitir durante un año, puedes elegir entre dos tipos de cuentas:"
+msgstr "Zure bezero kopuruaren arabera eta urtean sortu behar dituzun fakturen arabera, bi kontu ezberdinen artean aukeratu dezakezu:"
 
 msgid "Descargar tus facturas en PDF"
 msgstr "Zure fakturak PDFan deskargatu"
 
 msgid "E-mail de contacto"
-msgstr "Harremanetako e-posta"
+msgstr "Harremanetarako E-posta"
 
 msgid "El envío de las facturas es muy sencillo. Una vez que emitas la factura, podrás descargarla en formato PDF y adjuntarla en un mail a tus clientes."
-msgstr "El envío de las facturas es muy sencillo. Una vez que emitas la factura, podrás descargarla en formato PDF y adjuntarla en un mail a tus clientes."
+msgstr "Fakturak bidaltzea oso erraza da. Faktura sortu, eta PDF bezala deskargatu dezakzu. E-postan atxiki eta zure bezeroari bidali. "
 
 msgid "El mundo laboral actual se mueve a ritmo vertiginoso y, por ello, ahorrar tiempo, trabajo y dinero en los procesos esenciales de un negocio, es indispensable. El programa para hacer facturas desarrollado por sisfacturacion.com es la solución más sencilla y rentable para autónomos y pequeñas empresas que desean optimizar sus recursos. ¿Te preguntas por qué? Conoce los beneficios, las opciones disponibles y los proyectos de innovación continua que te permitirán de manera rápida y efectiva mantener un registro organizado de cada uno de tus clientes, emitir facturas personalizadas, editar y descargar dichas facturas, y enviarlas por email."
-msgstr "El mundo laboral actual se mueve a ritmo vertiginoso y, por ello, ahorrar tiempo, trabajo y dinero en los procesos esenciales de un negocio, es indispensable. El programa para hacer facturas desarrollado por sisfacturacion.com es la solución más sencilla y rentable para autónomos y pequeñas empresas que desean optimizar sus recursos. ¿Te preguntas por qué? Conoce los beneficios, las opciones disponibles y los proyectos de innovación continua que te permitirán de manera rápida y efectiva mantener un registro organizado de cada uno de tus clientes, emitir facturas personalizadas, editar y descargar dichas facturas, y enviarlas por email."
+msgstr "Gaur egun lan mundua oso azkar mugitzen da, horregatik denbora, lana eta dirua aurreztea ezin bestekoa zure enpresaren lana aurrera eramateko. Sisfacturacion.com fakturak sortzeko modu erraz bat eskaintzen du. Enpresa eta autonomoei zuzendua dago, dituzten premiak erabat betez. Zergatik? Dituen aukerek lana erraztuko dizute eta modu antolatu batean zure bezeroak eta beren fakturak kudeatzeko bidea eskaintzen dizu. Faktura deskargatu eta e-postaz bidaltzeko aukera eskainiz. "
 
 msgid "El programa para hacer facturas de sisfacturación.com es gratuito y posee una interfaz muy intuitiva, que te permite emitir facturas sin necesidad de tener conocimientos avanzados en finanzas o en tecnología. El paso a paso es muy sencillo y rápido. Una vez que te registras y validas tu cuenta, puedes personalizar tus facturas agregándoles un logo personal y guardar los datos de tus clientes para acceder a ellos cada vez que lo necesites. Emitir la primera factura te demandará menos de un minuto y luego puedes optar por guardarla o descargarla en formato PDF para enviarla a tu cliente."
-msgstr "El programa para hacer facturas de sisfacturación.com es gratuito y posee una interfaz muy intuitiva, que te permite emitir facturas sin necesidad de tener conocimientos avanzados en finanzas o en tecnología. El paso a paso es muy sencillo y rápido. Una vez que te registras y validas tu cuenta, puedes personalizar tus facturas agregándoles un logo personal y guardar los datos de tus clientes para acceder a ellos cada vez que lo necesites. Emitir la primera factura te demandará menos de un minuto y luego puedes optar por guardarla o descargarla en formato PDF para enviarla a tu cliente."
+msgstr "Fakturak sortzeko sisfacturacion.com aplikazioa dohainik eta erabiltzeko erraza da. Fakturak sortzeko bidea ematen dizu ezagutza informatiko aurreraturik izan gabe. Pausos pauso azkar eta erraz sortuko dituzu fakturak. Erregistratu eta zure e-posta balioztatu zure lehen faktura sortzeko. Fakturak pertsonalizatu ditzakezu zure enpresaren irudiarekin eta zure bezeroen datuak gordeta geldituko dira hurrengo fakturetan berrerabili ahal izateko. Zure lehen faktura egitea minutu bat baino gutxiago eskatuko dizu eta ondoren faktura gorde edo desgargatu ahal izango duzu zure bezeroei bidaltzeko."
 
 msgid "Electricista autónomo"
 msgstr "Elektrikari autonomoa"
@@ -66,208 +66,208 @@ msgid "Elige tu cuenta"
 msgstr "Aukeratu zure kontua"
 
 msgid "Emite, descarga y envía tus facturas gratis"
-msgstr "Sortu, deskargatu eta bidali zure fakturak debalde"
+msgstr "Sortu, deskargatu eta bidali zure fakturak dohainik"
 
 msgid "En Sisfacturacion, desarrollamos dos tipos de cuentas para satisfacer las distintas necesidades de nuestros clientes."
-msgstr "En Sisfacturacion, desarrollamos dos tipos de cuentas para satisfacer las distintas necesidades de nuestros clientes."
+msgstr "Sisfacturacion.com aplikazioak bi erabiltzaile mota ditu bezero bakoitzaren beharrak asetu ahal izateko."
 
 msgid "En la siguiente tabla puedes comparar las características principales de cada tipo de cuenta."
-msgstr "En la siguiente tabla puedes comparar las características principales de cada tipo de cuenta."
+msgstr "Hurrengo taulan kontu mota bakoitzeko berezitasunak alderatu ditzakezu."
 
 msgid "Enviar las facturas a tus clientes te costara solo un minuto. Ingresa los datos de tu cliente (o búscalo en el registro), carga el detalle de la factura y la cantidad, guarda y ¡listo! La factura estará lista para descargar en formato de PDF y ser enviada por email."
-msgstr "Enviar las facturas a tus clientes te costara solo un minuto. Ingresa los datos de tu cliente (o búscalo en el registro), carga el detalle de la factura y la cantidad, guarda y ¡listo! La factura estará lista para descargar en formato de PDF y ser enviada por email."
+msgstr "Zure bezeroei fakturak bidaltzea denbora oso gutxi eskatuko dizu. Zure bezeroaren satuak sartu eta dituzunen artean aukeratu, fakturaren informazioa sartu eta fakturaren diru kopurua, gorde esta listo! Faktura deskargatzeko PDF moduan izango duzu eta e-postaz bidali ahal izango duzu. "
 
 msgid "Envía un email a tu cliente con su factura."
-msgstr "Envía un email a tu cliente con su factura."
+msgstr "Bidali fakturak zure bezeroei e-posta bidez"
 
 msgid "Esta es una opción excelente en los comienzos de una pequeña empresa y para aquellos autónomos que poseen un grupo selecto de clientes. La cuenta gratuita te permitirá emitir hasta 30 facturas al año, con numeración correlativa, y descargarlas en PDF. Esta cuenta también te ofrece el servicio de gestión de clientes. Y todo esto de manera absolutamente ¡gratuita!"
-msgstr "Esta es una opción excelente en los comienzos de una pequeña empresa y para aquellos autónomos que poseen un grupo selecto de clientes. La cuenta gratuita te permitirá emitir hasta 30 facturas al año, con numeración correlativa, y descargarlas en PDF. Esta cuenta también te ofrece el servicio de gestión de clientes. Y todo esto de manera absolutamente ¡gratuita!"
+msgstr "Aukera hau egokia da enpresaren hastapenean eta bezero gutxirekin lan egiten duten autonomoentzako. Dohaineko kontuak urtean 30 faktura egiteko aukera eskaintzen dizu eta PDFan deskargatzeko moduan. Zure bezeroak kudeatzeko aukera ere eskaintzen dizu. Eta guzti hau dohainik!"
 
 msgid "Este tipo de cuenta es el ideal si necesitas emitir muchas facturas al año, ya que te ofrece la posibilidad de generarlas de manera ilimitada y te brinda, además, algunos beneficios adicionales. Adquirir una cuenta Premium en sisfacturacion.com te otorgará muchos beneficios exclusivos a cambio de un único pago de %val%. Así es como, a las ventajas disponibles en la cuenta gratuita podrás sumarles una cuenta libre de publicidad, con acceso seguro, https://, y cantidad ilimitada de usuarios."
-msgstr "Este tipo de cuenta es el ideal si necesitas emitir muchas facturas al año, ya que te ofrece la posibilidad de generarlas de manera ilimitada y te brinda, además, algunos beneficios adicionales. Adquirir una cuenta Premium en sisfacturacion.com te otorgará muchos beneficios exclusivos a cambio de un único pago de %val%. Así es como, a las ventajas disponibles en la cuenta gratuita podrás sumarles una cuenta libre de publicidad, con acceso seguro, https://, y cantidad ilimitada de usuarios."
+msgstr "Kontu mota hau egokia da faktura asko sortu behar dituzten enpresa eta autonomoentzat, ez du faktura mugarik eta bestelako onurak ere baditu. Premium kontuak sortzeak %val% ordainketa bakarrean betirako sarbidea emango dizu kontu honi dagozkion onura guztiekin. Zure faktura publizitate gabe sortuko dituzu, sarbide segurua eta erabiltzaile mugagabeak. "
 
 msgid "Factura descargable en PDF"
-msgstr "PDFandeskargatu dezakezu faktura"
+msgstr "Fakturak PDFan deskarga ditzakezu"
 
 msgid "Facturas en PDF"
 msgstr "Fakturak PDFan"
 
 msgid "Genera tu primera factura en menos de un minuto. No necesitarás ayuda de ningún experto. Este programa de facturación fue diseñado para que cualquiera pueda usarlo fácilmente. No es necesario tener ningún conocimiento previo en finanzas o en informática."
-msgstr "Genera tu primera factura en menos de un minuto. No necesitarás ayuda de ningún experto. Este programa de facturación fue diseñado para que cualquiera pueda usarlo fácilmente. No es necesario tener ningún conocimiento previo en finanzas o en informática."
+msgstr "Zure lehen faktura minutu batean baino gutxiagoan sortu. Ez duzu inongo adituren laguntzarik behar izango. Aplikazio hau edozein erabiltzailek erabiltzeko moduan sortua dago. Ez da beharrezkoa fakturak sortzeko inongo ezagutza informatikorik. "
 
 msgid "Gestión de clientes"
 msgstr "Bezeroak kudeatu"
 
 msgid "Gratis"
-msgstr "Debalde"
+msgstr "Dohainik"
 
 msgid "Guarda los datos de tus clientes para nuevas emisiones"
-msgstr "Bezeroen datuak gorde hurrengo fakturentzat"
+msgstr "Zure bezeroen datuak gorde entorkizuneko fakturetan berriz erabiltzeko"
 
 msgid "Guarda los datos y descarga la factura en PDF."
-msgstr "Guarda los datos y descarga la factura en PDF."
+msgstr "Datuak gorde eta faktura PDF formatuan jatsi."
 
 msgid "Hemos recibido tu respuesta. En breve nos pondremos en contacto. Gracias."
-msgstr "Hemos recibido tu respuesta. En breve nos pondremos en contacto. Gracias."
+msgstr "Zure erantzuna jaso dugu. Laster jarriko gara zurekin harremanetan. Eskerrik asko."
 
 msgid "La cuenta Premium de nuestro programa de facturación sólo cuesta %val%."
-msgstr "La cuenta Premium de nuestro programa de facturación sólo cuesta %val%."
+msgstr "Aplikazioa erabiltzeko Premium kontuak bakarrik %val% balio du. "
 
 msgid "La cuenta gratuita de sisfacturacion.com te permite disfrutar de todos los beneficios necesarios para generar y enviar  facturas personalizadas a tus clientes. Además, cada vez que generes una factura a un nuevo cliente, el sistema guardará sus datos para facilitar la próxima facturación."
-msgstr "La cuenta gratuita de sisfacturacion.com te permite disfrutar de todos los beneficios necesarios para generar y enviar  facturas personalizadas a tus clientes. Además, cada vez que generes una factura a un nuevo cliente, el sistema guardará sus datos para facilitar la próxima facturación."
+msgstr "Dohaineko kontuak aplikazioak eskaintzen dituen onurak erabiltzeko aukera ematen dizu, fakturak sortu eta faktura pertsonalizatuak bidali zure bezeroei. Gainera bezero berri bati faktura bat sortzen diozunean bere datuak gordeko dira hurrengo fakturetan berriz erabili ahal izateko."
 
 msgid "Las facturas generadas con el programa de gestión son sólo documentos. El valor legal se lo da la empresa o autónomo que crea las facturas."
-msgstr "Las facturas generadas con el programa de gestión son sólo documentos. El valor legal se lo da la empresa o autónomo que crea las facturas."
+msgstr "Sortutako fakturek dokumentu digital soilak dira. Edozein faktura bezala balio legala sortzen duen enpresa edo autonomoak ematen dizkio. "
 
 msgid "Limite facturas"
-msgstr "Limite facturas"
+msgstr "Faktura kopurua"
 
 msgid "Los usuarios que decidan comprar el programa tendrán acceso a una cuenta Premium libre de publicidad. Y con algunas ventajas adicionales."
-msgstr "Los usuarios que decidan comprar el programa tendrán acceso a una cuenta Premium libre de publicidad. Y con algunas ventajas adicionales."
+msgstr "Premium kontua erosten duten erabiltzaileek publizitate bage erabili ahal izango du aplikazioa. Eta bestelako onurekin. "
 
 msgid "Mostrar menú"
-msgstr "Mostrar menú"
+msgstr "Menua erakutsi"
 
 msgid "Muy simple, no necesito más."
-msgstr "Muy simple, no necesito más."
+msgstr "Oso erraza, ez dut gehiago behar. "
 
 msgid "Nuestros usuarios"
-msgstr "Nuestros usuarios"
+msgstr "Gure erabiltzaileak"
 
 msgid "Numeración correlativa"
-msgstr "Numeración correlativa"
+msgstr "Fakturen zenbaki jarraituak"
 
 msgid "Para poder subvencionar los gastos que genera el mantenimiento de este programa de facturación."
-msgstr "Para poder subvencionar los gastos que genera el mantenimiento de este programa de facturación."
+msgstr "Aplikazio honen mantenimendu gastuak ordaindu ahal izateko."
 
 msgid "Pintor"
-msgstr "Pintor"
+msgstr "Margolaria"
 
 msgid "Precios"
-msgstr "Precios"
+msgstr "Prezioak"
 
 msgid "Precios del programa de facturación"
-msgstr "Precios del programa de facturación"
+msgstr "Fakturazio aplikazioaren prezioak"
 
 msgid "Preguntar"
-msgstr "Preguntar"
+msgstr "Galdetu"
 
 msgid "Preguntas frecuentes"
-msgstr "Preguntas frecuentes"
+msgstr "Ohiko galderak"
 
 msgid "Preguntas frecuentes del programa de facturación"
-msgstr "Preguntas frecuentes del programa de facturación"
+msgstr "Fakturazio programari buruzko ohiko galerak"
 
 msgid "Premium"
 msgstr "Premium"
 
 msgid "Programa de facturación"
-msgstr "Programa de facturación"
+msgstr "Fakturazio programa"
 
 msgid "Programa para hacer facturas"
-msgstr "Programa para hacer facturas"
+msgstr "Fakturak egiteko programa"
 
 msgid "Práctico"
-msgstr "Práctico"
+msgstr "Erabilgarria"
 
 msgid "Puedes acceder a la cuenta Premium haciendo un pago único a través de PayPal."
-msgstr "Puedes acceder a la cuenta Premium haciendo un pago único a través de PayPal."
+msgstr "Premium kontua eskuratu dezakezu PayPal bidez egindako ordainketa bakarrean."
 
 msgid "Registraste para empezar a usar nuestro programa de facturación gratis. Soluciona las necesidades de  pymes y autónomos. Genera la facturas que necesites online y desde cualquier dispositivo."
-msgstr "Registraste para empezar a usar nuestro programa de facturación gratis. Soluciona las necesidades de  pymes y autónomos. Genera la facturas que necesites online y desde cualquier dispositivo."
+msgstr "Erregistratu zaitez orain fakturak egiten hasteko dohainik. Enpresa eta autonomoentzako neurriko irtenbidea. Sortu fakturak online eta edozein gailutatik."
 
 msgid "Registrate"
-msgstr "Registrate"
+msgstr "Erregistratu"
 
 msgid "Registrate gratis"
-msgstr "Registrate gratis"
+msgstr "Erregistratu dohan"
 
 msgid "Regístrate y valida la cuenta."
-msgstr "Regístrate y valida la cuenta."
+msgstr "Erregistratu eta onetsi zure kontua."
 
 msgid "Si eres un autónomo o estás comenzando una pequeña empresa, puedes acceder a nuestra cuenta gratuita, que te otorgará todas las herramientas necesarias para emitir y enviar a tus clientes facturas personalizadas con un solo clic."
-msgstr "Si eres un autónomo o estás comenzando una pequeña empresa, puedes acceder a nuestra cuenta gratuita, que te otorgará todas las herramientas necesarias para emitir y enviar a tus clientes facturas personalizadas con un solo clic."
+msgstr "Autonomoa bazara edo enpresa txiki bat martxan jartzen ari bazara lortu gure dohaineko kontua eta zure enpresak behar dituen tresnak emango dizkizu fakturak sortu ahal izateko."
 
 msgid "Si tu negocio está creciendo y necesitas emitir una gran cantidad de facturas al año, tu mejor opción es nuestra cuenta Premium, que por un pago único de %val% te ofrece un paquete de beneficios exclusivos por tiempo ilimitado."
-msgstr "Si tu negocio está creciendo y necesitas emitir una gran cantidad de facturas al año, tu mejor opción es nuestra cuenta Premium, que por un pago único de %val% te ofrece un paquete de beneficios exclusivos por tiempo ilimitado."
+msgstr "Zure enpresa handitzen ari bada, gero eta faktura gehiago sortu behar badituzu, aukera egokiena Premium kontua sortzea da. %val%ko ordainketa bakarra eginaz. Honek fakturak muga gabe sortzeko aukera emango dizu eta beste onura batzuk. "
 
 msgid "Simple"
-msgstr "Sinplea"
+msgstr "Erraza"
 
 msgid "Sin limite"
-msgstr "Mugagabea"
+msgstr "Muga gabe"
 
 msgid "Sin publicidad"
 msgstr "Publizitate gabe"
 
 msgid "SisFacturacion.com<br>Programa de facturación simple y gratuito"
-msgstr "SisFacturacion.com<br>Fakturazio programa sinple eta debaldekoa"
+msgstr "SisFacturacion.com<br>fakturazio programa erraz eta dohainekoa"
 
 msgid "Suma beneficios exclusivos a tu sistema de facturación con un pago único de %val%. Solo pagas una vez y accedes a una cuenta libre de publicidad, emisión ilimitada de facturas, usuarios ilimitados y acceso seguro. Si necesitas comenzar a emitir facturas en cantidad, pásate a la cuenta Premium y agiliza los procesos de facturación y registro de clientes."
-msgstr "Suma beneficios exclusivos a tu sistema de facturación con un pago único de %val%. Solo pagas una vez y accedes a una cuenta libre de publicidad, emisión ilimitada de facturas, usuarios ilimitados y acceso seguro. Si necesitas comenzar a emitir facturas en cantidad, pásate a la cuenta Premium y agiliza los procesos de facturación y registro de clientes."
+msgstr "Onura berezik %val% ordainketa bakarrarekin eta betirako. Behin ordaindu eta zure kontua publizitate gabe izango duzu, ez duzu mugarik izango fakturak sortzeko, behar adina erabiltzaile eta sarbide segurua. Sortu behar duzun faktura kopurua handia bada, sortu Premium kontua eta hasi orain fakturak sortzen. "
 
 msgid "Sí, solo te tienes que registrar para crear tu usuario. Una vez que hayas validado tu cuenta de correo podrás empezar a usar el programa de facturación y crear tus facturas."
-msgstr "Sí, solo te tienes que registrar para crear tu usuario. Una vez que hayas validado tu cuenta de correo podrás empezar a usar el programa de facturación y crear tus facturas."
+msgstr "Bai, bakarrik erregistratu egin behar zara kontua sortzeko. Behin kontua sortuta zure e-posta onetsi eta programa erabiltzen hasiko zara zure fakturak sortzeko."
 
 msgid "Sólo una vez y te dará acceso ilimitado para acceder al programa de facturación. No tendrás que volver a pagar."
-msgstr "Sólo una vez y te dará acceso ilimitado para acceder al programa de facturación. No tendrás que volver a pagar."
+msgstr "Behin bakarrik ordaindu beharko duzu fakturazio programara muga gabe eta betirako sarbidea lortzeko. Ez duzu berriz ordaindu beharko. "
 
 msgid "Tabla de precios"
-msgstr "Tabla de precios"
+msgstr "Prezio taula"
 
 msgid "Todo lo que necesitas para hacer facturas está incluido en nuestra versión gratuita del programa de facturación: puedes personalizar tus facturas agregando el logotipo de tu empresa, generar facturas, descargarlas en PDF y enviarlas por email a tus clientes de manera rápida y sencilla. Regístrate y accede al programa de facturación para comprobarlo por ti mismo."
-msgstr "Todo lo que necesitas para hacer facturas está incluido en nuestra versión gratuita del programa de facturación: puedes personalizar tus facturas agregando el logotipo de tu empresa, generar facturas, descargarlas en PDF y enviarlas por email a tus clientes de manera rápida y sencilla. Regístrate y accede al programa de facturación para comprobarlo por ti mismo."
+msgstr "Fakturako sortzeko behar duzun guztia gure dohaineko kontuan lortuko duzu, fakturak pertsonalizatu zure logotipoa gehituz, fakturak sortu eta PDF bezala deskargatu eta bidali e-postaz zure bezeroei erraz eta azkar. Erregistratu eta dohaineko programara sarbidea lortu zure kabuz probatu ahal izateko. "
 
 msgid "Trabajo con mi hermano realizando trabajos de pintura para particulares. Creo las facturas con el ordenador y luego puedo acceder a ellas desde mi móvil. El mejor programa que he utilizado."
-msgstr "Trabajo con mi hermano realizando trabajos de pintura para particulares. Creo las facturas con el ordenador y luego puedo acceder a ellas desde mi móvil. El mejor programa que he utilizado."
+msgstr "Nire anaiarekin egiten dut lan margolari bezala. Nire fakturak ordenagailuarekin sortzen ditut eta gero mugikorretik ikus ditzaket. Topatu dudan programa onena. "
 
 msgid "Tu nombre"
-msgstr "Tu nombre"
+msgstr "Zure izena"
 
 msgid "Usar este programa de facturación es completamente gratuito. Solo necesitas registrarte para crear tu usuario y confirmar tu cuenta de correo electrónico, y accederás a un programa profesional que agilizará la facturación de tu negocio sin tener que gastar un euro."
-msgstr "Usar este programa de facturación es completamente gratuito. Solo necesitas registrarte para crear tu usuario y confirmar tu cuenta de correo electrónico, y accederás a un programa profesional que agilizará la facturación de tu negocio sin tener que gastar un euro."
+msgstr "Fakturazio programa dohan erabili dezakezu. Bakarrik erregistratu eta zure e-posta onetsi. Fakturazio programara sarbidea lortuko duzu zure enpresarentzako fakturak egiten hasteko, zure enpresaren fakturazio sistema osoa izango duzu dohainik. "
 
 msgid "Usuario ilimitados"
-msgstr "Usuario ilimitados"
+msgstr "Erabiltzale mugagabeak"
 
 msgid "Vuestra opinión"
-msgstr "Vuestra opinión"
+msgstr "Zuen iritzia"
 
 msgid "¡Listo! El mundo de los negocios corre aprisa y tú necesitas innovar para ganar la carrera. Contar con el programa para hacer facturas de sisfacturacion.com no solo te simplificará el trabajo, sino que también te dará más tiempo y dinero para dedicar a tu negocio. Pruébalo, ¡es gratis!"
-msgstr "¡Listo! El mundo de los negocios corre aprisa y tú necesitas innovar para ganar la carrera. Contar con el programa para hacer facturas de sisfacturacion.com no solo te simplificará el trabajo, sino que también te dará más tiempo y dinero para dedicar a tu negocio. Pruébalo, ¡es gratis!"
+msgstr "Egina! Negozioen mundua oso azkar doa eta berritzea ezin bestekoa da olatuaren puntan ibiltzeko. Fakturak egiteko programaren bitartez zure lana erraztuko duzu eta gainera denbora irabaziko duzu zure enpresari eskaintzeko. Probatu dohainik!"
 
 msgid "¿Alguna duda? Consultanos"
-msgstr "¿Alguna duda? Consultanos"
+msgstr "Dudarik duzu? Galdetu"
 
 msgid "¿Cada cuanto tiempo hay que pagar por la cuenta Premium?"
-msgstr "¿Cada cuanto tiempo hay que pagar por la cuenta Premium?"
+msgstr "Zenbatero ordaindu behar da Premium kontua?"
 
 msgid "¿Cuanto cuesta la cuenta Premium?"
-msgstr "¿Cuanto cuesta la cuenta Premium?"
+msgstr "Zenbat balio du Premium kontuak?"
 
 msgid "¿Cómo envío las facturas a mis clientes?"
-msgstr "¿Cómo envío las facturas a mis clientes?"
+msgstr "Nola bidaltzen diet fakturak nire bezeroei?"
 
 msgid "¿Cómo puedo pagar por la cuenta Premium?"
-msgstr "¿Cómo puedo pagar por la cuenta Premium?"
+msgstr "Nola ordaindu dezaket Premium kontua lortzeko?"
 
 msgid "¿Cómo? En cuatro pasos rapidísimos y muy fáciles:"
-msgstr "¿Cómo? En cuatro pasos rapidísimos y muy fáciles:"
+msgstr "Nola? Lau pauso azkar eta errezen bidez:"
 
 msgid "¿El programa de facturación es gratis?"
-msgstr "¿El programa de facturación es gratis?"
+msgstr "Fakturazio programa dohainik da?"
 
 msgid "¿Eres autónomo o posees una pequeña empresa? Acelera y optimiza la facturación de tu negocio a través de la simple utilización de un nuevo programa para hacer facturas. A partir de ahora, podrás ahorrarte trabajo, tiempo y dinero en un solo clic."
-msgstr "¿Eres autónomo o posees una pequeña empresa? Acelera y optimiza la facturación de tu negocio a través de la simple utilización de un nuevo programa para hacer facturas. A partir de ahora, podrás ahorrarte trabajo, tiempo y dinero en un solo clic."
+msgstr "Autonomoa zara edo enpresa txiki bat daukazu? Azkartu zure fakturazioa erabiltzeko erraza den programa batekin. Hemendik aurrera lana, denbora eta dirua aurreztuko duzu. "
 
 msgid "¿Las facturas tienen valor legal?"
-msgstr "Fakturek legedia betetzen dute?"
+msgstr "Fakturak balio legala dute?"
 
 msgid "¿Por que hay publicidad en mi cuenta?"
-msgstr "Zergatik daukat publizitatea debaldeko kontuan?"
+msgstr "Zergatik dago publizitatea nire kontuan?"
 
 msgid "¿Qué beneficios tengo con el programa gratuito?"
-msgstr "Zein abaintail dauzkat debaleko programarekin?"
+msgstr "Zein dira dohaineko programak ematen dituen onurak?"
 
 msgid "¿Qué es la cuenta Premium?"
 msgstr "Zer da Premium kontua?"

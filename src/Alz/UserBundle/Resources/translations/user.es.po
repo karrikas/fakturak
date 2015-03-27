@@ -1,0 +1,12 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es\n"
+
+msgid "El usuario o la contraseña no son correctos."
+msgstr "El usuario o la contraseña no son correctos."
+msgid "Entrar en tu cuenta"
+msgstr "Entrar en tu cuenta"
+msgid "Registrarse"
+msgstr "Registrarse"

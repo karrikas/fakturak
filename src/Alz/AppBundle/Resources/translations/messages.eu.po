@@ -3,196 +3,298 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: eu\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"X-Generator: Poedit 1.7.5\n"
 
 msgid "1 234,00"
 msgstr "1 234,00"
+
 msgid "1 234,00 €"
 msgstr "1 234,00 €"
+
 msgid "1 234.00"
 msgstr "1 234.00"
+
 msgid "1 234.00 €"
 msgstr "1 234.00 €"
+
 msgid "1,234.00"
 msgstr "1,234.00"
+
 msgid "1,234.00 €"
 msgstr "1,234.00 €"
+
 msgid "1.234,00"
 msgstr "1.234,00"
+
 msgid "1.234,00 €"
 msgstr "1.234,00 €"
+
 msgid "Acceder a cuenta Premium"
-msgstr "Acceder a cuenta Premium"
+msgstr "Premium kontua lortu"
+
 msgid "Activar cuenta Premium"
-msgstr "Activar cuenta Premium"
+msgstr "Premium kontua aktibatu"
+
 msgid "App facturación"
-msgstr "App facturación"
+msgstr "Fakturazio App"
+
 msgid "Añadir cliente"
-msgstr "Añadir cliente"
+msgstr "Bezeroa sortu"
+
 msgid "CIF o NIF"
-msgstr "CIF o NIF"
+msgstr "CIF edo NIF"
+
 msgid "CP"
-msgstr "CP"
+msgstr "Posta kodea"
+
 msgid "Cancelar"
-msgstr "Cancelar"
+msgstr "Ezeztatu"
+
 msgid "Cancelar cuenta Premium"
-msgstr "Cancelar cuenta Premium"
+msgstr "Premium kontua ezeztatu"
+
 msgid "Cantidad"
-msgstr "Cantidad"
+msgstr "Kopurua"
+
 msgid "Cif"
 msgstr "Cif"
+
 msgid "Ciudad"
-msgstr "Ciudad"
+msgstr "Herria"
+
 msgid "Click para editar"
-msgstr "Click para editar"
+msgstr "Klik egin editatzeko"
+
 msgid "Cliente"
-msgstr "Cliente"
+msgstr "Bezeroa"
+
 msgid "Clientes"
-msgstr "Clientes"
+msgstr "Bezeroak"
+
 msgid "Concepto"
-msgstr "Concepto"
+msgstr "Kontzeptua"
+
 msgid "Configuración"
-msgstr "Configuración"
+msgstr "Konfigurazioa"
+
 msgid "Configuración de la empresa"
-msgstr "Configuración de la empresa"
+msgstr "Enpresaren konfigurazioa"
+
 msgid "Conpeptos"
-msgstr "Conpeptos"
+msgstr "Kontzeptuak"
+
 msgid "Crear cliente"
-msgstr "Crear cliente"
+msgstr "Bezeroa sortu"
+
 msgid "Crear factura"
-msgstr "Crear factura"
+msgstr "Faktura sortu"
+
 msgid "Crear facturas"
-msgstr "Crear facturas"
+msgstr "Fakturak sortu"
+
 msgid "Crear nuevo cliente"
-msgstr "Crear nuevo cliente"
+msgstr "Bezero berria sortu"
+
 msgid "Código postal"
-msgstr "Código postal"
+msgstr "Posta kodea"
+
 msgid "Datos de la empresa"
-msgstr "Datos de la empresa"
+msgstr "Enpresaren datuak"
+
 msgid "Debes añadir los datos de la empresa para empezar a utilizar la aplicación."
-msgstr "Debes añadir los datos de la empresa para empezar a utilizar la aplicación."
+msgstr "Enpresaren informazioa sartu behar duzu aplikazioa erabiltzen hasteko."
+
 msgid "Descargar"
-msgstr "Descargar"
+msgstr "Deskargatu"
+
 msgid "Descargar en PDF"
-msgstr "Descargar en PDF"
+msgstr "PDFa deskargatu"
+
 msgid "Desdargar factura"
-msgstr "Desdargar factura"
+msgstr "Faktura deskargatu"
+
 msgid "Dirección"
-msgstr "Dirección"
+msgstr "Helbidea"
+
 msgid "E-mail"
-msgstr "E-mail"
+msgstr "E-posta"
+
 msgid "EUR - €"
 msgstr "EUR - €"
+
 msgid "Editar"
-msgstr "Editar"
+msgstr "Editatu"
+
 msgid "Editar cliente"
-msgstr "Editar cliente"
+msgstr "Bezeroa editatu"
+
 msgid "Editar factura"
-msgstr "Editar factura"
+msgstr "Faktura editatu"
+
 msgid "Eliminar factura"
-msgstr "Eliminar factura"
+msgstr "Faktura ezabatu"
+
 msgid "Email"
-msgstr "Email"
+msgstr "Eposta"
+
 msgid "Empresa"
-msgstr "Empresa"
+msgstr "Enpresa"
+
 msgid "Empresa de facturación"
-msgstr "Empresa de facturación"
+msgstr "Fakturatze enpresa"
+
 msgid "Este mensaje aparece en todas las facturas. Utilizala para poner la forma de pago o alguna forma de contacto. Se puede modificar en cada factura. "
-msgstr "Este mensaje aparece en todas las facturas. Utilizala para poner la forma de pago o alguna forma de contacto. Se puede modificar en cada factura. "
+msgstr "Mezu hau faktura guztietan agertzen da. Erabili ohiko ordainketa modua zehazteko edo harremanetarako bidea. Faktura bakoitzean aldatzeko aukera dago. "
+
 msgid "Factura"
-msgstr "Factura"
+msgstr "Faktura"
+
 msgid "Facturas"
-msgstr "Facturas"
+msgstr "Fakturak"
+
 msgid "Fax"
 msgstr "Fax"
+
 msgid "Fecha"
-msgstr "Fecha"
+msgstr "Data"
+
 msgid "Formato de la moneda"
-msgstr "Formato de la moneda"
+msgstr "Txanponen formatua"
+
 msgid "GBP - £"
 msgstr "GBP - £"
+
 msgid "Guardar"
-msgstr "Guardar"
+msgstr "Gorde"
+
 msgid "Hemos recibido tu respuesta. En breve nos pondremos en contacto. Gracias."
-msgstr "Hemos recibido tu respuesta. En breve nos pondremos en contacto. Gracias."
+msgstr "Zure galdera jaso dugu. Laster jarriko garagar harremanetan. Eskerrik asko."
+
 msgid "IVA"
-msgstr "IVA"
+msgstr "BEZ"
+
 msgid "Imagen del logotipo"
-msgstr "Imagen del logotipo"
+msgstr "Logotipoaren irudia"
+
 msgid "Información"
-msgstr "Información"
+msgstr "Informazioa"
+
 msgid "Información de la empresa"
-msgstr "Información de la empresa"
+msgstr "Enpresaren informazioa"
+
 msgid "Listado de clientes"
-msgstr "Listado de clientes"
+msgstr "Bezero zerrenda"
+
 msgid "Listado de facturas"
-msgstr "Listado de facturas"
+msgstr "Faktura zerrenda"
+
 msgid "Logo"
-msgstr "Logo"
+msgstr "Logotipoa"
+
 msgid "Los datos se han eliminado."
-msgstr "Los datos se han eliminado."
+msgstr "Datuak ezabatu dira."
+
 msgid "Los datos se han guardado."
-msgstr "Los datos se han guardado."
+msgstr "Datuak gorde dira."
+
 msgid "Mensaje facturas"
-msgstr "Mensaje facturas"
+msgstr "Fakturetako mezuak"
+
 msgid "Mensaje informativo para las facturas"
-msgstr "Mensaje informativo para las facturas"
+msgstr "Fakturentzako informazio mezua"
+
 msgid "Mostrar menú"
-msgstr "Mostrar menú"
+msgstr "Menua erakutsi"
+
 msgid "Muchas gracias."
-msgstr "Muchas gracias."
+msgstr "Eskerrik asko."
+
 msgid "No se ha podido finalizar la compra. Si tienes problemas ponte en contacto con nosotros en la dirección <a href=\"mailto:info@sisfacturacion.com\">info@sisfacturacion.com</a>."
-msgstr "No se ha podido finalizar la compra. Si tienes problemas ponte en contacto con nosotros en la dirección <a href=\"mailto:info@sisfacturacion.com\">info@sisfacturacion.com</a>."
+msgstr "Erosketa ezin izan da burutu. Arazoak badituzu jarri gurekin harremanetan hurrengo helbidean <a href=\"mailto:info@sisfacturacion.com\">info@sisfacturacion.com</a>."
+
 msgid "Nombre"
-msgstr "Nombre"
+msgstr "Izena"
+
 msgid "Nuevo cliente"
-msgstr "Nuevo cliente"
+msgstr "Bezero berria"
+
 msgid "Número"
-msgstr "Número"
+msgstr "Zenbakia"
+
 msgid "Número factura"
-msgstr "Número factura"
+msgstr "Faktura zenbakia"
+
 msgid "Paga sólo %val% y tendrás acceso PREMIUM para siempre. Sin límite de facturas, ni publicidad. Y con un nivel de seguridad adicional. No dejes pasar este oportunidad."
-msgstr "Paga sólo %val% y tendrás acceso PREMIUM para siempre. Sin límite de facturas, ni publicidad. Y con un nivel de seguridad adicional. No dejes pasar este oportunidad."
+msgstr "Ordaindu %val% bakarrik eta PREMIUM sarbidea izango duzu betirako. Mugarik gabe eta iragarkirik gabe. Eta segurtasun maila hobearekin. Ez utzi aukera hau pasatzen. "
+
 msgid "Precio"
-msgstr "Precio"
+msgstr "Prezioa"
+
 msgid "Preguntar"
 msgstr "Galdetu"
+
 msgid "Provincia"
-msgstr "Provincia"
+msgstr "Probintzia"
+
 msgid "Razón social"
-msgstr "Razón social"
+msgstr "Enpresa izena"
+
 msgid "Revisa y guarda la configuración para empezar a hacer facturas."
-msgstr "Revisa y guarda la configuración para empezar a hacer facturas."
+msgstr "Errepasatu eta gorde konfigurazioa fakturak egiten hasteko."
+
 msgid "Salir"
-msgstr "Salir"
+msgstr "Irten"
+
 msgid "SisFacturacion.com aplicación para crear las facturas de tu empresa."
-msgstr "SisFacturacion.com aplicación para crear las facturas de tu empresa."
+msgstr "SisFacturacion.com zure enpresaren fakturak sortzeko aplikazioa."
+
 msgid "SisFacturacion.com<br>Programa de facturación simple y gratuito"
-msgstr "SisFacturacion.com<br>Programa de facturación simple y gratuito"
+msgstr "SisFacturacion.com<br>Fakturazio aplikazio sinplea eta dohainik"
+
 msgid "Te damos la bienvenida desde el equipo de trabajo de SisFacturación."
-msgstr "Te damos la bienvenida desde el equipo de trabajo de SisFacturación."
+msgstr "SisFacturacion.com lan taldeak ongi etorria eman nahi zaitu."
+
 msgid "Telf"
 msgstr "Telf"
+
 msgid "Teléfono"
-msgstr "Teléfono"
+msgstr "Telefonoa"
+
 msgid "Texto información"
-msgstr "Texto información"
+msgstr "Informazio testua"
+
 msgid "Tipo de moneda"
-msgstr "Tipo de moneda"
+msgstr "Txanpon mota"
+
 msgid "Total"
-msgstr "Total"
+msgstr "Guztira"
+
 msgid "Total con IVA"
-msgstr "Total con IVA"
+msgstr "Guztira BEZarekin"
+
 msgid "Tu pago se ha procesado con exito, en breve se activara tu cuenta PREMIUM."
-msgstr "Tu pago se ha procesado con exito, en breve se activara tu cuenta PREMIUM."
+msgstr "Zure ordainketa ongi burutu da, lastek aktibatuko da zure PREMIUM kontua. "
+
 msgid "USD - $"
 msgstr "USD - $"
+
 msgid "¿Necesitas ayuda? Envianos tu consulta."
-msgstr "¿Necesitas ayuda? Envianos tu consulta."
+msgstr "Laguntza behar duzu? Bidali zure kontsulta."
+
 msgid "€ 1 234,00"
 msgstr "€ 1 234,00"
+
 msgid "€ 1 234.00"
 msgstr "€ 1 234.00"
+
 msgid "€ 1,234.00"
 msgstr "€ 1,234.00"
+
 msgid "€ 1.234,00"
 msgstr "€ 1.234,00"
