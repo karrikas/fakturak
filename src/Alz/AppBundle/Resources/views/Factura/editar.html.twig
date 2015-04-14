@@ -111,7 +111,7 @@ var factura_id = {{ factura.id }};
                 </div>
 
                 <br>
-                <div contentEditable="true" ng-change="clienteInfoChange()" ng-model="factura.clienteinfo" title="{{ "Click para editar"|trans }}">{{ factura.clienteinfo|nl2br }}</div>
+                <div contentEditable="true" ng-change="clienteInfoChange()" ng-model="factura.clienteinfo" title="{{ "Click para editar"|trans }}">{{ factura.clienteinfo|raw|nl2br }}</div>
                 <br>
             </div>
 
@@ -159,7 +159,7 @@ var factura_id = {{ factura.id }};
 
         <div class="col-md-6 text-right">
             <label class="control-label required" for="alz_appbundle_factura_cliente">{{ "Empresa de facturación"|trans }}</label>
-            <div contentEditable="true" ng-change="empresaChange()" ng-model="factura.empresainfo" title="{{ "Click para editar"|trans }}">{{ factura.empresainfo|nl2br }}</div>
+            <div contentEditable="true" ng-change="empresaChange()" ng-model="factura.empresainfo" title="{{ "Click para editar"|trans }}">{{ factura.empresainfo|raw|nl2br }}</div>
         </div>
     </div>
 

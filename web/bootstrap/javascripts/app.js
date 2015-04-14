@@ -43,11 +43,11 @@ appApp.controller("FacturaController", ['$http', '$scope', function($http, $scop
                 info += data.cif;
                 info += '<br>';
             }
-            if (data.direcion1 != null) {
+            if (data.direccion1 != null) {
                 info += data.direccion1;
                 info += '<br>';
             }
-            if (data.direcion2 != null) {
+            if (data.direccion2 != null) {
                 info += data.direccion2;
                 info += '<br>';
             }
